@@ -23,26 +23,30 @@ set incsearch
 set showmatch
 set showmode
 
+" Misc
 let mapleader=","
-map <Leader>f :!fmt<CR>
-map <Leader>c :!xclip -i; xclip -o<CR>
-
 au FocusLost * :wa
-
 filetype indent plugin on
 nmap <F9> :w<CR> :make<CR><CR>
+map <Leader>f :!fmt<CR>
 
+" Copy the current selection in X clipboard.
+map <Leader>c :!xclip -i; xclip -o<CR>u
+
+
+" File types
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
 autocmd BufNewFile,BufRead *.as						set filetype=actionscript
-
-autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
-autocmd FileType php set makeprg=php\ -l\ %
 autocmd FileType markdown set makeprg=markdown\ %\ >\ %<.html
 
+
+" VIM gone wild.
 set wildmode=list:longest,list:full
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
 
+
+" Session save/restore
 nmap SQ <ESC>:mksession! /home/leo/.vim/Session.vim<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 "vim called without arguments
@@ -51,6 +55,8 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
+
+" Sets +x automatically when writing a shell script.
 function ModeChange()
 	if getline(1) =~ "^#!"
 		if getline(1) =~ "/bin/"
@@ -58,6 +64,13 @@ function ModeChange()
 		endif
 	endif
 endfunction
-
 au BufWritePost * call ModeChange()
 
+
+" Syntax checking
+let g:syntastic_enable_signs=1
+
+
+" Manual PHP syntax checking via :make
+autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
+autocmd FileType php set makeprg=php\ -l\ %

@@ -83,6 +83,7 @@ shopt -s expand_aliases
 shopt -s extglob
 shopt -s histappend
 shopt -s hostcomplete
+umask u+rw,go-rwx # 'OFF MY LAWN
 
 # Color aliases
 alias ls='ls --color=auto --group-directories-first'
@@ -95,11 +96,7 @@ alias tree='tree -C'
 alias ll='ls -alF'
 alias mysql='mysql --user=root --password=root'
 alias mytop='mytop -u root -p root'
-alias ack='ack-grep --color'
-alias acki='ack-grep --color -i'
 alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | less -r"
-
-umask u+rw,go-rwx
 
 # vim bindings
 set -o vi
@@ -107,12 +104,17 @@ bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
 export EDITOR=vim
 
 
+# Check syntax of all PHP files.
 function phpcheck() {
 	find . -type f -name '*.php' -exec php -l {} \; | grep -vE '^(No syntax errors|Errors parsing)'
 	return 0
 }
 
+# Handy grep aliases, since ack sucks.
+function g()	{ grep --color=always -EHnr	 --exclude-dir='.svn' $@ . | less -r;  }
+function gi()	{ grep --color=always -EHnri --exclude-dir='.svn' $@ . | less -r;  }
 
+# Nice SVN diff.
 function sd() {
 	arg=''
 	if [[ -n $1 ]]; then
