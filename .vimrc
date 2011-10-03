@@ -74,3 +74,7 @@ let g:syntastic_enable_signs=1
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
 autocmd FileType php set makeprg=php\ -l\ %
+
+" sudo save a file.
+cmap w!! %!sudo tee > /dev/null %
+
