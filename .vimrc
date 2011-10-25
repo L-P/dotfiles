@@ -28,6 +28,7 @@ let mapleader=","
 au FocusLost * :wa
 filetype indent plugin on
 nmap <F9> :w<CR> :make<CR><CR>
+nmap <F10> :TagbarToggle<CR>
 map <Leader>f :!fmt<CR>
 
 " Copy the current selection in X clipboard.
@@ -37,7 +38,8 @@ map <Leader>c :!xclip -i; xclip -o<CR>u
 " File types
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
 autocmd BufNewFile,BufRead *.as						set filetype=actionscript
-autocmd FileType markdown set makeprg=markdown\ %\ >\ %<.html
+autocmd BufNewFile,BufRead *.json					set filetype=javascript equalprg=json_reformat
+autocmd FileType markdown	set makeprg=markdown\ %\ >\ %<.html
 
 
 " VIM gone wild.
@@ -76,5 +78,4 @@ autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
 autocmd FileType php set makeprg=php\ -l\ %
 
 " sudo save a file.
-cmap w!! %!sudo tee > /dev/null %
-
+cmap w!! %!sudo tee > /dev/null %<CR>
