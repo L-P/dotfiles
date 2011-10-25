@@ -111,8 +111,8 @@ function phpcheck() {
 }
 
 # Handy grep aliases, since ack sucks.
-function g()	{ grep --color=always -EHnr	 --exclude-dir='.svn' $@ . | less -r;  }
-function gi()	{ grep --color=always -EHnri --exclude-dir='.svn' $@ . | less -r;  }
+function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' $@ . | less -rFX ;  }
+function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' $@ . | less -rFX ;  }
 
 # Nice SVN diff.
 function sd() {
@@ -124,4 +124,3 @@ function sd() {
 }
 
 source ~/.bash_local
-
