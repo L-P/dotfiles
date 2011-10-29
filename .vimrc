@@ -31,6 +31,13 @@ nmap <F9> :w<CR> :make<CR><CR>
 nmap <F10> :TagbarToggle<CR>
 map <Leader>f :!fmt<CR>
 
+" Use arrow keys to navigate in wrapped text
+" http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
+nnoremap <Up> gk
+nnoremap <Down> gj
+inoremap <Up> <C-O>gk
+inoremap <Down> <C-O>gj
+
 " Copy the current selection in X clipboard.
 map <Leader>c :!xclip -i; xclip -o<CR>u
 
@@ -79,3 +86,8 @@ autocmd FileType php set makeprg=php\ -l\ %
 
 " sudo save a file.
 cmap w!! %!sudo tee > /dev/null %<CR>
+
+" Abbreviations
+abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
+abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
+
