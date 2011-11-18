@@ -22,11 +22,14 @@ set pastetoggle=<F2>
 set incsearch
 set showmatch
 set showmode
+set undofile
+set undodir=/var/tmp/vim
 
 " Misc
 let mapleader=","
 au FocusLost * :wa
 filetype indent plugin on
+nmap <F8> :GundoToggle<CR>
 nmap <F9> :w<CR> :make<CR><CR>
 nmap <F10> :TagbarToggle<CR>
 map <Leader>f :!fmt<CR>
@@ -39,7 +42,7 @@ inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
 " Copy the current selection in X clipboard.
-map <Leader>c :!xclip -i; xclip -o<CR>u
+map <Leader>c :!xsel -iob<CR>u
 
 
 " File types
@@ -56,14 +59,14 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
 
 
 " Session save/restore
-nmap SQ <ESC>:mksession! /home/leo/.vim/Session.vim<CR>:wqa<CR>
+nmap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 "vim called without arguments
-		execute 'source ~/.vim/Session.vim'
+		execute 'source .vimsession'
 	end
 endfunction
-autocmd VimEnter * call RestoreSession()
 
+autocmd VimEnter * call RestoreSession()
 
 " Sets +x automatically when writing a shell script.
 function ModeChange()
