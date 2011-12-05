@@ -86,17 +86,21 @@ shopt -s hostcomplete
 umask u+rw,go-rwx # 'OFF MY LAWN
 
 # Color aliases
-alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias tree='tree -C'
 
 # Aliases
-alias ll='ls -alF'
 alias mysql='mysql --user=root --password=root'
 alias mytop='mytop -u root -p root'
 alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | less -r"
+alias wget='wget --no-check-certificate'
+alias ls='ls --group-directories-first --color'
+alias ll='ls -lh'
+alias la='ll -a'
+alias update_bashrc='wget https://raw.github.com/L-P/dotfiles/master/.bashrc -O ~/.bashrc'
+alias update_vimrc='wget https://raw.github.com/L-P/dotfiles/master/.vimrc -O ~/.vimrc'
 
 # vim bindings
 set -o vi
@@ -120,7 +124,7 @@ function sd() {
 	if [[ -n $1 ]]; then
 		arg="-c $1"
 	fi
-	svn diff $arg | pygmentize -l diff | less -r
+	svn diff $arg | pygmentize -l diff | less -rFX
 }
 
 source ~/.bash_local
