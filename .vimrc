@@ -48,7 +48,7 @@ map <Leader>c :!xsel -iob<CR>u
 " File types
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
 autocmd BufNewFile,BufRead *.as						set filetype=actionscript
-autocmd BufNewFile,BufRead *.json					set filetype=javascript equalprg=json_reformat
+autocmd BufNewFile,BufRead *.json					set syntax=javascript equalprg=json_reformat
 autocmd FileType markdown	set makeprg=markdown\ %\ >\ %<.html
 
 
@@ -81,6 +81,8 @@ au BufWritePost * call ModeChange()
 
 " Syntax checking
 let g:syntastic_enable_signs=1
+let g:syntastic_echo_current_error=1
+let g:syntastic_auto_loc_list=2
 
 
 " Manual PHP syntax checking via :make
