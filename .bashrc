@@ -99,8 +99,14 @@ alias wget='wget --no-check-certificate'
 alias ls='ls --group-directories-first --color'
 alias ll='ls -lh'
 alias la='ll -a'
-alias update_bashrc='wget https://raw.github.com/L-P/dotfiles/master/.bashrc -O ~/.bashrc'
-alias update_vimrc='wget https://raw.github.com/L-P/dotfiles/master/.vimrc -O ~/.vimrc'
+alias mkdir='mkdir -pv'
+alias ..='cd ..'
+alias ....='cd ../..'
+alias ......='cd ../../..'
+alias ........='cd ../../../..'
+
+alias update-bashrc='wget https://raw.github.com/L-P/dotfiles/master/.bashrc -O ~/.bashrc'
+alias update-vimrc='wget https://raw.github.com/L-P/dotfiles/master/.vimrc -O ~/.vimrc'
 
 # vim bindings
 set -o vi
