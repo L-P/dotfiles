@@ -25,15 +25,21 @@ set showmode
 set undofile
 set undodir=/var/tmp/vim
 
+
+
 " Misc
-let mapleader=","
 au FocusLost * :wa
 filetype indent plugin on
+let mapleader=","
+
+
+
+" Mappings
 nmap <F8> :GundoToggle<CR>
 nmap <F9> :w<CR> :make<CR><CR>
 nmap <F10> :TagbarToggle<CR>
 
-" Re-orders and format the contents of a long array.
+" Re-orders and formats the contents of a long array.
 map <Leader>o vib:s/ /\r/g<CR>gv<gv:sort<CR>gvgqvib>gv:g/^$/d<CR>
 
 " Use arrow keys to navigate in wrapped text
@@ -46,6 +52,10 @@ inoremap <Down> <C-O>gj
 " Copy the current selection in X clipboard.
 map <Leader>c :!xsel -iob<CR>u
 
+" sudo save a file.
+cmap w!! %!sudo tee > /dev/null %<CR>
+
+
 
 " File types
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
@@ -54,11 +64,15 @@ autocmd BufNewFile,BufRead *.json					set syntax=javascript equalprg=json_reform
 autocmd FileType markdown	set makeprg=markdown\ %\ >\ %<.html
 
 
+
 " VIM gone wild.
 set wildmode=list:longest,list:full
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
 
+
+
+" Functions and stuff
 
 " Session save/restore
 nmap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
@@ -67,8 +81,8 @@ function! RestoreSession()
 		execute 'source .vimsession'
 	end
 endfunction
-
 autocmd VimEnter * call RestoreSession()
+
 
 " Sets +x automatically when writing a shell script.
 function! ModeChange()
@@ -81,20 +95,23 @@ endfunction
 au BufWritePost * call ModeChange()
 
 
-" Syntax checking
+
+" Syntastic params
 let g:syntastic_enable_signs=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_auto_loc_list=2
+
 
 
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
 autocmd FileType php set makeprg=php\ -l\ %
 
-" sudo save a file.
-cmap w!! %!sudo tee > /dev/null %<CR>
+
 
 " Abbreviations
 abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
 abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
+" Dump local PHP variables (names, name=>contents).
+abbr dlv var_dump(array_keys(get_defined_vars()), compact(array_keys(get_defined_vars())));<CR>die();
