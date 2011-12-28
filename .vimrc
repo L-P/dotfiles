@@ -32,7 +32,9 @@ filetype indent plugin on
 nmap <F8> :GundoToggle<CR>
 nmap <F9> :w<CR> :make<CR><CR>
 nmap <F10> :TagbarToggle<CR>
-map <Leader>f :!fmt<CR>
+
+" Re-orders and format the contents of a long array.
+map <Leader>o vib:s/ /\r/g<CR>gv<gv:sort<CR>gvgqvib>gv:g/^$/d<CR>
 
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
@@ -69,7 +71,7 @@ endfunction
 autocmd VimEnter * call RestoreSession()
 
 " Sets +x automatically when writing a shell script.
-function ModeChange()
+function! ModeChange()
 	if getline(1) =~ "^#!"
 		if getline(1) =~ "/bin/"
 			silent !chmod u+x <afile>
