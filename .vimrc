@@ -39,8 +39,11 @@ nmap <F8> :GundoToggle<CR>
 nmap <F9> :w<CR> :make<CR><CR>
 nmap <F10> :TagbarToggle<CR>
 
+" Reformats paragraphs.
+map <Leader>f !fmt<CR>
+
 " Re-orders and formats the contents of a long array.
-map <Leader>o vib:s/ /\r/g<CR>gv<gv:sort<CR>gvgqvib>gv:g/^$/d<CR>
+map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
@@ -115,3 +118,4 @@ abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
 " Dump local PHP variables (names, name=>contents).
 abbr dlv var_dump(array_keys(get_defined_vars()), compact(array_keys(get_defined_vars())));<CR>die();
+
