@@ -105,8 +105,15 @@ alias ....='cd ../..'
 alias ......='cd ../../..'
 alias ........='cd ../../../..'
 
-alias update-bashrc='wget https://raw.github.com/L-P/dotfiles/master/.bashrc -O ~/.bashrc'
-alias update-vimrc='wget https://raw.github.com/L-P/dotfiles/master/.vimrc -O ~/.vimrc'
+
+function update-dotfiles() {
+	local repo='wget https://raw.github.com/L-P/dotfiles/master/'
+	wget $repo/.bashrc -O ~/.bashrc
+	wget $repo/.vimrc -O ~/.vimrc
+	wget $repo/.gitconfig -O ~/.gitconfig
+	wget $repo/.i3/config -O ~/.i3/config
+}
+
 
 # vim bindings
 set -o vi
