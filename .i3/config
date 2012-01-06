@@ -154,9 +154,9 @@ bar {
 }
 
 # Lock screen
-bind 78 exec /usr/bin/i3lock
+bindsym Scroll_Lock exec /usr/bin/i3lock
 
 # Sound control with Alt+KP_(PLUS/MINUS)
-bind Mod1+82 exec /usr/bin/amixer set Master 5-
-bind Mod1+86 exec /usr/bin/amixer set Master 5+
+bindsym $mod+KP_Substract exec /usr/bin/amixer set Master 5-
+bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
 
