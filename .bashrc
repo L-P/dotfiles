@@ -107,11 +107,11 @@ alias ........='cd ../../../..'
 
 
 function update-dotfiles() {
-	local repo='https://raw.github.com/L-P/dotfiles/master/'
-	wget $repo/.bashrc -O ~/.bashrc
-	wget $repo/.vimrc -O ~/.vimrc
-	wget $repo/.gitconfig -O ~/.gitconfig
-	wget $repo/.i3/config -O ~/.i3/config
+	local repo='https://raw.github.com/L-P/dotfiles/master'
+	wget -nv $repo/.bashrc -O ~/.bashrc
+	wget -nv $repo/.vimrc -O ~/.vimrc
+	wget -nv $repo/.gitconfig -O ~/.gitconfig
+	wget -nv $repo/.i3/config -O ~/.i3/config
 }
 
 
