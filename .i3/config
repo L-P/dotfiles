@@ -157,3 +157,8 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 
 # Prevents Pidgin from taking half the screen.
 for_window [class="Pidgin"] resize shrink left
+
+# Keep Nyancat away from the work stuff.
+assign [class="Clementine"] → 10
+for_window [class="Clementine"] focus
+
