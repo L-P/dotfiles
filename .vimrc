@@ -1,7 +1,6 @@
-set nocompatible
 syntax on
+
 set background=dark
-set guifont=Inconsolata\ Medium\ 12
 set number
 set showcmd
 set ruler
@@ -20,6 +19,7 @@ set pastetoggle=<F2>
 set incsearch
 set showmatch
 set showmode
+set scrolloff=3
 set undofile
 set undodir=/var/tmp/vim
 
