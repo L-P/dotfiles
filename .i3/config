@@ -151,3 +151,7 @@ bindsym Scroll_Lock exec /usr/bin/i3lock -d -c 000000
 bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
 
+# Proper xfce notifications.
+# http://infra.in.zekjur.net/archives/i3-discuss/2011-November/000348.html
+for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
+
