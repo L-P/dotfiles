@@ -155,3 +155,5 @@ bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
 # http://infra.in.zekjur.net/archives/i3-discuss/2011-November/000348.html
 for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 
+# Prevents Pidgin from taking half the screen.
+for_window [class="Pidgin"] resize shrink left
