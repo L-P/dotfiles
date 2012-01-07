@@ -2,7 +2,14 @@
 	diff = auto
 	status = auto
 	branch = auto
+	log = auto
+	interactive = auto
+	pager = true
+
 [user]
 	name = Léo Peltier
 	email = contact@leo-peltier.fr
 
+[cola]
+	fontdiff = Inconsolata,12,-1,5,50,0,0,0,0,0
+	tabwidth = 4

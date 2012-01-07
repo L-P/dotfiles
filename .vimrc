@@ -14,8 +14,6 @@ set encoding=utf-8
 set ignorecase
 set smartcase
 set mouse=a
-set ttyfast
-set lazyredraw
 set spelllang=fr
 set spellsuggest=5
 set pastetoggle=<F2>
@@ -28,7 +26,6 @@ set undodir=/var/tmp/vim
 
 
 " Misc
-au FocusLost * :wa
 filetype indent plugin on
 let mapleader=","
 
@@ -104,18 +101,21 @@ let g:syntastic_enable_signs=1
 let g:syntastic_echo_current_error=1
 let g:syntastic_auto_loc_list=2
 
+" Python-specific
+autocmd FileType python set textwidth=79 expandtab
 
+
+
+" PHP sweeteners
 
 " Manual PHP syntax checking via :make
-autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
-autocmd FileType php set makeprg=php\ -l\ %
+autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
 
-
-
-" Abbreviations
-abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
-abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
+" Lazyness
+autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
+autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
 " Dump local PHP variables (names, name=>contents).
-abbr dlv var_dump(array_keys(get_defined_vars()), compact(array_keys(get_defined_vars())));<CR>die();
+autocmd FileType php abbr dlv var_dump(array_keys(get_defined_vars()),
+			\ compact(array_keys(get_defined_vars())));<CR>die();
 
