@@ -162,3 +162,6 @@ for_window [class="Pidgin"] resize shrink left
 assign [class="Clementine"] → 10
 for_window [class="Clementine"] focus
 
+# Make Thunar copy dialog float.
+for_window [title="File Operation Progress"] floating enable
+
