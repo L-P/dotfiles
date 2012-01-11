@@ -144,10 +144,14 @@ bar {
 	status_command i3status
 }
 
+
+# Shotcuts
+bindsym $mod+p exec /usr/bin/pcmanfm
+
 # Lock screen
 bindsym Scroll_Lock exec /usr/bin/i3lock -d -c 000000
 
-# Sound control with Alt+KP_(PLUS/MINUS)
+# Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
 
