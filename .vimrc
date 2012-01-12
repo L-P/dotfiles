@@ -59,6 +59,7 @@ cmap w!! %!sudo tee > /dev/null %<CR>
 
 " File types
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
+autocmd BufNewFile,BufRead *.phpt					set filetype=php
 autocmd BufNewFile,BufRead *.as						set filetype=actionscript
 autocmd BufNewFile,BufRead *.json					set syntax=javascript equalprg=json_reformat
 autocmd FileType markdown	set makeprg=markdown\ %\ >\ %<.html
