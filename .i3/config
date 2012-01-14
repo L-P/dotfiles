@@ -150,6 +150,11 @@ bindsym $mod+p exec /usr/bin/pcmanfm
 
 # Lock screen
 bindsym Scroll_Lock exec /usr/bin/i3lock -d -c 000000
+bindsym $mod+End exec /usr/bin/i3lock -d -c 000000
+
+# Brightness
+bindsym $mod+F2 exec sudo /opt/scripts/brightness.sh - 500
+bindsym $mod+F3 exec sudo /opt/scripts/brightness.sh + 500
 
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
