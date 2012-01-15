@@ -172,7 +172,7 @@ assign [class="Clementine"] → 10
 for_window [class="Clementine"] focus
 
 # Make Thunar copy dialog float.
-for_window [title="File Operation Progress"] floating enable
-for_window [title="HappyDeploy"] floating enable
-for_window [title="Compress"] floating enable
+for_window [title="^File Operation Progress$"] floating enable
+for_window [title="^HappyDeploy$"] floating enable
+for_window [title="^Compress$"] floating enable
 
