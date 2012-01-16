@@ -101,6 +101,12 @@ alias ll='ls -lh'
 alias la='ll -a'
 alias mkdir='mkdir -pv'
 alias rm='rm --preserve-root'
+
+# Dammit §
+alias cim='vim'
+alias vp='cp'
+alias cd..='cd ..'
+
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
