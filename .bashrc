@@ -106,6 +106,7 @@ alias rm='rm --preserve-root'
 alias cim='vim'
 alias vp='cp'
 alias cd..='cd ..'
+alias :q='exit'
 
 alias ..='cd ..'
 alias ....='cd ../..'
