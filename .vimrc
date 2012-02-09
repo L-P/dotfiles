@@ -39,6 +39,9 @@ nmap <F10> :TagbarToggle<CR>
 " Reformats paragraphs.
 map <Leader>f !fmt<CR>
 
+" Color input
+map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
+
 " Re-orders and formats the contents of a long array.
 map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 

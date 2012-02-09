@@ -93,6 +93,7 @@ alias tree='tree -C'
 
 # Aliases
 alias mysql='mysql --user=root --password=root'
+alias mysqladmin='mysqladmin --user=root --password=root'
 alias mytop='mytop -u root -p root'
 alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | less -r"
 alias wget='wget --no-check-certificate'
