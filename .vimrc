@@ -20,6 +20,9 @@ set incsearch
 set showmatch
 set showmode
 set scrolloff=3
+set laststatus=2 " Always show statusline
+
+" Persistant undo file, awesome when used with Gundo
 set undofile
 set undodir=~/.vim/undo
 
