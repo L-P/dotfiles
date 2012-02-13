@@ -21,7 +21,7 @@ set showmatch
 set showmode
 set scrolloff=3
 set undofile
-set undodir=/var/tmp/vim
+set undodir=~/.vim/undo
 
 
 

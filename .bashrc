@@ -84,6 +84,7 @@ shopt -s extglob
 shopt -s histappend
 shopt -s hostcomplete
 umask u+rw,go-rwx # 'OFF MY LAWN
+mkdir ~/.vim/undo > /dev/null 2>&1
 
 # Color aliases
 alias grep='grep --color=auto'
