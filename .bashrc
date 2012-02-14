@@ -109,6 +109,8 @@ alias cim='vim'
 alias vp='cp'
 alias cd..='cd ..'
 alias :q='exit'
+alias :e='vim'
+alias :tabe='vim'
 
 alias ..='cd ..'
 alias ....='cd ../..'
