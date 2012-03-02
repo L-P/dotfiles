@@ -55,6 +55,9 @@ nnoremap <Down> gj
 inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
+" Consistency
+map Y y$
+
 " Copy the current selection in X clipboard.
 map <Leader>c :!xsel -iob<CR>u
 
