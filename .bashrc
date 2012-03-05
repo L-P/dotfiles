@@ -86,6 +86,11 @@ shopt -s hostcomplete
 umask u+rw,go-rwx # 'OFF MY LAWN
 mkdir ~/.vim/undo > /dev/null 2>&1
 
+# vim bindings
+set -o vi
+bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
+export EDITOR=vim
+
 # Color aliases
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -118,6 +123,12 @@ alias ......='cd ../../..'
 alias ........='cd ../../../..'
 
 
+# Nicer du
+function duf {
+	du -csh -- "$@" | sort -rh
+}
+
+# Update dotfiles from github.
 function update-dotfiles() {
 	local repo='https://raw.github.com/L-P/dotfiles/master'
 	wget -nv $repo/.bashrc -O ~/.bashrc
@@ -125,13 +136,6 @@ function update-dotfiles() {
 	wget -nv $repo/.gitconfig -O ~/.gitconfig
 	wget -nv $repo/.i3/config -O ~/.i3/config
 }
-
-
-# vim bindings
-set -o vi
-bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
-export EDITOR=vim
-
 
 # Check syntax of all PHP files.
 function phpcheck() {
@@ -149,7 +153,8 @@ function sd() {
 	if [[ -n $1 ]]; then
 		arg="-c $1"
 	fi
-	svn diff $arg | pygmentize -l diff | less -rFX
+	svn diff $arg | pygmentize -l diff | less -RFXS
 }
 
 source ~/.bash_local
+
