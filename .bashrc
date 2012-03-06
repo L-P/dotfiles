@@ -153,7 +153,7 @@ function sd() {
 	if [[ -n $1 ]]; then
 		arg="-c $1"
 	fi
-	svn diff $arg | pygmentize -l diff | less -RFXS
+	svn diff $arg | pygmentize -l diff | less -RFXS -x4
 }
 
 source ~/.bash_local

@@ -13,5 +13,12 @@
 [cola]
 	fontdiff = Inconsolata,12,-1,5,50,0,0,0,0,0
 	tabwidth = 4
+
 [core]
 	excludesfile = /home/leo/.gitignore
+	pager = less -RFXS -x4
+
+[alias]
+	ci = commit
+	stat = status
+
