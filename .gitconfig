@@ -20,5 +20,4 @@
 
 [alias]
 	ci = commit
-	stat = status
 

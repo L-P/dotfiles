@@ -108,6 +108,8 @@ alias ll='ls -lh'
 alias la='ll -a'
 alias mkdir='mkdir -pv'
 alias rm='rm --preserve-root'
+alias gd='git diff'
+alias gs='git status --short'
 
 # Dammit §
 alias cim='vim'
