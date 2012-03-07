@@ -1,6 +1,12 @@
 syntax on
 
+" 8 : bold everywhere
+" 16 : fine enough
+" 32 : ugly
+" 256 : can't see shit
+set t_Co=16
 set background=dark
+
 set number
 set showcmd
 set ruler
