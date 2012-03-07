@@ -1,11 +1,8 @@
 syntax on
 
-" 8 : bold everywhere
-" 16 : fine enough
-" 32 : ugly
-" 256 : can't see shit
-set t_Co=16
+set t_Co=256
 set background=dark
+colorscheme wombat256mod
 
 set number
 set showcmd
