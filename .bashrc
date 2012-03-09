@@ -112,6 +112,7 @@ alias la='ll -a'
 alias mkdir='mkdir -pv'
 alias rm='rm --preserve-root'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gs='git status --short'
 
 # Dammit §
