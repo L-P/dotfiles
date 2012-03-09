@@ -90,6 +90,9 @@ mkdir ~/.vim/undo > /dev/null 2>&1
 set -o vi
 bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
 export EDITOR=vim
+export LESS='-RFXS -x4'
+export PAGER='less'
+export MANPAGER='less'
 
 # Color aliases
 alias grep='grep --color=auto'
@@ -101,7 +104,7 @@ alias tree='tree -C'
 alias mysql='mysql --user=root --password=root'
 alias mysqladmin='mysqladmin --user=root --password=root'
 alias mytop='mytop -u root -p root'
-alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | less -r"
+alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | $PAGER"
 alias wget='wget --no-check-certificate'
 alias ls='ls --group-directories-first --color'
 alias ll='ls -lh'
@@ -146,8 +149,8 @@ function phpcheck() {
 }
 
 # Handy grep aliases, since ack sucks.
-function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' $@ . | less -RFXS -x4 ;  }
-function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' $@ . | less -RFXS -x4 ;  }
+function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' $@ . | $PAGER ; }
+function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' $@ . | $PAGER ; }
 
 # Nice SVN diff.
 function sd() {
@@ -155,7 +158,7 @@ function sd() {
 	if [[ -n $1 ]]; then
 		arg="-c $1"
 	fi
-	svn diff $arg | pygmentize -l diff | less -RFXS -x4
+	svn diff $arg | pygmentize -l diff | $PAGER
 }
 
 source ~/.bash_local
