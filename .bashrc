@@ -128,6 +128,10 @@ alias ....='cd ../..'
 alias ......='cd ../../..'
 alias ........='cd ../../../..'
 
+# Create and move into a directory
+function mkcd() {
+	mkdir -p "$*" && cd "$*"
+}
 
 # Nicer du
 function duf {
