@@ -118,6 +118,12 @@ let g:syntastic_auto_loc_list=2
 autocmd FileType python set textwidth=79 expandtab
 
 
+" JS Specific
+
+" Only use smartindent to have proper JS semi-auto indenting.
+autocmd FileType javascript setl noai nocin inde=
+autocmd FileType javascript set smartindent
+
 
 " PHP sweeteners
 
