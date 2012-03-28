@@ -104,7 +104,6 @@ alias tree='tree -C'
 alias mysql='mysql --user=root --password=root'
 alias mysqladmin='mysqladmin --user=root --password=root'
 alias mytop='mytop -u root -p root'
-alias csd="svn stat | cut -c 9- | grep -v -e '^.$' -e '.dat$' | xargs svn diff | pygmentize -l diff | $PAGER"
 alias wget='wget --no-check-certificate'
 alias ls='ls --group-directories-first --color'
 alias ll='ls -lh'
@@ -150,8 +149,8 @@ function phpcheck() {
 }
 
 # Handy grep aliases, since ack sucks.
-function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' $@ . | $PAGER ; }
-function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' $@ . | $PAGER ; }
+function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ; }
+function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ; }
 
 # Nice SVN diff.
 function sd() {
