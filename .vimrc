@@ -51,6 +51,11 @@ map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
 " Re-orders and formats the contents of a long array.
 map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 
+" CSS expand
+map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
+" CSS fold
+map <Leader>cf viBJkVjjJ
+
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
