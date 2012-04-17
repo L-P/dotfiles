@@ -144,3 +144,15 @@ autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 autocmd FileType php abbr dlv var_dump(array_keys(get_defined_vars()),
 			\ compact(array_keys(get_defined_vars())));<CR>die();
 
+abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+			\scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
+			\ Phasellus varius vulputate convallis. Nam in urna mi. Nulla ligula purus,
+			\adipiscing a eleifend at, scelerisque ac lacus. Phasellus ut ipsum ante.
+			\ Vivamus eget metus augue. Fusce vel commodo orci. Praesent id ligula eget ante
+			\accumsan aliquam. Aliquam varius pulvinar lorem, id accumsan enim ornare quis.
+			\ Integer aliquam metus nec sapien mollis et rutrum quam malesuada. Donec in
+			\sapien quis eros condimentum placerat vitae ut nisl. Ut ornare varius leo, eu
+			\euismod tortor elementum ut. Suspendisse ornare, velit sed blandit faucibus,
+			\dui neque elementum justo, sit amet pellentesque tellus lacus quis ante. Donec
+			\cursus dapibus sollicitudin.
+
