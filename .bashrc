@@ -113,6 +113,7 @@ alias rm='rm --preserve-root'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gs='git status --short'
+alias py='python3'
 
 # Dammit §
 alias cim='vim'
