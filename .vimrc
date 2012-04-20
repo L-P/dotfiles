@@ -51,6 +51,11 @@ map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
 " Re-orders and formats the contents of a long array.
 map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 
+" CSS expand
+map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
+" CSS fold
+map <Leader>cf viBJkVjjJ
+
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
@@ -138,4 +143,16 @@ autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 " Dump local PHP variables (names, name=>contents).
 autocmd FileType php abbr dlv var_dump(array_keys(get_defined_vars()),
 			\ compact(array_keys(get_defined_vars())));<CR>die();
+
+abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+			\scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
+			\ Phasellus varius vulputate convallis. Nam in urna mi. Nulla ligula purus,
+			\adipiscing a eleifend at, scelerisque ac lacus. Phasellus ut ipsum ante.
+			\ Vivamus eget metus augue. Fusce vel commodo orci. Praesent id ligula eget ante
+			\accumsan aliquam. Aliquam varius pulvinar lorem, id accumsan enim ornare quis.
+			\ Integer aliquam metus nec sapien mollis et rutrum quam malesuada. Donec in
+			\sapien quis eros condimentum placerat vitae ut nisl. Ut ornare varius leo, eu
+			\euismod tortor elementum ut. Suspendisse ornare, velit sed blandit faucibus,
+			\dui neque elementum justo, sit amet pellentesque tellus lacus quis ante. Donec
+			\cursus dapibus sollicitudin.
 
