@@ -133,6 +133,9 @@ autocmd FileType javascript set smartindent
 
 " PHP sweeteners
 
+" Documentation via K, see scripts/php_doc.sh
+set keywordprg=php_doc
+
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
 
