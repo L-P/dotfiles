@@ -155,6 +155,7 @@ bindsym $mod+End exec /usr/bin/i3lock -d -c 000000
 # Brightness
 bindsym $mod+F2 exec sudo /opt/scripts/brightness.sh - 500
 bindsym $mod+F3 exec sudo /opt/scripts/brightness.sh + 500
+bindsym $mod+F4 exec /opt/scripts/touchpad_toggle.sh
 
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
