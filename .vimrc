@@ -120,6 +120,9 @@ let g:syntastic_echo_current_error=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_javascript_syntax_checker="jshint"
 
+" CtrlP params
+let g:ctrlp_cmd='CtrlPMixed'
+
 " Python-specific
 autocmd FileType python set textwidth=79 expandtab
 
@@ -144,8 +147,9 @@ autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
 autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
 " Dump local PHP variables (names, name=>contents).
-autocmd FileType php abbr dlv var_dump(array_keys(get_defined_vars()),
-			\ compact(array_keys(get_defined_vars())));<CR>die();
+autocmd FileType php abbr dlv {<CR>ob_end_clean();<CR>
+			\var_dump(array_keys(get_defined_vars()),
+			\ compact(array_keys(get_defined_vars())));<CR>die();<CR>}
 
 abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
 			\scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
