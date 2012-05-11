@@ -134,6 +134,10 @@ autocmd FileType javascript setl noai nocin inde=
 autocmd FileType javascript set smartindent
 
 
+" CSS
+autocmd FileType css set filetype=less
+
+
 " PHP sweeteners
 
 " Documentation via K, see scripts/php_doc.sh
