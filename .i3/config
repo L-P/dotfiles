@@ -174,6 +174,7 @@ assign [class="Pidgin"] → 10
 # Those should always float
 for_window [class="File-roller" title="^Compress$"] floating enable
 for_window [class="Gcolor2"] floating enable
+for_window [class="Screenruler"] floating enable; border none; resize shrink up 15px
 for_window [title="^qiv$"] floating enable
 
 # Odd workspaces on the left screen, even ones on the right.
