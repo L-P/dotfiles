@@ -1,3 +1,18 @@
 [submodule ".vim/bundle/vim-pathogen"]
 	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
+	url = git://github.com/scrooloose/vim-pathogen.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/Gundo"]
+	path = .vim/bundle/Gundo
+	url = git://github.com/vim-scripts/Gundo.git
+[submodule ".vim/bundle/vim-wombat"]
+	path = .vim/bundle/vim-wombat
+	url = git://github.com/cschlueter/vim-wombat.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
