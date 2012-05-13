@@ -100,6 +100,11 @@ au BufWritePost * call ModeChange()
 
 " Plugins config
 " ==============
+" Pathogen
+" --------
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+
 " Syntastic
 " ---------
 let g:syntastic_enable_signs=1						" Use VIM signs to show errors
