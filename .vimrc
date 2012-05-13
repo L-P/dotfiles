@@ -1,60 +1,50 @@
+" General settings
+" ============
 syntax on
+filetype indent plugin on
 
+" Setting up colorscheme
+" ----------------------
 set t_Co=256
 set background=dark
 colorscheme wombat256mod
 
-set number
-set showcmd
-set ruler
-set modelines=0
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set encoding=utf-8
-set ignorecase
-set smartcase
-set mouse=a
-set spelllang=fr
-set spellsuggest=5
-set pastetoggle=<F2>
-set incsearch
-set showmatch
-set showmode
-set scrolloff=3
-set laststatus=2 " Always show statusline
+" Misc options
+" ------------
+set number              " Line numbering
+set showcmd             " Show the command being typed
+set ruler               " Show the cursor position
+set autoindent          " Use automatic indent
+set tabstop=4           " 1 tab = 4 spaces
+set shiftwidth=4        " 1 tab = 4 spaces
+set softtabstop=4       " 1 tab = 4 spaces
+set encoding=utf-8      " Unicode über alles
+set ignorecase          " See smartcase
+set smartcase           " Do case-insensitive searches if the pattern is lowercase
+set mouse=a             " Shame on me
+set spelllang=fr        " Use French for spellcheck
+set spellsuggest=5      " Limit spelling suggestions list to 5 entries
+set pastetoggle=<F2>    " Use F2 to toggle paste mode
+set incsearch           " Jump to the next search result while still typing
+set showmatch           " Highlight matching opening bracket when inserting '}'
+set showmode            " Display the current mode (insert/normal/visual/etc.)
+set scrolloff=3         " Force-scoll 3 lines before/after the cursor.
+set laststatus=2        " Always show statusline
 
-" Persistant undo file, awesome when used with Gundo
+" Persistant undo across sessions
+" -------------------------------
 set undofile
 set undodir=~/.vim/undo
 
 
-
-" Misc
-filetype indent plugin on
-let mapleader=","
-
-
-
 " Mappings
-nmap <F8> :GundoToggle<CR>
-nmap <F9> :w<CR> :make<CR><CR>
-nmap <F10> :TagbarToggle<CR>
-
-" Reformats paragraphs.
-map <Leader>f !fmt<CR>
-
-" Color input
-map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
-
-" Re-orders and formats the contents of a long array.
-map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
-
-" CSS expand
-map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
-" CSS fold
-map <Leader>cf viBJkVjjJ
+" --------
+let mapleader=","               " \ is diffucult to type on azerty keyboards
+nmap <F8> :GundoToggle<CR>      " Toggle Gundo window
+nmap <F9> :wa<CR> :make<CR><CR> " F9 to save and build
+nmap <F10> :TagbarToggle<CR>    " Toggle tagbar window
+map <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's 'gqq'
+map Y y$						" For consistency
 
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
@@ -63,35 +53,29 @@ nnoremap <Down> gj
 inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
-" Consistency
-map Y y$
-
-" Copy the current selection in X clipboard.
+" Copy the current selection in X clipboard, useful when vim is compiled
+" without + and * registers support.
 map <Leader>c :!xsel -iob<CR>u
 
 " sudo save a file.
 cmap w!! %!sudo tee > /dev/null %<CR>
 
 
-
-" File types
-autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*}	set filetype=markdown
-autocmd BufNewFile,BufRead *.phpt					set filetype=php
-autocmd BufNewFile,BufRead *.as						set filetype=actionscript
-autocmd BufNewFile,BufRead *.json					set syntax=javascript equalprg=json_reformat
-autocmd FileType markdown	set makeprg=markdown\ %\ >\ %<.html
-
-
-
-" VIM gone wild.
+" Shiny path autocomplete
 set wildmode=list:longest,list:full
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
 
+" Per-filetype options
+autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
+autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
+autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
+autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
+autocmd BufNewFile,BufRead *.{le,c}ss            set syntax=less filetype=less
 
 
-" Functions and stuff
-
+" Misc functions
+" ==============
 " Session save/restore
 nmap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
 function! RestoreSession()
@@ -114,39 +98,57 @@ au BufWritePost * call ModeChange()
 
 
 
-" Syntastic params
-let g:syntastic_enable_signs=1
-let g:syntastic_echo_current_error=1
+" Plugins config
+" ==============
+" Syntastic
+" ---------
+let g:syntastic_enable_signs=1						" Use VIM signs to show errors
+let g:syntastic_echo_current_error=1				" Display current error in statusline
 let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_syntax_checker="jshint"
+let g:syntastic_javascript_syntax_checker="jshint"	" Use jshint instead of jslint
 
 " CtrlP params
-let g:ctrlp_cmd='CtrlPMixed'
+" ------------
+let g:ctrlp_cmd='CtrlPMixed' " Search in all buffers/files
 
-" Python-specific
+
+" Language-specific config
+" ========================
+" Python
+" ------
+" Follow PEP8 recommandations by using space-indented 79 chars lines.
 autocmd FileType python set textwidth=79 expandtab
 
 
-" JS Specific
-
+" Javascript
+" ----------
 " Only use smartindent to have proper JS semi-auto indenting.
 autocmd FileType javascript setl noai nocin inde=
 autocmd FileType javascript set smartindent
 
 
-" CSS
-autocmd FileType css set filetype=less
+" CSS/LESS
+" --------
+" Color picker for quick color insertion when working with CSS 
+autocmd FileType less map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
+
+" Expand and fold CSS rules (for one-lined CSS files)
+autocmd FileType less map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
+autocmd FileType less map <Leader>cf viBJkVjjJ
 
 
-" PHP sweeteners
-
+" PHP
+" ---
 " Documentation via K, see scripts/php_doc.sh
 set keywordprg=php_doc
+
+" Re-orders and formats the contents of a long PHP array.
+autocmd FileType php map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
 
-" Lazyness
+" Method declaration abbreviations
 autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
 autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
@@ -155,6 +157,7 @@ autocmd FileType php abbr dlv {<CR>ob_end_clean();<CR>
 			\var_dump(array_keys(get_defined_vars()),
 			\ compact(array_keys(get_defined_vars())));<CR>die();<CR>}
 
+" Lorem ipsum abbreviation
 abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
 			\scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
 			\ Phasellus varius vulputate convallis. Nam in urna mi. Nulla ligula purus,
