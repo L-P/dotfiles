@@ -76,7 +76,6 @@ autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=m
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
-autocmd BufNewFile,BufRead *.{le,c}ss            set syntax=less filetype=less
 
 
 " Misc functions
@@ -133,11 +132,11 @@ autocmd FileType javascript set smartindent
 " CSS/LESS
 " --------
 " Color picker for quick color insertion when working with CSS 
-autocmd FileType less map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
+autocmd FileType css,less map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
 
 " Expand and fold CSS rules (for one-lined CSS files)
-autocmd FileType less map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
-autocmd FileType less map <Leader>cf viBJkVjjJ
+autocmd FileType css,less map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
+autocmd FileType css,less map <Leader>cf viBJkVjjJ
 
 
 " PHP
