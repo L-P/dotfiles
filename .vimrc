@@ -84,7 +84,7 @@ autocmd BufNewFile,BufRead *.{le,c}ss            set syntax=less filetype=less
 " Session save/restore
 nmap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
 function! RestoreSession()
-	if argc() == 0 "vim called without arguments
+	if argc() == 0 && filereadable('.vimsession')
 		execute 'source .vimsession'
 	end
 endfunction
@@ -93,10 +93,8 @@ autocmd VimEnter * call RestoreSession()
 
 " Sets +x automatically when writing a shell script.
 function! ModeChange()
-	if getline(1) =~ "^#!"
-		if getline(1) =~ "/bin/"
-			silent !chmod u+x <afile>
-		endif
+	if getline(1) =~ "^#!" && getline(1) =~ "/bin/"
+		silent !chmod u+x <afile>
 	endif
 endfunction
 au BufWritePost * call ModeChange()
@@ -145,7 +143,7 @@ autocmd FileType less map <Leader>cf viBJkVjjJ
 " PHP
 " ---
 " Documentation via K, see scripts/php_doc.sh
-set keywordprg=php_doc
+autocmd FileType php set keywordprg=php_doc
 
 " Re-orders and formats the contents of a long PHP array.
 autocmd FileType php map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
@@ -163,7 +161,7 @@ autocmd FileType php abbr dlv {<CR>ob_end_clean();<CR>
 			\ compact(array_keys(get_defined_vars())));<CR>die();<CR>}
 
 " Lorem ipsum abbreviation
-abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+autocmd FileType php abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
 			\scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
 			\ Phasellus varius vulputate convallis. Nam in urna mi. Nulla ligula purus,
 			\adipiscing a eleifend at, scelerisque ac lacus. Phasellus ut ipsum ante.
