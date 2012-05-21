@@ -127,6 +127,7 @@ autocmd FileType python set textwidth=79 expandtab
 " Only use smartindent to have proper JS semi-auto indenting.
 autocmd FileType javascript setl noai nocin inde=
 autocmd FileType javascript set smartindent
+autocmd FileType javascript abbr clog console.log(%);<CR><ESC>?%<CR>xi
 
 
 " CSS/LESS
