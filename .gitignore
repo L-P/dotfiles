@@ -2,4 +2,5 @@
 .vimsession
 .vim/undo
 .vim/.netrwhist
+.vim/spell
 
