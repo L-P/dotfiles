@@ -2,11 +2,8 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="blinks"
 DISABLE_AUTO_UPDATE="true"
-plugins=(svn nyan)
+plugins=(git svn nyan vi-mode)
 source $ZSH/oh-my-zsh.sh
-
-# Vi bindings
-bindkey -v
 
 # Misc options
 export EDITOR=vim
@@ -45,9 +42,15 @@ function phpcheck() {
 	return 0
 }
 
-# Handy grep aliases, since ack sucks.
-function g()	{ grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ; }
-function gi()	{ grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ; }
+# Handy grep aliases, since ack sucks. Unalias needed because of zsh git module.
+unalias g 2> /dev/null
+function g() {
+	grep --color=always -EHnr	 --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+}
+unalias gi 2> /dev/null
+function gi() {
+	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+}
 
 # Nice SVN diff.
 function sd() {
