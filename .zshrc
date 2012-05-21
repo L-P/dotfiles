@@ -8,11 +8,19 @@ source $ZSH/oh-my-zsh.sh
 # Vi bindings
 bindkey -v
 
+# Misc options
 export EDITOR=vim
 export LESS='-RFXS -x4'
 export PAGER='less'
 export MANPAGER='less'
+umask u+rw,go-rwx # 'OFF MY LAWN
+mkdir ~/.vim/undo > /dev/null 2>&1
 
+# Aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias tree='tree -C'
 alias mysql='mysql --user=root --password=root'
 alias mysqladmin='mysqladmin --user=root --password=root'
 alias mytop='mytop -u root -p root'
@@ -52,3 +60,4 @@ function sd() {
 
 
 source ~/.zsh_local
+
