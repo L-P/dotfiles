@@ -21,6 +21,3 @@
 [alias]
 	ci = commit
 
-[fetch]
-	recurseSubmodules = true
-
