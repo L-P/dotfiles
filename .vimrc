@@ -112,6 +112,7 @@ let g:syntastic_javascript_syntax_checker="jshint"	" Use jshint instead of jslin
 " CtrlP params
 " ------------
 let g:ctrlp_cmd='CtrlPMixed' " Search in all buffers/files
+let g:ctrlp_by_filename=1 " Search by filename instad of path
 
 
 " Language-specific config
