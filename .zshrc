@@ -67,6 +67,13 @@ function sd() {
 	svn diff $arg | pygmentize -l diff | $PAGER
 }
 
+# Record terminal input/output to file.
+function record() {
+	local date="$(date --rfc-3339=seconds | sed 's/ /_/g')"
+	local dir="$HOME/.terminal_recordings"
+	mkdir -p "$dir" &> /dev/null
+	script -t "$dir/script_$date" 2> "$dir/timing_$date"
+}
 
 source ~/.zsh_local
 
