@@ -18,7 +18,19 @@ setopt \
 	share_history \
 	complete_aliases
 
-PROMPT='[%!:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]%{$fg[green]%}%B%(!.%{$fg[red]%}.%{$fg[green]%})%B@%{$fg[green]%}%m%b:%B%{$fg[blue]%}%c%b%(!.#.$) '
+
+# Awesome prompt
+local cmdstatus="[%!:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
+local userat="%{$fg[green]%}%B%(!.%{$fg[red]%}.%{$fg[green]%})%B@%{$fg[green]%}%m%b"
+local pwd=":%B%{$fg[blue]%}%c%b"
+local userchar="%(!.#.$)"
+PROMPT='${cmdstatus}${userat}${pwd}$(git_prompt_info)${userchar} '
+
+# Taken from the candy theme.
+ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[green]%}["
+ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}*%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 source ~/.commonshrc
 source ~/.zsh_local
