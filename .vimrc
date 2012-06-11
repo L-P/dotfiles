@@ -50,6 +50,7 @@ nmap <F9> :wa<CR> :make<CR><CR> " F9 to save and build
 nmap <F10> :TagbarToggle<CR>    " Toggle tagbar window
 map <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's 'gqq'
 map Y y$						" For consistency
+map Q 						" Disable Ex mode, <Nop> won't work so I used ^V^V
 
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
