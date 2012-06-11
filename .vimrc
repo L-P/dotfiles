@@ -44,7 +44,7 @@ set undodir=~/.vim/undo
 
 " Mappings
 " --------
-let mapleader=","               " \ is diffucult to type on azerty keyboards
+let mapleader=","               " \ is difficult to type on azerty keyboards
 nmap <F8> :GundoToggle<CR>      " Toggle Gundo window
 nmap <F9> :wa<CR> :make<CR><CR> " F9 to save and build
 nmap <F10> :TagbarToggle<CR>    " Toggle tagbar window
