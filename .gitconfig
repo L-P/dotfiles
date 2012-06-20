@@ -20,4 +20,5 @@
 
 [alias]
 	ci = commit
+	graph = log --graph --oneline --decorate
 
