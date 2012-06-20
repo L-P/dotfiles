@@ -77,6 +77,7 @@ autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=m
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
+autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=75 expandtab
 
 
 " Misc functions
