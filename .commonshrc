@@ -1,7 +1,7 @@
 # Scarcely used (see `update-alternatives --config editor`)
 export EDITOR=vim
 
-# VIM make complain if the folder does not exist
+# VIM may complain if the folder does not exist
 mkdir ~/.vim/undo > /dev/null 2>&1
 
 # More secure umask by default
