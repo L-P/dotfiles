@@ -46,12 +46,10 @@ function phpcheck() {
 	return 0
 }
 
-# Handy grep aliases, since ack sucks. Unalias needed because of zsh git module.
-unalias g 2> /dev/null
+# Handy grep aliases, since ack sucks.
 function g() {
 	grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
-unalias gi 2> /dev/null
 function gi() {
 	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
