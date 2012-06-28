@@ -45,12 +45,12 @@ set undodir=~/.vim/undo
 " Mappings
 " --------
 let mapleader=","               " \ is difficult to type on azerty keyboards
-nmap <F8> :GundoToggle<CR>      " Toggle Gundo window
-nmap <F9> :wa<CR> :make<CR><CR> " F9 to save and build
-nmap <F10> :TagbarToggle<CR>    " Toggle tagbar window
-map <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's 'gqq'
-map Y y$						" For consistency
-map Q 						" Disable Ex mode, <Nop> won't work so I used ^V^V
+noremap <F8> :GundoToggle<CR>      " Toggle Gundo window
+noremap <F9> :wa<CR> :make<CR><CR> " F9 to save and build
+noremap <F10> :TagbarToggle<CR>    " Toggle tagbar window
+noremap <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's 'gqq'
+noremap Y y$						" For consistency
+noremap Q 						" Disable Ex mode, <Nop> won't work so I used ^V^V
 
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
@@ -61,10 +61,10 @@ inoremap <Down> <C-O>gj
 
 " Copy the current selection in X clipboard, useful when vim is compiled
 " without + and * registers support.
-map <Leader>c :!xsel -iob<CR>u
+noremap <Leader>c :!xsel -iob<CR>u
 
 " sudo save a file.
-cmap w!! %!sudo tee > /dev/null %<CR>
+cnoremap w!! %!sudo tee > /dev/null %<CR>
 
 
 " Shiny path autocomplete
@@ -83,7 +83,7 @@ autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt 
 " Misc functions
 " ==============
 " Session save/restore
-nmap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
+nnoremap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 && filereadable('.vimsession')
 		execute 'source .vimsession'
@@ -136,11 +136,11 @@ autocmd FileType javascript abbr clog console.log(%);<CR><ESC>?%<CR>xi
 " CSS/LESS
 " --------
 " Color picker for quick color insertion when working with CSS 
-autocmd FileType css,less map <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
+autocmd FileType css,less noremap <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
 
 " Expand and fold CSS rules (for one-lined CSS files)
-autocmd FileType css,less map <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
-autocmd FileType css,less map <Leader>cf viBJkVjjJ
+autocmd FileType css,less noremap <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
+autocmd FileType css,less noremap <Leader>cf viBJkVjjJ
 
 
 " PHP
@@ -149,7 +149,7 @@ autocmd FileType css,less map <Leader>cf viBJkVjjJ
 autocmd FileType php set keywordprg=php_doc
 
 " Re-orders and formats the contents of a long PHP array.
-autocmd FileType php map <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
+autocmd FileType php noremap <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
 
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
