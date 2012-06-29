@@ -20,5 +20,6 @@
 
 [alias]
 	ci = commit
+	co = checkout
 	graph = log --graph --oneline --decorate
 
