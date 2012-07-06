@@ -1,0 +1,12 @@
+clementine
+firefox
+git
+htop
+ncdu
+subversion
+thunderbird
+tree
+vim
+vim-gui-common # VIM compiled with */+ registers support.
+zsh
+
