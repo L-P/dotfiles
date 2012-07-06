@@ -52,6 +52,11 @@ noremap <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's
 noremap Y y$						" For consistency
 noremap Q 						" Disable Ex mode, <Nop> won't work so I used ^V^V
 
+" Decode quoted-printable encoded mails.
+" http://vim.wikia.com/wiki/Quoted_Printable_to_Plain
+nnoremap <Leader>Q :%s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
+vnoremap <Leader>Q :s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
+
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
