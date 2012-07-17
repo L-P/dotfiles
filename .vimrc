@@ -57,6 +57,10 @@ noremap Q 						" Disable Ex mode, <Nop> won't work so I used ^V^V
 nnoremap <Leader>Q :%s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
 vnoremap <Leader>Q :s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
 
+" Print serialized PHP data as JSON.
+noremap <Leader>s ggdG:r !php -r 'echo json_encode(unserialize(file_get_contents("%")));'<CR>ggdd
+			\:set equalprg=json_reformat ft=json syntax=javascript<CR>=G
+
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
