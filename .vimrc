@@ -124,6 +124,7 @@ let g:syntastic_javascript_syntax_checker="jshint"	" Use jshint instead of jslin
 " ------------
 let g:ctrlp_cmd='CtrlPMixed' " Search in all buffers/files
 let g:ctrlp_by_filename=1 " Search by filename instad of path
+let g:ctrlp_mruf_max=0 " Disable MRU so CtrlPMixed only searches for buffers and files.
 
 
 " Language-specific config
