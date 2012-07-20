@@ -1,5 +1,8 @@
 .*.sw[op]
 .vimsession
+.~lock.*
+nohup.out
+
 .vim/undo
 .vim/.netrwhist
 .vim/spell
