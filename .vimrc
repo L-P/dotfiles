@@ -169,9 +169,13 @@ autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
 autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
 " Dump local PHP variables (names, name=>contents).
-autocmd FileType php abbr dlv {<CR>ob_end_clean();<CR>
-			\var_dump(array_keys(get_defined_vars()),
-			\ compact(array_keys(get_defined_vars())));<CR>die();<CR>}
+autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
+			\$buffers = array(); while(ob_get_level()) $buffers[] = ob_get_clean();<CR>
+			\$buffers = array_filter($buffers) ?: null;<CR>
+			\header('Content-Type: text/html; charset=UTF-8');<CR>
+			\var_dump(array_keys($locals), compact(array_keys($locals)), compact('buffers'));<CR>
+			\function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
+			\die();<CR>}<ESC>>aB
 
 " Lorem ipsum abbreviation
 autocmd FileType php abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
