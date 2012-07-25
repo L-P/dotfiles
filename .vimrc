@@ -159,7 +159,7 @@ autocmd FileType css,less noremap <Leader>cf viBJkVjjJ
 autocmd FileType php set keywordprg=php_doc
 
 " Re-orders and formats the contents of a long PHP array.
-autocmd FileType php noremap <Leader>o vib:s/ /\r/g<CR>gv<vib:sort<CR>gv,fvib>gv:g/^$/d<CR>
+autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
 
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
