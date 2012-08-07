@@ -1,6 +1,6 @@
 clementine
 firefox
-git
+git # Replace with git-core if it does not work
 htop
 ncdu
 subversion
@@ -8,5 +8,5 @@ thunderbird
 tree
 vim
 vim-gui-common # VIM compiled with */+ registers support.
+yajl-tools # Provides json_reformat.
 zsh
-
