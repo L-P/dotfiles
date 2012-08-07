@@ -21,13 +21,9 @@ function dot::make_links() {
 }
 
 function dot::clone_repos() {
-	# Use the 'editable' origin for my users
-	local repo=''
-	if [[ "$USER" = 'leo' ]] || [[ "$USER" = 'lpeltier' ]]; then
-		repo='git@github.com:L-P/dotfiles.git'
-	else
-		repo='git://github.com/L-P/dotfiles.git'
-	fi
+	# The uncommented repo is the read-only one.
+	#local repo='git@github.com:L-P/dotfiles.git'
+	local repo='git://github.com/L-P/dotfiles.git'
 
 	# Create/purge the destination (if needed) and cd into it
 	mkdir -p "$1" &> /dev/null
