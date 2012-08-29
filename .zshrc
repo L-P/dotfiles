@@ -15,10 +15,7 @@ bindkey '^R' history-incremental-search-backward
 
 SAVEHIST=1000000
 
-setopt \
-	inc_append_history \
-	share_history \
-	complete_aliases
+setopt inc_append_history complete_aliases
 
 
 # Awesome prompt
