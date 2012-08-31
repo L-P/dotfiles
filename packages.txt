@@ -1,12 +1,31 @@
-clementine
-firefox
-git # Replace with git-core if it does not work
+# To install the packages:
+# apt-get install $(cut packages.txt -d '#' -f 1)
+
+# Can't live without them
+git # Old name: git-core
+vim
+zsh
+
+# Misc CLI tools
+exuberant-ctags # Mostly for the Tagbar vim plugin
 htop
+mailutils
 ncdu
 subversion
-thunderbird
 tree
-vim
-vim-gui-common # VIM compiled with */+ registers support.
 yajl-tools # Provides json_reformat.
-zsh
+
+# Misc
+build-essential
+python3
+python3-doc
+
+# Desktop specific
+vlc
+firefox
+clementine
+fonts-inconsolata # Old name: ttf-inconsolata
+thunderbird
+vim-gui-common # VIM compiled with */+ registers support.
+xsel
+
