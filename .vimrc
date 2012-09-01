@@ -71,6 +71,7 @@ inoremap <Down> <C-O>gj
 " Copy the current selection in X clipboard, useful when vim is compiled
 " without + and * registers support.
 noremap <Leader>c :!xsel -iob<CR>u
+noremap <Leader>t :!ctags -R &<CR> !silent
 
 " sudo save a file.
 cnoremap w!! %!sudo tee > /dev/null %<CR>
@@ -87,7 +88,6 @@ autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=75 expandtab
-
 
 " Misc functions
 " ==============
