@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/actionscript"]
+	path = .vim/bundle/actionscript
+	url = git://github.com/vim-scripts/actionscript.vim--Leider.git
