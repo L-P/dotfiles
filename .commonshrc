@@ -34,7 +34,6 @@ alias gds='git diff --staged'
 alias gs='git status --short'
 alias py='python3'
 
-
 # Nicer du (ncdu is nice too)
 function duf {
 	du -csh -- "$@" | sort -rh
@@ -53,6 +52,11 @@ function g() {
 function gi() {
 	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
+
+# Find aliases
+function f() { find . -iname "*$@*" }
+function ff() { find . -type f -iname "*$@*" }
+function fd() { find . -type d -iname "*$@*" }
 
 # Nice SVN diff (much like git diff)
 function sd() {
