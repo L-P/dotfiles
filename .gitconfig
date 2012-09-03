@@ -15,7 +15,7 @@
 	tabwidth = 4
 
 [core]
-	excludesfile = /home/leo/.gitignore
+	excludesfile = ~/.gitignore
 	pager = less -RFXS -x4
 
 [alias]
