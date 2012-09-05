@@ -11,6 +11,7 @@ exuberant-ctags # Mostly for the Tagbar vim plugin
 htop
 mailutils
 ncdu
+python-pygments
 subversion
 tree
 yajl-tools # Provides json_reformat.
@@ -21,11 +22,13 @@ python3
 python3-doc
 
 # Desktop specific
-vlc
-firefox
 clementine
+firefox
 fonts-inconsolata # Old name: ttf-inconsolata
+gnome-disk-utility # Palimpsest
+libnotify-bin # Provides notify-send
 thunderbird
 vim-gui-common # VIM compiled with */+ registers support.
+vlc
 xsel
 
