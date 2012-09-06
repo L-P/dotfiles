@@ -1,0 +1,10 @@
+# To remove the packages:
+# apt-get purge $(cut bad-packages.txt -d '#' -f 1)
+
+abiword # libreoffice
+audacious # clementine
+gnome-mplayer # vlc
+gnumeric # libreoffice
+sylpheed # thunderbird
+xfburn # brasero
+
