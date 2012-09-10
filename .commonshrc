@@ -75,3 +75,6 @@ function record() {
 	script -t "$dir/script_$date" 2> "$dir/timing_$date"
 }
 
+/usr/bin/keychain $HOME/.ssh/* &> /dev/null
+source $HOME/.keychain/$HOST-sh &> /dev/null
+
