@@ -12,6 +12,7 @@ export MANPAGER='less'
 umask u+rw,go-rwx # 'OFF MY LAWN
 mkdir ~/.vim/undo > /dev/null 2>&1
 bindkey '^R' history-incremental-search-backward
+alias vim='nocorrect vim' # No I don't want to execute '.vim' FFS §
 
 SAVEHIST=1000000
 
