@@ -21,6 +21,7 @@ yajl-tools # Provides json_reformat.
 # Misc
 build-essential
 etckeeper
+keychain
 openssh-blacklist
 openssh-blacklist-extra
 python3
@@ -33,8 +34,11 @@ gcolor2
 lighttpd
 lighttpd-mod-magnet
 mysql-workbench
+nodejs
+npm
 php5-cgi
 php5-cli
+php5-gd
 php5-mysql
 php5-xcache
 php5-xdebug
@@ -45,11 +49,13 @@ brasero
 clementine
 firefox
 fonts-inconsolata # Old name: ttf-inconsolata
-gdtm
 gnome-disk-utility # Palimpsest
+gstm
+i3
 keepassx
 libnotify-bin # Provides notify-send
 libreoffice
+terminator
 thunderbird
 vim-gui-common # VIM compiled with */+ registers support.
 vlc
