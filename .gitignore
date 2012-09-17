@@ -6,4 +6,7 @@ nohup.out
 .vim/undo
 .vim/.netrwhist
 .vim/spell
+/.subversion/auth
+/.subversion/README.txt
+/.subversion/servers
 
