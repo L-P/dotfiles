@@ -1,11 +1,13 @@
+# Global ignores
 .*.sw[op]
 .vimsession
 .~lock.*
 nohup.out
 
-.vim/undo
-.vim/.netrwhist
-.vim/spell
+# Ignores for dotfiles repo
+/.vim/undo
+/.vim/.netrwhist
+/.vim/spell
 /.subversion/auth
 /.subversion/README.txt
 /.subversion/servers
