@@ -55,6 +55,7 @@ i3
 keepassx
 libnotify-bin # Provides notify-send
 libreoffice
+ripit
 terminator
 thunderbird
 vim-gui-common # VIM compiled with */+ registers support.
