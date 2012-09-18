@@ -1,5 +1,6 @@
 # Global ignores
 .*.sw[op]
+.svn/
 .vimsession
 .~lock.*
 nohup.out
