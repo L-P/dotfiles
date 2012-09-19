@@ -191,3 +191,5 @@ workspace 6 output CRT2
 workspace 8 output CRT2
 workspace 10 output CRT2
 
+# Black background
+exec xsetroot -solid black
