@@ -1,0 +1,121 @@
+Section "ServerLayout"
+	Identifier     "aticonfig Layout"
+	Screen      0  "aticonfig-Screen[0]-0" 0 0
+EndSection
+
+Section "Module"
+EndSection
+
+Section "Monitor"
+	Identifier   "aticonfig-Monitor[0]-0"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+EndSection
+
+Section "Monitor"
+	Identifier   "aticonfig-Monitor[0]-1"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+EndSection
+
+Section "Monitor"
+	Identifier   "aticonfig-Monitor[0]-2"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+EndSection
+
+Section "Monitor"
+	Identifier   "0-DFP1"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+	Option	    "PreferredMode" "1920x1080"
+	Option	    "TargetRefresh" "60"
+	Option	    "Position" "1280 0"
+	Option	    "Rotate" "normal"
+	Option	    "Disable" "false"
+EndSection
+
+Section "Monitor"
+	Identifier   "0-DFP11"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+	Option	    "PreferredMode" "1280x1024"
+	Option	    "TargetRefresh" "60"
+	Option	    "Position" "0 0"
+	Option	    "Rotate" "normal"
+	Option	    "Disable" "false"
+EndSection
+
+Section "Monitor"
+	Identifier   "0-DFP9"
+	Option	    "VendorName" "ATI Proprietary Driver"
+	Option	    "ModelName" "Generic Autodetecting Monitor"
+	Option	    "DPMS" "true"
+	Option	    "PreferredMode" "1280x1024"
+	Option	    "TargetRefresh" "75"
+	Option	    "Position" "3200 0"
+	Option	    "Rotate" "normal"
+	Option	    "Disable" "false"
+EndSection
+
+Section "Device"
+	Identifier  "aticonfig-Device[0]-0"
+	Driver      "fglrx"
+	Option	    "Monitor-DFP1" "0-DFP1"
+	Option	    "Monitor-DFP11" "0-DFP11"
+	Option	    "Monitor-DFP9" "0-DFP9"
+	BusID       "PCI:1:0:0"
+EndSection
+
+Section "Device"
+	Identifier  "aticonfig-Device[0]-1"
+	Driver      "fglrx"
+	Option	    "Monitor-DFP9" "0-DFP9"
+	BusID       "PCI:1:0:0"
+	Screen      1
+EndSection
+
+Section "Device"
+	Identifier  "aticonfig-Device[0]-2"
+	Driver      "fglrx"
+	Option	    "Monitor-DFP11" "0-DFP11"
+	BusID       "PCI:1:0:0"
+	Screen      2
+EndSection
+
+Section "Screen"
+	Identifier "aticonfig-Screen[0]-0"
+	Device     "aticonfig-Device[0]-0"
+	DefaultDepth     24
+	SubSection "Display"
+		Viewport   0 0
+		Virtual   4480 1920
+		Depth     24
+	EndSubSection
+EndSection
+
+Section "Screen"
+	Identifier "aticonfig-Screen[0]-1"
+	Device     "aticonfig-Device[0]-1"
+	DefaultDepth     24
+	SubSection "Display"
+		Viewport   0 0
+		Depth     24
+	EndSubSection
+EndSection
+
+Section "Screen"
+	Identifier "aticonfig-Screen[0]-2"
+	Device     "aticonfig-Device[0]-2"
+	DefaultDepth     24
+	SubSection "Display"
+		Viewport   0 0
+		Depth     24
+	EndSubSection
+EndSection
+
