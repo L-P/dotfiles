@@ -39,12 +39,15 @@ set colorcolumn=81		" Highlight the 81th column (code soft-limit of 80 chars)
 
 
 " Highlight trailing spaces.
-highlight TrailingSpaces ctermbg=darkred
-match TrailingSpaces /\s\+$/
+highlight ExtraWhitespace ctermbg=darkred
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Highlight code over the 110th column (hard-limit).
-highlight OverLength ctermfg=red
-match OverLength /\%110v.\+/
+autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>110v.\+', -1)
 
 " Persistant undo across sessions
 " -------------------------------
