@@ -33,8 +33,18 @@ set pastetoggle=<F2>    " Use F2 to toggle paste mode
 set incsearch           " Jump to the next search result while still typing
 set showmatch           " Highlight matching opening bracket when inserting '}'
 set showmode            " Display the current mode (insert/normal/visual/etc.)
-set scrolloff=3         " Force-scoll 3 lines before/after the cursor.
+set scrolloff=3         " Force-scoll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
+set colorcolumn=81		" Highlight the 81th column (code soft-limit of 80 chars)
+
+
+" Highlight trailing spaces.
+highlight TrailingSpaces ctermbg=darkred
+match TrailingSpaces /\s\+$/
+
+" Highlight code over the 110th column (hard-limit).
+highlight OverLength ctermfg=red
+match OverLength /\%110v.\+/
 
 " Persistant undo across sessions
 " -------------------------------
@@ -131,6 +141,12 @@ let g:ctrlp_working_path_mode=0 " Use vim working directory as ctrlp root.
 
 " Language-specific config
 " ========================
+" Git commits
+" -----------
+" Highlight the right column.
+autocmd FileType gitcommit set colorcolumn=+1
+
+
 " Python
 " ------
 " Follow PEP8 recommandations by using space-indented 79 chars lines.
