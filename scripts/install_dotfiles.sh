@@ -1,19 +1,24 @@
 #!/usr/bin/env bash
 
 function dot::make_links() {
-	local dotpath="$1/dotfiles/"
+	local dotpath="~/.dotfiles/"
+	local skip=(".dotfiles" ".git" ".gitmodules")
 
-	if [ -z $HOME ] || [ -z $dotpath ]; then exit 3; fi
-	if [ ! $HOME ]; then
+	if [ -z "$HOME" ] || [ -z "$dotpath" ]; then exit 3; fi
+	if [ ! "$HOME" ]; then
 		echo "Can't write to '$HOME'."
 		exit 4
 	fi
 
 	for src in $(find "$dotpath" -maxdepth 1 -name '.*' ); do
-		if [[ "$(basename "$src")" = '.gitmodules' ]]; then continue; fi
-		if [[ "$(basename "$src")" = '.git' ]]; then continue; fi
+		local basename="$(basename "$src")"
+		local dst="$HOME/$basename"
 
-		local dst="$HOME/$(basename "$src")"
+		for v in $skip; do
+			if [[ "$basename" = "$v" ]]; then
+				continue 2
+			fi
+		done
 
 		rm -Rf "$dst"
 		ln -s "$src" "$dst"
@@ -21,31 +26,24 @@ function dot::make_links() {
 }
 
 function dot::clone_repos() {
-	# The uncommented repo is the read-only one.
-	#local repo='git@github.com:L-P/dotfiles.git'
-	local repo='git://github.com/L-P/dotfiles.git'
+	#local repo='git@github.com:L-P/dotfiles.git' # R/W
+	local repo='git://github.com/L-P/dotfiles.git' # RO
+	local dest="~/.dotfiles"
 
-	# Create/purge the destination (if needed) and cd into it
-	mkdir -p "$1" &> /dev/null
-	if [ ! -w "$1" ];then
-		echo "Can't write to '$1'."
+	# Create/purge the destination
+	mkdir -p "$dest" &> /dev/null
+	if [ ! -w "$dest" ];then
+		echo "Can't write to '$dest'."
 		exit 2
 	fi
-	cd "$1"
-	rm -Rf dotfiles &> /dev/null
 
 	# Clone everything
-	git clone "$repo"
-	cd dotfiles
+	git clone "$repo" "$dest"
+	cd "$dest"
 	git submodule init
 	git submodule update
 }
 
-if [ -z "$1" ]; then
-	echo "Usage : install_dotfiles <repo_destination>"
-	exit 1
-fi
-
-dot::clone_repos "$1"
-dot::make_links "$1"
+dot::clone_repos
+dot::make_links
 
