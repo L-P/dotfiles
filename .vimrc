@@ -101,7 +101,7 @@ autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=m
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
-autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=75 expandtab
+autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 
 " Misc functions
 " ==============
@@ -166,7 +166,7 @@ autocmd FileType javascript abbr clog console.log(%);<CR><ESC>?%<CR>xi
 
 " CSS/LESS
 " --------
-" Color picker for quick color insertion when working with CSS 
+" Color picker for quick color insertion when working with CSS
 autocmd FileType css,less noremap <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
 
 " Expand and fold CSS rules (for one-lined CSS files)
