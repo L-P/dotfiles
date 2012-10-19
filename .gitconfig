@@ -10,10 +10,6 @@
 	name = Léo Peltier
 	email = contact@leo-peltier.fr
 
-[cola]
-	fontdiff = Inconsolata,12,-1,5,50,0,0,0,0,0
-	tabwidth = 4
-
 [core]
 	excludesfile = ~/.gitignore
 	pager = less -RFXS -x4
