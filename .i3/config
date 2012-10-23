@@ -170,6 +170,7 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 assign [class="Clementine"] → 10
 assign [class="Keepassx"] → 10
 assign [class="Pidgin"] → 10
+assign [class="Spotify"] → 10
 
 # Those should always float
 for_window [class="^File-roller$" title="^Compress$"] floating enable
