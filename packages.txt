@@ -12,6 +12,7 @@ exuberant-ctags # Mostly for the Tagbar vim plugin
 htop
 mailutils
 ncdu
+pv
 python-pygments
 subversion
 tree
