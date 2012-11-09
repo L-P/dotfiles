@@ -175,6 +175,7 @@ assign [class="Spotify"] → 10
 # Those should always float
 for_window [class="^File-roller$" title="^Compress$"] floating enable
 for_window [class="^Gcolor2$"] floating enable
+for_window [class="^Steam$"] floating enable
 for_window [class="^Screenruler$"] floating enable; border none; resize shrink up 15px
 for_window [class="^ioquake3.x86_64$"] floating enable
 
