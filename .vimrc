@@ -97,7 +97,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
 
 " Per-filetype options
-autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
+autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown textwidth=80 makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
