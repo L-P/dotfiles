@@ -37,6 +37,7 @@ lighttpd
 lighttpd-mod-magnet
 mysql-workbench
 nodejs
+nodejs-legacy # jshint and less require this
 npm
 php5-cgi
 php5-cli
