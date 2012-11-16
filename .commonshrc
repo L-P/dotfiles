@@ -41,12 +41,6 @@ function duf {
 	du -csh -- "$@" | sort -rh
 }
 
-# Check syntax of all PHP files.
-function phpcheck() {
-	find . -type f -name '*.php' -exec php -l {} \; | grep -vE '^(No syntax errors|Errors parsing)'
-	return 0
-}
-
 # Handy grep aliases, since ack sucks.
 function g() {
 	grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
