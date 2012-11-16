@@ -199,6 +199,10 @@ autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
             \function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
             \die();<CR>}<ESC>>aB
 
+autocmd FileType php abbr djv {<CR>$locals = get_defined_vars();<CR>
+            \echo json_encode(array(array_keys($locals), compact(array_keys($locals))));<CR>
+            \die();<CR>}<ESC>>aB
+
 " Lorem ipsum abbreviation
 autocmd FileType php abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
             \scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
