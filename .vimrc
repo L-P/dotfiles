@@ -103,6 +103,7 @@ autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.json                set filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
+autocmd BufNewFile,BufRead *.txt                 set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 
 " Misc functions
 " ==============
