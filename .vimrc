@@ -200,6 +200,7 @@ autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
             \die();<CR>}<ESC>>aB
 
 autocmd FileType php abbr djv {<CR>$locals = get_defined_vars();<CR>
+            \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
             \echo json_encode(array(array_keys($locals), compact(array_keys($locals))));<CR>
             \die();<CR>}<ESC>>aB
 
