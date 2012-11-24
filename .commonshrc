@@ -1,18 +1,13 @@
 # Scarcely used (see `update-alternatives --config editor`)
 export EDITOR=vim
 
-# VIM may complain if the folder does not exist
-mkdir ~/.vim/undo > /dev/null 2>&1
-
 # More secure umask by default
 umask u+rw,go-rwx
-
 
 # Nicer less by default
 export LESS='-RFXS -x4'
 export PAGER='less'
 export MANPAGER='less'
-
 
 # Color aliases
 alias grep='grep --color=auto'
