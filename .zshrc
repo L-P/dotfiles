@@ -25,4 +25,3 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 source ~/.commonshrc
 source ~/.zsh_local
-

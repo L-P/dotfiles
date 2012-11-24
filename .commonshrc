@@ -38,15 +38,15 @@ alias json='json_reformat | pygmentize -l js' # json is on pygments ≥ 1.5
 
 # Nicer du (ncdu is nice too)
 function duf {
-	du -csh -- "$@" | sort -rh
+    du -csh -- "$@" | sort -rh
 }
 
 # Handy grep aliases, since ack sucks.
 function g() {
-	grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+    grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
 function gi() {
-	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+    grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
 
 # Find aliases
@@ -56,21 +56,20 @@ function fd() { find . -type d -iname "*$@*" }
 
 # Nice SVN diff (much like git diff)
 function sd() {
-	arg=''
-	if [[ -n $1 ]]; then
-		arg="-c $1"
-	fi
-	svn diff $arg | pygmentize -l diff | $PAGER
+    arg=''
+    if [[ -n $1 ]]; then
+        arg="-c $1"
+    fi
+    svn diff $arg | pygmentize -l diff | $PAGER
 }
 
 # Record terminal input/output to file.
 function record() {
-	local date="$(date --rfc-3339=seconds | sed 's/ /_/g')"
-	local dir="$HOME/.terminal_recordings"
-	mkdir -p "$dir" &> /dev/null
-	script -t "$dir/script_$date" 2> "$dir/timing_$date"
+    local date="$(date --rfc-3339=seconds | sed 's/ /_/g')"
+    local dir="$HOME/.terminal_recordings"
+    mkdir -p "$dir" &> /dev/null
+    script -t "$dir/script_$date" 2> "$dir/timing_$date"
 }
 
 /usr/bin/keychain $HOME/.ssh/* &> /dev/null
 source $HOME/.keychain/$HOST-sh &> /dev/null
-

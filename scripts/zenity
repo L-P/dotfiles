@@ -16,13 +16,13 @@ $out = ob_get_clean();
 
 // If the output is a broken color, fix it.
 if(preg_match('`^#[0-9A-F]{12}$`i', trim($out))) {
-	$color = '#';
-	for($i=1; $i<12; $i+=4) {
-		$color .= $out[$i];
-		$color .= $out[$i+1];
-	}
+    $color = '#';
+    for($i=1; $i<12; $i+=4) {
+        $color .= $out[$i];
+        $color .= $out[$i+1];
+    }
 
-	$out = $color . PHP_EOL;
+    $out = $color . PHP_EOL;
 }
 
 echo $out;

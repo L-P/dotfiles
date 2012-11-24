@@ -20,7 +20,7 @@ set number              " Line numbering
 set showcmd             " Show the command being typed
 set ruler               " Show the cursor position
 set autoindent          " Use automatic indent
-set expandtab			" tabs will be replaced by spaces
+set expandtab           " tabs will be replaced by spaces
 set tabstop=4           " 1 tab = 4 spaces
 set shiftwidth=4        " 1 tab = 4 spaces
 set softtabstop=4       " 1 tab = 4 spaces
@@ -217,4 +217,3 @@ autocmd FileType php abbr lorem Lorem ipsum dolor sit amet, consectetur adipisci
             \euismod tortor elementum ut. Suspendisse ornare, velit sed blandit faucibus,
             \dui neque elementum justo, sit amet pellentesque tellus lacus quis ante. Donec
             \cursus dapibus sollicitudin.
-

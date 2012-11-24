@@ -4,8 +4,8 @@
 browser="$(which firefox)"
 
 if ($browser -remote "ping()" &> /dev/null); then
-	$browser -remote "openurl(http://www.php.net/$1, new-tab)" &> /dev/null & disown
+    $browser -remote "openurl(http://www.php.net/$1, new-tab)" &> /dev/null & disown
 else
-	$browser http://www.php.net/$1 &> /dev/null & disown
+    $browser http://www.php.net/$1 &> /dev/null & disown
 fi
 

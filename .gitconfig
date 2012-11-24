@@ -1,22 +1,21 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	log = auto
-	interactive = auto
-	pager = true
+    diff = auto
+    status = auto
+    branch = auto
+    log = auto
+    interactive = auto
+    pager = true
 
 [user]
-	name = Léo Peltier
-	email = contact@leo-peltier.fr
+    name = Léo Peltier
+    email = contact@leo-peltier.fr
 
 [core]
-	excludesfile = ~/.gitignore
-	pager = less -RFXS -x4
+    excludesfile = ~/.gitignore
+    pager = less -RFXS -x4
 
 [alias]
-	ci = commit
-	co = checkout
-	fix = !EDITOR=true && git commit --fixup HEAD && git rebase -i --autosquash HEAD~2
-	graph = log --graph --oneline --decorate
-
+    ci = commit
+    co = checkout
+    fix = !EDITOR=true && git commit --fixup HEAD && git rebase -i --autosquash HEAD~2
+    graph = log --graph --oneline --decorate

@@ -1,13 +1,13 @@
 #!/bin/sh
 
 if [ -z "$1" ]; then
-	echo "Usage: wipe <device>"
-	exit 1
+    echo "Usage: wipe <device>"
+    exit 1
 fi
 
 if [ ! -w "$1" ]; then
-	echo "Please check that '$1' exists and is writable."
-	exit 2
+    echo "Please check that '$1' exists and is writable."
+    exit 2
 fi
 
 size=$(fdisk -l "$1" 2> /dev/null | grep "$1:" | cut -d ' ' -f 5)

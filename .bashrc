@@ -53,17 +53,17 @@ PROMPT_COMMAND='RET=$?;'
 RETVAL='$(echo $RET)'
 RETCOL='$(
 if [[ $RET = 0 ]]; then
-	echo -ne "\[$bldgrn\]"
+    echo -ne "\[$bldgrn\]"
 else
-	echo -ne "\[$bldred\]"
+    echo -ne "\[$bldred\]"
 fi)'
 AROBCOL='$(
 if [[ $UID -ge 1000 ]]; then 
-	echo -ne "\[$bldgrn\]"
+    echo -ne "\[$bldgrn\]"
 elif [[ $UID = 0 ]]; then 
-	echo -ne "\[$bldred\]"
+    echo -ne "\[$bldred\]"
 else
-	echo -ne "\[$bldylw\]"
+    echo -ne "\[$bldylw\]"
 fi)'
 PS1="[\!:$RETCOL$RETVAL\[$txtrst\]]$AROBCOL@\[$bldgrn\]\h\[$txtrst\]:\[$bldblu\]\W\[$txtrst\]\$ "
 case "$TERM" in
@@ -102,4 +102,3 @@ alias ...='cd ../..'
 
 source ~/.commonshrc
 source ~/.bash_local
-
