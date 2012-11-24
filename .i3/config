@@ -160,6 +160,8 @@ bindsym $mod+F4 exec /opt/scripts/touchpad_toggle.sh
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
+bindsym XF86AudioLowerVolume exec /usr/bin/amixer set Master 5-
+bindsym XF86AudioRaiseVolume exec /usr/bin/amixer set Master 5+
 
 
 # Proper xfce notifications.
