@@ -30,6 +30,7 @@ alias gs='git status --short'
 alias py='python3'
 alias ripit='ripit -o /dev/shm/ripit -c 2 -q 8' # FLAC @ max comp.
 alias json='json_reformat | pygmentize -l js' # json is on pygments ≥ 1.5
+alias sudo='sudo ' # Triggers alias expansion after typing sudo
 
 # Nicer du (ncdu is nice too)
 function duf {
