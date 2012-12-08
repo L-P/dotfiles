@@ -8,6 +8,7 @@ vim
 zsh
 
 # Misc CLI tools
+curl
 exuberant-ctags # Mostly for the Tagbar vim plugin
 htop
 mailutils
