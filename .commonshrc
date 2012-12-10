@@ -33,7 +33,7 @@ alias json='json_reformat | pygmentize -l js' # json is on pygments ≥ 1.5
 alias sudo='sudo ' # Triggers alias expansion after typing sudo
 
 # Nicer du (ncdu is nice too)
-function duf {
+function duf() {
     du -csh -- "$@" | sort -rh
 }
 
