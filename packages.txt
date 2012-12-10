@@ -51,6 +51,7 @@ screenruler
 # Desktop specific
 brasero
 clementine
+enigmail
 firefox
 fonts-inconsolata # Old name: ttf-inconsolata
 gnome-disk-utility # Palimpsest
