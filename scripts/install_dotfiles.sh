@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function dot::make_links() {
-    local dotpath="~/.dotfiles/"
+    local dotpath=".dotfiles"
     local skip=(".dotfiles" ".git" ".gitmodules")
 
     if [ -z "$HOME" ] || [ -z "$dotpath" ]; then exit 3; fi
@@ -28,7 +28,7 @@ function dot::make_links() {
 function dot::clone_repos() {
     #local repo='git@github.com:L-P/dotfiles.git' # R/W
     local repo='git://github.com/L-P/dotfiles.git' # RO
-    local dest="~/.dotfiles"
+    local dest=".dotfiles"
 
     # Create/purge the destination
     mkdir -p "$dest" &> /dev/null
