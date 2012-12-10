@@ -59,6 +59,8 @@ i3
 keepassx
 libnotify-bin # Provides notify-send
 libreoffice
+lubuntu-restricted-addons
+lubuntu-restricted-extras
 ripit
 terminator
 thunderbird
@@ -66,4 +68,3 @@ vim-gui-common # VIM compiled with */+ registers support.
 vlc
 xli # Used to set monitoring graphs as desktop background
 xsel
-
