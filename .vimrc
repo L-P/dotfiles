@@ -143,6 +143,10 @@ let g:ctrlp_by_filename=1       " Search by filename instad of path
 let g:ctrlp_mruf_max=0          " Disable MRU so CtrlPMixed only searches for buffers and files.
 let g:ctrlp_working_path_mode=0 " Use vim working directory as ctrlp root.
 
+" Jedi params
+" -----------
+let g:jedi#popup_on_dot = 0 " Don't disrupt my typing process
+
 
 " Language-specific config
 " ========================
