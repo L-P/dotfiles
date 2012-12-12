@@ -95,7 +95,7 @@ cnoremap w!! %!sudo tee > /dev/null %<CR>
 " Shiny path autocomplete
 set wildmode=list:longest,list:full
 set wildmenu
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*,*.pyc
 
 " Per-filetype options
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown textwidth=80 makeprg=markdown\ %\ >\ %<.html
