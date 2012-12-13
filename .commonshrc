@@ -50,6 +50,17 @@ function f() { find . -iname "*$@*" }
 function ff() { find . -type f -iname "*$@*" }
 function fd() { find . -type d -iname "*$@*" }
 
+# Make a git repo with an empty commit
+function mkrepo() {
+    (
+        mkdir $1
+        cd $1
+        git init
+        git ci --allow-empty -m "Initial commit."
+        cd ..
+    ) > /dev/null
+}
+
 # Nice SVN diff (much like git diff)
 function sd() {
     arg=''
