@@ -184,16 +184,16 @@ for_window [title="^meli7$"] floating enable
 # Odd workspaces on the left screen, even ones on the right.
 # This has no incidence when using only one screen, i3 fallbacks to the current
 # screen if the one specified does not exist.
-workspace 1 output DFP2
-workspace 3 output DFP2
-workspace 5 output DFP2
-workspace 7 output DFP2
-workspace 9 output DFP2
-workspace 2 output CRT2
-workspace 4 output CRT2
-workspace 6 output CRT2
-workspace 8 output CRT2
-workspace 10 output CRT2
+workspace 1 output DFP5
+workspace 3 output DFP5
+workspace 5 output DFP5
+workspace 7 output DFP5
+workspace 9 output DFP5
+workspace 2 output DFP9
+workspace 4 output DFP9
+workspace 6 output DFP9
+workspace 8 output DFP9
+workspace 10 output DFP9
 
 # Black background
 exec xsetroot -solid black
