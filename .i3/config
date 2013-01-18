@@ -189,11 +189,11 @@ workspace 3 output DFP5
 workspace 5 output DFP5
 workspace 7 output DFP5
 workspace 9 output DFP5
-workspace 2 output DFP9
-workspace 4 output DFP9
-workspace 6 output DFP9
-workspace 8 output DFP9
-workspace 10 output DFP9
+workspace 2 output DFP11
+workspace 4 output DFP11
+workspace 6 output DFP11
+workspace 8 output DFP11
+workspace 10 output DFP11
 
 # Black background
 exec xsetroot -solid black
