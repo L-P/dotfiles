@@ -196,4 +196,4 @@ workspace 8 output DFP11
 workspace 10 output DFP11
 
 # Black background
-exec xsetroot -solid black
+exec --no-startup-id xsetroot -solid black
