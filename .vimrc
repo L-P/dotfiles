@@ -37,6 +37,8 @@ set showmode            " Display the current mode (insert/normal/visual/etc.)
 set scrolloff=3         " Force-scoll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
 set colorcolumn=81      " Highlight the 81th column (code soft-limit of 80 chars)
+set exrc                " Per-directory .vimrc.
+set secure              " Disallow unsafe commands in per-directory .vimrc files.
 
 
 " Highlight trailing spaces.
