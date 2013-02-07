@@ -18,4 +18,4 @@
     ci = commit
     co = checkout
     fix = !EDITOR=true && git commit --fixup HEAD && git rebase -i --autosquash HEAD~2
-    graph = log --graph --oneline --decorate
+    graph = log --graph --oneline --decorate --all
