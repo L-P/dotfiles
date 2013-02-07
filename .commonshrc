@@ -16,9 +16,6 @@ alias egrep='egrep --color=auto'
 alias tree='tree -C'
 
 # Aliases
-alias mysql='mysql --user=root --password=root'
-alias mysqladmin='mysqladmin --user=root --password=root'
-alias mytop='mytop -u root -p root'
 alias ls='ls --group-directories-first --color -v'
 alias ll='ls -vlh'
 alias la='ll -va'
