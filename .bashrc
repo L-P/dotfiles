@@ -88,13 +88,6 @@ shopt -s hostcomplete
 set -o vi
 bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
 
-# Dammit §
-alias cim='vim'
-alias vp='cp'
-alias cd..='cd ..'
-alias :q='exit'
-alias :e='vim'
-alias :tabe='vim'
 
 # ZSH-like
 alias ..='cd ..'

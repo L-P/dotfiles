@@ -31,6 +31,14 @@ alias sudo='sudo ' # Triggers alias expansion after typing sudo
 alias tpoff='synclient TouchpadOff=1'
 alias tpon='synclient TouchpadOff=0'
 
+# Typos
+alias cim='vim'
+alias vp='cp'
+alias cd..='cd ..'
+alias :q='exit'
+alias :e='vim'
+alias :tabe='vim'
+
 # Nicer du (ncdu is nice too)
 function duf() {
     du -csh -- "$@" | sort -rh
