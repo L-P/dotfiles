@@ -162,6 +162,7 @@ bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
 bindsym XF86AudioLowerVolume exec /usr/bin/amixer set Master 5-
 bindsym XF86AudioRaiseVolume exec /usr/bin/amixer set Master 5+
+bindsym XF86AudioMute exec /usr/bin/amixer set Master toggle
 
 
 # Proper xfce notifications.
