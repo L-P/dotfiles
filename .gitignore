@@ -12,4 +12,5 @@ nohup.out
 /.subversion/auth
 /.subversion/README.txt
 /.subversion/servers
+/.config
 

@@ -1,0 +1,20 @@
+[global_config]
+  tab_position = hidden
+[keybindings]
+  full_screen = disabled
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    use_system_font = False
+    font = Inconsolata Medium 16
+    scrollback_infinite = True
+    show_titlebar = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
