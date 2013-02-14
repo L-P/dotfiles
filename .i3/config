@@ -149,8 +149,8 @@ bar {
 bindsym $mod+p exec --no-startup-id /usr/bin/pcmanfm
 
 # Lock screen
-bindsym Scroll_Lock	exec -no-startup-id /usr/bin/i3lock -d -c 000000
-bindsym $mod+End	exec -no-startup-id /usr/bin/i3lock -d -c 000000
+bindsym Scroll_Lock	exec --no-startup-id /usr/bin/i3lock -d -c 000000
+bindsym $mod+End	exec --no-startup-id /usr/bin/i3lock -d -c 000000
 
 # Brightness
 bindsym $mod+F4 exec --no-startup-id /opt/scripts/touchpad_toggle.sh
