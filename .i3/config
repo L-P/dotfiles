@@ -146,23 +146,22 @@ bar {
 
 
 # Shotcuts
-bindsym $mod+p exec /usr/bin/pcmanfm
+bindsym $mod+p exec --no-startup-id /usr/bin/pcmanfm
 
 # Lock screen
-bindsym Scroll_Lock exec /usr/bin/i3lock -d -c 000000
-bindsym $mod+End exec /usr/bin/i3lock -d -c 000000
+bindsym Scroll_Lock	exec -no-startup-id /usr/bin/i3lock -d -c 000000
+bindsym $mod+End	exec -no-startup-id /usr/bin/i3lock -d -c 000000
 
 # Brightness
-bindsym $mod+F2 exec sudo /opt/scripts/brightness.sh - 500
-bindsym $mod+F3 exec sudo /opt/scripts/brightness.sh + 500
-bindsym $mod+F4 exec /opt/scripts/touchpad_toggle.sh
+bindsym $mod+F4 exec --no-startup-id /opt/scripts/touchpad_toggle.sh
 
 # Sound control with Mod+KP_(PLUS/MINUS)
-bindsym $mod+KP_Subtract exec /usr/bin/amixer set Master 5-
-bindsym $mod+KP_Add exec /usr/bin/amixer set Master 5+
-bindsym XF86AudioLowerVolume exec /usr/bin/amixer set Master 5-
-bindsym XF86AudioRaiseVolume exec /usr/bin/amixer set Master 5+
-bindsym XF86AudioMute exec /usr/bin/amixer set Master toggle
+bindsym $mod+KP_Subtract		exec --no-startup-id /usr/bin/amixer set Master 5-
+bindsym $mod+KP_Add				exec --no-startup-id /usr/bin/amixer set Master 5+
+bindsym XF86AudioLowerVolume	exec --no-startup-id /usr/bin/amixer set Master 5-
+bindsym XF86AudioRaiseVolume	exec --no-startup-id /usr/bin/amixer set Master 5+
+bindsym XF86AudioMute			exec --no-startup-id /usr/bin/amixer set Master toggle
+bindsym XF86Calculator			exec --no-startup-id /usr/bin/terminator -x python3
 
 
 # Proper xfce notifications.
