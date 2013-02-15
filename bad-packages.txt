@@ -7,6 +7,6 @@ apport-gtk
 audacious # clementine
 gnome-mplayer # vlc
 gnumeric # libreoffice
+network-manager # wicd-curses
 sylpheed # thunderbird
 xfburn # brasero
-

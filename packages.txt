@@ -10,6 +10,7 @@ zsh
 # Misc CLI tools
 curl
 exuberant-ctags # Mostly for the Tagbar vim plugin
+gnupg-agent
 htop
 mailutils
 ncdu
@@ -19,6 +20,7 @@ subversion
 tree
 whois
 yajl-tools # Provides json_reformat.
+
 
 # Misc
 build-essential
@@ -37,10 +39,12 @@ unzip
 gcolor2
 lighttpd
 lighttpd-mod-magnet
+mysql-server
 mysql-workbench
 nodejs
 nodejs-legacy # jshint and less require this
 npm
+php-pear
 php5-cgi
 php5-cli
 php5-gd
@@ -48,8 +52,13 @@ php5-mysql
 php5-xcache
 php5-xdebug
 screenruler
+wireshark
+
+# Laptop specific
+laptop-mode
 
 # Desktop specific
+aspell-fr
 brasero
 clementine
 enigmail
@@ -63,10 +72,12 @@ libnotify-bin # Provides notify-send
 libreoffice
 lubuntu-restricted-addons
 lubuntu-restricted-extras
+mirage
 ripit
 terminator
 thunderbird
 vim-gui-common # VIM compiled with */+ registers support.
 vlc
+wicd-curses
 xli # Used to set monitoring graphs as desktop background
 xsel
