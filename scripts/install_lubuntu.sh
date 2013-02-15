@@ -57,9 +57,9 @@ install_packages() {
 
 
 update_alternatives() {
-    sudo update-alternatives --set editor vim.basic
-    sudo update-alternatives --set x-www-browser firefox
-    sudo update-alternatives --set gnome-www-browser firefox
+    sudo update-alternatives --set editor $(which vim.basic)
+    sudo update-alternatives --set x-www-browser $(which firefox)
+    sudo update-alternatives --set gnome-www-browser $(which firefox)
 }
 
 
