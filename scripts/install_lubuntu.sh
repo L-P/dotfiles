@@ -11,6 +11,7 @@ main() {
     install_packages
     update_alternatives
     install_npm_packages
+    enable_lighttpd_mods
 }
 
 
@@ -70,6 +71,10 @@ install_npm_packages() {
     sudo npm install -g jshint less yui-compressor
 
     umask "$old_umask"
+}
+
+enable_lighttpd_mods() {
+    sudo lighttpd-enable-mod fastcgi fastcgi-php evhost
 }
 
 
