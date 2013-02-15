@@ -31,9 +31,14 @@ openssh-blacklist-extra
 optipng
 pyflakes
 python3
-python3-doc
 unrar
 unzip
+
+# Documentation
+git-doc
+lighttpd-doc
+php-doc
+python3-doc
 
 # Web dev
 gcolor2
