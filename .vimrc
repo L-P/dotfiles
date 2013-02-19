@@ -34,7 +34,7 @@ set pastetoggle=<F2>    " Use F2 to toggle paste mode
 set incsearch           " Jump to the next search result while still typing
 set showmatch           " Highlight matching opening bracket when inserting '}'
 set showmode            " Display the current mode (insert/normal/visual/etc.)
-set scrolloff=3         " Force-scoll 3 lines before/after the cursor
+set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
 set colorcolumn=81      " Highlight the 81th column (code soft-limit of 80 chars)
 set exrc                " Per-directory .vimrc.
@@ -65,7 +65,6 @@ noremap <F7> :NERDTreeToggle<CR>    " Toggle NERDTreee
 noremap <F8> :GundoToggle<CR>       " Toggle Gundo window
 noremap <F9> :wa<CR> :make<CR><CR>  " F9 to save and build
 noremap <F10> :TagbarToggle<CR>     " Toggle tagbar window
-noremap <Leader>f !fmt<CR>          " Sometimes fmt does a better job than vim's 'gqq'
 noremap Y y$                        " For consistency
 noremap Q                         " Disable Ex mode, <Nop> won't work so I used ^V^V
 
@@ -88,7 +87,6 @@ inoremap <Down> <C-O>gj
 " Copy the current selection in X clipboard, useful when vim is compiled
 " without + and * registers support.
 noremap <Leader>c :!xsel -iob<CR>u
-noremap <Leader>t :!ctags -R &<CR> !silent
 
 " sudo save a file.
 cnoremap w!! %!sudo tee > /dev/null %<CR>
@@ -144,10 +142,6 @@ let g:ctrlp_by_filename=1       " Search by filename instad of path
 let g:ctrlp_mruf_max=0          " Disable MRU so CtrlPMixed only searches for buffers and files.
 let g:ctrlp_working_path_mode=0 " Use vim working directory as ctrlp root.
 
-" Jedi params
-" -----------
-let g:jedi#popup_on_dot = 0 " Don't disrupt my typing process
-
 
 " Language-specific config
 " ========================
@@ -175,10 +169,6 @@ autocmd FileType javascript abbr clog console.log(%);<CR><ESC>?%<CR>xi
 " --------
 " Color picker for quick color insertion when working with CSS
 autocmd FileType css,less noremap <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
-
-" Expand and fold CSS rules (for one-lined CSS files)
-autocmd FileType css,less noremap <Leader>ce ^f{lr<CR><ESC>f}hr<CR><ESC>k:s/;/;\r/g<CR>viB=gv:sort<CR>gv:g/^$/d<CR>
-autocmd FileType css,less noremap <Leader>cf viBJkVjjJ
 
 
 " PHP
