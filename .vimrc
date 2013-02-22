@@ -134,6 +134,7 @@ au BufWritePost * call ModeChange()
 let g:syntastic_enable_signs=1                      " Use VIM signs to show errors
 let g:syntastic_echo_current_error=1                " Display current error in statusline
 let g:syntastic_javascript_syntax_checker="jshint"  " Use jshint instead of jslint
+let g:syntastic_auto_loc_list=1                     " lopen/lclose automatically
 
 " CtrlP params
 " ------------
