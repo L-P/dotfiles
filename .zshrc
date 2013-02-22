@@ -6,11 +6,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Misc options
 bindkey '^R' history-incremental-search-backward
+
+# Bind ^Z to fg, allowing to cycle in and out of apps quickly.
+function rebind-z() { fg }
+zle -N rebind-z
+bindkey '^Z' rebind-z
+
 SAVEHIST=1000000
 setopt inc_append_history complete_aliases
 
 
-# Awesome prompt
+# Awe-inspiring prompt
 local cmdstatus="[%!:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
 local userat="%{$fg[green]%}%B%(!.%{$fg[red]%}.%{$fg[green]%})%B@%{$fg[green]%}%m%b"
 local pwd=":%B%{$fg[blue]%}%c%b"
