@@ -41,6 +41,14 @@ set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
 
 
+" Enable folding, see the various syntax files for details.
+let g:sh_fold_enabled=1
+let javaScript_fold=1
+let php_folding=1
+set nofoldenable
+set foldmethod=syntax
+
+
 " Highlight trailing spaces.
 highlight ExtraWhitespace ctermbg=darkred
 match ExtraWhitespace /\s\+$/
@@ -174,6 +182,13 @@ autocmd FileType css,less noremap <Leader>a i<CR><ESC>k:r!zenity --color-selecti
 
 " PHP
 " ---
+" Syntax file options
+let php_sql_query=1
+let php_htmlInStrings=1
+let php_parent_error_close=1
+let php_parent_error_open=1
+
+
 " Documentation via K, see scripts/php_doc.sh
 autocmd FileType php set keywordprg=php_doc
 
