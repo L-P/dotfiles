@@ -17,7 +17,7 @@ setopt inc_append_history complete_aliases
 
 
 # Awe-inspiring prompt
-local cmdstatus="[%!:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
+local cmdstatus="[%!:%j:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
 local userat="%{$fg[green]%}%B%(!.%{$fg[red]%}.%{$fg[green]%})%B@%{$fg[green]%}%m%b"
 local pwd=":%B%{$fg[blue]%}%c%b"
 local userchar="%(!.#.$)"
