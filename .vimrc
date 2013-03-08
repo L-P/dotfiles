@@ -192,6 +192,11 @@ let php_parent_error_open=1
 " Documentation via K, see scripts/php_doc.sh
 autocmd FileType php set keywordprg=php_doc
 
+" Update control structures to PSR whitespacing.
+autocmd FileType php noremap <Leader>p :%s/\(if\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
+			\:%s/function \(.*\) {/function \1\r{/e<CR>
+
+
 " Re-orders and formats the contents of a long PHP array.
 autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
 
