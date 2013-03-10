@@ -60,7 +60,7 @@ screenruler
 wireshark
 
 # Laptop specific
-laptop-mode
+laptop-mode-tools
 
 # Desktop specific
 aspell-fr
