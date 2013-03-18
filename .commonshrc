@@ -11,8 +11,6 @@ export MANPAGER='less'
 
 # Color aliases
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias tree='tree -C'
 
 # Aliases
@@ -26,9 +24,7 @@ alias gds='git diff --staged'
 alias gs='git status --short'
 alias py='python3'
 alias ripit='ripit -o /dev/shm/ripit -c 2 -q 8' # FLAC @ max comp.
-alias json='json_reformat | pygmentize -l js' # json is on pygments ≥ 1.5
-alias tpoff='synclient TouchpadOff=1'
-alias tpon='synclient TouchpadOff=0'
+alias json='json_reformat | pygmentize -l json'
 
 # Typos
 alias cim='vim'
