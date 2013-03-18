@@ -200,6 +200,9 @@ autocmd FileType php noremap <Leader>p :%s/\(if\\|for\\|foreach\\|while\)(/\1 (/
 " Re-orders and formats the contents of a long PHP array.
 autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
 
+" Launch PHP documentor.
+autocmd FileType php noremap <Leader>d :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>
+
 " Manual PHP syntax checking via :make
 autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
 
