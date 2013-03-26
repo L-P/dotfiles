@@ -8,6 +8,7 @@ umask u+rw,go-rwx
 export LESS='--raw-control-chars --quit-if-one-screen --no-init --chop-long-lines --tabs=4'
 export PAGER='less'
 export MANPAGER='less'
+export TERM='xterm-256color'
 
 # Color aliases
 alias grep='grep --color=auto'
