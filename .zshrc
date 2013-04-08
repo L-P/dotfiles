@@ -1,7 +1,7 @@
 # Oh-my-ZSH
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
-plugins=(vi-mode)
+plugins=(vi-mode golang safe-paste)
 source $ZSH/oh-my-zsh.sh
 
 # Misc options
