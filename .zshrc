@@ -15,6 +15,9 @@ bindkey '^Z' rebind-z
 SAVEHIST=1000000
 setopt inc_append_history complete_aliases
 
+# Disable autocorrect
+unsetopt correct_all
+
 
 # Awe-inspiring prompt
 local cmdstatus="[%!:%j:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
