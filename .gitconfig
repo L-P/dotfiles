@@ -14,8 +14,15 @@
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
 
+[pull]
+    default = nothing
+
 [alias]
     ci = commit
     co = checkout
 	fix = !EDITOR=true && git commit --amend -a
     graph = log --graph --oneline --decorate
+    grall = log --graph --oneline --decorate --all
+
+[diff]
+	guitool = meld
