@@ -137,6 +137,10 @@ au BufWritePost * call ModeChange()
 
 " Plugins config
 " ==============
+" Powerline
+" ---------
+let g:Powerline_symbols = 'fancy'
+
 " Syntastic
 " ---------
 let g:syntastic_enable_signs=1                      " Use VIM signs to show errors
