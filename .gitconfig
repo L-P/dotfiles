@@ -14,8 +14,8 @@
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
 
-[pull]
-    default = nothing
+[push]
+	default = simple
 
 [alias]
     ci = commit
