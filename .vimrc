@@ -97,6 +97,9 @@ inoremap <Down> <C-O>gj
 " without + and * registers support.
 noremap <Leader>c :!xsel -iob<CR>u
 
+" Align multiple columns of text, useful for multiple var assignments
+vnoremap <Leader>a :!column -t<CR>gv=
+
 " sudo save a file.
 cnoremap w!! %!sudo tee > /dev/null %<CR>
 
