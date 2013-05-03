@@ -20,7 +20,7 @@
 [alias]
     ci = commit
     co = checkout
-    fix = git commit --amend --no-edit -u
+    fix = commit --amend --no-edit -a
     graph = log --graph --oneline --decorate
     grall = log --graph --oneline --decorate --all
 
