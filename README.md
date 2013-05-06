@@ -28,4 +28,3 @@ Quick install
 I'm a lazy man so I made a [script for installing everything](https://raw.github.com/L-P/dotfiles/master/scripts/install\_dotfiles.sh).
 
 **Warning**: this script will remove all the dotfiles from your home folder, use it at your own risk.
-

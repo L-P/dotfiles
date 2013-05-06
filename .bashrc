@@ -58,9 +58,9 @@ else
     echo -ne "\[$bldred\]"
 fi)'
 AROBCOL='$(
-if [[ $UID -ge 1000 ]]; then 
+if [[ $UID -ge 1000 ]]; then
     echo -ne "\[$bldgrn\]"
-elif [[ $UID = 0 ]]; then 
+elif [[ $UID = 0 ]]; then
     echo -ne "\[$bldred\]"
 else
     echo -ne "\[$bldylw\]"

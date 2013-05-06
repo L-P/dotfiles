@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 # Get current swap usage for all running processes
 # Erik Ljungstrom 27/05/2011
 # Modified by Mikko Rantalainen 2012-08-09

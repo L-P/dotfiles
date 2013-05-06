@@ -77,15 +77,6 @@ noremap <F10> :TagbarToggle<CR>     " Toggle tagbar window
 noremap Y y$                        " For consistency
 noremap Q                         " Disable Ex mode, <Nop> won't work so I used ^V^V
 
-" Decode quoted-printable encoded mails.
-" http://vim.wikia.com/wiki/Quoted_Printable_to_Plain
-nnoremap <Leader>Q :%s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
-vnoremap <Leader>Q :s/=\(\x\x\<BAR>\n\)/\=submatch(1)=='\n'?'':nr2char('0x'.submatch(1))/ge<CR>
-
-" Print serialized PHP data as JSON.
-noremap <Leader>s ggdG:r !php -r 'echo json_encode(unserialize(file_get_contents("%")));'<CR>ggdd
-            \:set equalprg=json_reformat ft=json syntax=javascript<CR>=G
-
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
@@ -182,20 +173,11 @@ autocmd FileType javascript set smartindent
 autocmd FileType javascript abbr clog console.log(%);<CR><ESC>?%<CR>xi
 
 
-" CSS/LESS
-" --------
-" Color picker for quick color insertion when working with CSS
-autocmd FileType css,less noremap <Leader>a i<CR><ESC>k:r!zenity --color-selection<CR>k3J
-
-
 " PHP
 " ---
 " Syntax file options
-let php_sql_query=1
-let php_htmlInStrings=1
 let php_parent_error_close=1
 let php_parent_error_open=1
-
 
 " Documentation via K, see scripts/php_doc.sh
 autocmd FileType php set keywordprg=php_doc
@@ -204,15 +186,8 @@ autocmd FileType php set keywordprg=php_doc
 autocmd FileType php noremap <Leader>p :%s/\(if\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
 			\:%s/function \(.*\) {/function \1\r{/e<CR>
 
-
 " Re-orders and formats the contents of a long PHP array.
 autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
-
-" Launch PHP documentor.
-autocmd FileType php noremap <Leader>d :set paste<CR>:exe PhpDoc()<CR>:set nopaste<CR>
-
-" Manual PHP syntax checking via :make
-autocmd FileType php set errorformat=%m\ in\ %f\ on\ line\ %l makeprg=php\ -l\ %
 
 " Method declaration abbreviations
 autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
@@ -227,20 +202,8 @@ autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
             \function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
             \die();<CR>}<ESC>>aB
 
+" Like dlv but dumps JSON.
 autocmd FileType php abbr djv {<CR>$locals = get_defined_vars();<CR>
             \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
             \echo json_encode(array(array_keys($locals), compact(array_keys($locals))));<CR>
             \die();<CR>}<ESC>>aB
-
-" Lorem ipsum abbreviation
-autocmd FileType php abbr lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            \scelerisque felis non mauris commodo congue. Mauris eu lobortis erat.
-            \ Phasellus varius vulputate convallis. Nam in urna mi. Nulla ligula purus,
-            \adipiscing a eleifend at, scelerisque ac lacus. Phasellus ut ipsum ante.
-            \ Vivamus eget metus augue. Fusce vel commodo orci. Praesent id ligula eget ante
-            \accumsan aliquam. Aliquam varius pulvinar lorem, id accumsan enim ornare quis.
-            \ Integer aliquam metus nec sapien mollis et rutrum quam malesuada. Donec in
-            \sapien quis eros condimentum placerat vitae ut nisl. Ut ornare varius leo, eu
-            \euismod tortor elementum ut. Suspendisse ornare, velit sed blandit faucibus,
-            \dui neque elementum justo, sit amet pellentesque tellus lacus quis ante. Donec
-            \cursus dapibus sollicitudin.
