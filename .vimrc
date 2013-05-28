@@ -110,16 +110,6 @@ autocmd BufNewFile,BufRead *.txt                 set filetype=mail equalprg=fmt 
 
 " Misc functions
 " ==============
-" Session save/restore
-nnoremap SQ <ESC>:mksession! .vimsession<CR>:wqa<CR>
-function! RestoreSession()
-    if argc() == 0 && filereadable('.vimsession')
-        execute 'source .vimsession'
-    end
-endfunction
-autocmd VimEnter * call RestoreSession()
-
-
 " Sets +x automatically when writing a shell script.
 function! ModeChange()
     if getline(1) =~ "^#!" && getline(1) =~ "/bin/"
