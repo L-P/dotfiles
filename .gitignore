@@ -1,7 +1,6 @@
 # Global ignores
 .*.sw[op]
 .svn/
-.vimsession
 .~lock.*
 nohup.out
 
@@ -9,6 +8,7 @@ nohup.out
 /.vim/undo
 /.vim/.netrwhist
 /.vim/spell
+/.vim/sessions
 /.subversion/auth
 /.subversion/README.txt
 /.subversion/servers
