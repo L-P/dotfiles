@@ -153,9 +153,6 @@ bindsym Scroll_Lock	exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+End	exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+Scroll_Lock exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
 
-# Brightness
-bindsym $mod+F4 exec --no-startup-id /opt/scripts/touchpad_toggle.sh
-
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract		exec --no-startup-id /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add				exec --no-startup-id /usr/bin/amixer set Master 5+
@@ -163,11 +160,6 @@ bindsym XF86AudioLowerVolume	exec --no-startup-id /usr/bin/amixer set Master 5-
 bindsym XF86AudioRaiseVolume	exec --no-startup-id /usr/bin/amixer set Master 5+
 bindsym XF86AudioMute			exec --no-startup-id /usr/bin/amixer set Master toggle
 bindsym XF86Calculator			exec --no-startup-id /usr/bin/terminator -x python3
-
-
-# Proper xfce notifications.
-# http://infra.in.zekjur.net/archives/i3-discuss/2011-November/000348.html
-for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
 
 # 'Background' workspace
 assign [class="Clementine"] → 10
@@ -178,9 +170,7 @@ assign [class="Spotify"] → 10
 # Those should always float
 for_window [class="^File-roller$" title="^Compress$"] floating enable
 for_window [class="^Gcolor2$"] floating enable
-for_window [class="^Steam$"] floating enable
 for_window [class="^Screenruler$"] floating enable; border none; resize shrink up 15px
-for_window [title="^meli7$"] floating enable; move left 150px
 
 # Odd workspaces on the left screen, even ones on the right.
 # This has no incidence when using only one screen, i3 fallbacks to the current
