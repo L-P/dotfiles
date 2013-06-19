@@ -136,7 +136,6 @@ let g:syntastic_auto_loc_list=1                     " lopen/lclose automatically
 " CtrlP params
 " ------------
 let g:ctrlp_cmd='CtrlPMixed'    " Search in all buffers/files
-let g:ctrlp_by_filename=1       " Search by filename instad of path
 let g:ctrlp_mruf_max=0          " Disable MRU so CtrlPMixed only searches for buffers and files.
 let g:ctrlp_working_path_mode=0 " Use vim working directory as ctrlp root.
 
