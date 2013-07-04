@@ -23,6 +23,7 @@
     fix = commit --amend --no-edit -a
     graph = log --graph --oneline --decorate
     grall = log --graph --oneline --decorate --all
+    mergeable = branch -avv --contains HEAD --no-merged
 
 [diff]
 	guitool = meld
