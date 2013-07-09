@@ -9,8 +9,8 @@ function main() {
         basename="$(basename "$file")"
         if [ "$basename" = '.' -o "$basename" =  '..' ]; then continue; fi
 
-        echo rm "$(basename "$file")"
-        echo ln -s "$file" .
+        rm "$(basename "$file")"
+        ln -s "$file" .
     done
     popd
 }

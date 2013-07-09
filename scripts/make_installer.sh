@@ -9,10 +9,11 @@ function main() {
     pushd "$tmp"
     git submodule update --init --recursive
     rm -Rf .git
-    cd ..
+    pushd ..
     makeself "$tmp" "$pwd/$(basename "$tmp").run" dotfiles ./loader
-    popd
-    mv "$tmp.tgz" .
+    popd; popd
+    mv "$tmp.run" .
+    rm -Rf "$tmp"
     return 0
 }
 
