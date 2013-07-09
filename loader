@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+function main() {
+    rm -RfI ~/.dotfiles
+    rsync -a . ~/.dotfiles
+
+    pushd ~
+    for file in .dotfiles/.*; do
+        basename="$(basename "$file")"
+        if [ "$basename" = '.' -o "$basename" =  '..' ]; then continue; fi
+
+        echo rm "$(basename "$file")"
+        echo ln -s "$file" .
+    done
+    popd
+}
+
+main
