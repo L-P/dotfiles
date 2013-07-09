@@ -42,14 +42,6 @@ set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
 
 
-" Enable folding, see the various syntax files for details.
-let g:sh_fold_enabled=1
-let javaScript_fold=1
-let php_folding=1
-set nofoldenable
-set foldmethod=syntax
-
-
 " Highlight trailing spaces.
 highlight ExtraWhitespace ctermbg=darkred
 match ExtraWhitespace /\s\+$/
