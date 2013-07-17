@@ -114,9 +114,9 @@ au BufWritePost * call ModeChange()
 
 " Plugins config
 " ==============
-" Powerline
-" ---------
-let g:Powerline_symbols = 'fancy'
+" Airline
+" -------
+let g:airline_powerline_fonts = 1
 
 " Syntastic
 " ---------
