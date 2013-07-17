@@ -43,3 +43,6 @@
 [submodule ".vim/bundle/gitsessions.vim"]
 	path = .vim/bundle/gitsessions.vim
 	url = git://github.com/wting/gitsessions.vim.git
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline.git
