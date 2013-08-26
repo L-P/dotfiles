@@ -31,12 +31,6 @@
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
-[submodule ".vim/bundle/phpdoc.vim"]
-	path = .vim/bundle/phpdoc.vim
-	url = git://github.com/vexxor/phpdoc.vim.git
-[submodule ".vim/bundle/vim-golang"]
-	path = .vim/bundle/vim-golang
-	url = git://github.com/jnwhiteh/vim-golang.git
 [submodule ".vim/bundle/gitsessions.vim"]
 	path = .vim/bundle/gitsessions.vim
 	url = git://github.com/wting/gitsessions.vim.git
