@@ -38,6 +38,8 @@ set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
 set colorcolumn=81      " Highlight the 81th column (code soft-limit of 80 chars)
 set nowrap              " Disable text-wrapping
+set splitright          " Open new splits on the right
+set splitbelow          " Open new splits on the bottom
 set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
 
