@@ -39,20 +39,18 @@ function duf() {
 
 # Handy grep aliases, since ack sucks.
 function g() {
-    local ref=$(git rev-parse --short HEAD 2> /dev/null)
-    if [ -n "$ref" ]; then
-        git grep --color=always -En $@
-    else
-        grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
-    fi
+	grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
 function gi() {
-    local ref=$(git rev-parse --short HEAD 2> /dev/null)
-    if [ -n "$ref" ]; then
-        git grep --color=always -Eni $@
-    else
-        grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
-    fi
+	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+}
+
+# Same aliases for the faster git grep.
+function gg() {
+	git grep --color=always -En $@
+}
+function ggi() {
+	git grep --color=always -Eni $@
 }
 
 # Find aliases
