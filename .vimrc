@@ -36,7 +36,8 @@ set showmatch           " Highlight matching opening bracket when inserting '}'
 set showmode            " Display the current mode (insert/normal/visual/etc.)
 set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
-set colorcolumn=81      " Highlight the 81th column (code soft-limit of 80 chars)
+set textwidth=79        " Soft-limit of 79 chars
+set colorcolumn=80      " Highlight the 80th column
 set nowrap              " Disable text-wrapping
 set splitright          " Open new splits on the right
 set splitbelow          " Open new splits on the bottom
@@ -97,7 +98,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*,*.pyc
 
 " Per-filetype options
-autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown textwidth=80 makeprg=markdown\ %\ >\ %<.html
+autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
