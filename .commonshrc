@@ -23,6 +23,7 @@ alias gs='git status --short'
 alias py='python3'
 alias ripit='ripit -o /dev/shm/ripit -c 2 -q 8' # FLAC @ max comp.
 alias json='json_reformat | pygmentize -l json'
+alias cdr='cd $(git rev-parse --show-toplevel)'
 
 # Typos
 alias cim='vim'
