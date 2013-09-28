@@ -6,7 +6,7 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = Inconsolata for Powerline Medium 16
+    font = Inconsolata Medium 18
     scrollback_infinite = True
     show_titlebar = False
 [layouts]
