@@ -9,8 +9,9 @@ nohup.out
 /.vim/.netrwhist
 /.vim/spell
 /.vim/sessions
-/.subversion/auth
-/.subversion/README.txt
-/.subversion/servers
-/.config
+/.subversion/*
+/.config/*
 
+# Exceptions
+!/.config/terminator/config
+!/.subversion/config
