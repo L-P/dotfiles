@@ -64,13 +64,23 @@ set undodir=~/.vim/undo
 
 " Mappings
 " --------
-let mapleader=","                   " \ is difficult to type on azerty keyboards
+let mapleader="," " \ is difficult to type on azerty keyboards
+
+" gitsessions.vim
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
-noremap <F8> :GundoToggle<CR>       " Toggle Gundo window
-noremap <F9> :wa<CR> :make<CR><CR>  " F9 to save and build
-noremap Y y$                        " For consistency
-noremap Q                         " Disable Ex mode, <Nop> won't work so I used ^V^V
+
+" Toggle Gundo window
+noremap <F8> :GundoToggle<CR>
+
+" F9 to save and build
+noremap <F9> :wa<CR> :make<CR><CR>
+
+" For consistency
+noremap Y y$
+
+" Disable Ex mode, <Nop> won't work so I used ^V^V
+noremap Q <Nop>
 
 " Use real regexes by default.
 nnoremap / /\v
