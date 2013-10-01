@@ -55,9 +55,15 @@ function ggi() {
 }
 
 # Find aliases
-function f() { find . -iname "*$@*" }
-function ff() { find . -type f -iname "*$@*" }
-function fd() { find . -type d -iname "*$@*" }
+function f() {
+	find . -iname "*$@*"
+}
+function ff() {
+	find . -type f -iname "*$@*"
+}
+function fd() {
+	find . -type d -iname "*$@*"
+}
 
 # Make a git repo with an empty commit
 function mkrepo() {
