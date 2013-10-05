@@ -1,3 +1,4 @@
+export PATH=~/.bin:$PATH
 # Scarcely used (see `update-alternatives --config editor`)
 export EDITOR=vim
 
