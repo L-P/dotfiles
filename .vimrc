@@ -79,7 +79,7 @@ noremap <F9> :wa<CR> :make<CR><CR>
 " For consistency
 noremap Y y$
 
-" Disable Ex mode, <Nop> won't work so I used ^V^V
+" Disable Ex mode.
 noremap Q <Nop>
 
 " Use real regexes by default.
