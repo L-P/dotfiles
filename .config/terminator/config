@@ -6,7 +6,7 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = Inconsolata Medium 18
+    font = Inconsolata Medium 16
     scrollback_infinite = True
     show_titlebar = False
 [layouts]
