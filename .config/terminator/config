@@ -5,10 +5,11 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
+    background_image = None
     use_system_font = False
-    font = Inconsolata Medium 16
-    scrollback_infinite = True
     show_titlebar = False
+    font = Inconsolata Medium 18
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
