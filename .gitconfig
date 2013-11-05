@@ -1,14 +1,22 @@
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-    log = auto
-    interactive = auto
-    pager = true
+[alias]
+    ci = commit
+    co = checkout
+    fix = commit --amend --no-edit -a
+    grall = log --graph --oneline --decorate --all
+    graph = log --graph --oneline --decorate
+    mergeable = branch -avv --contains HEAD --no-merged
+    upcoming = !git graph ..origin/HEAD
 
-[user]
-    name = Léo Peltier
-    email = contact@leo-peltier.fr
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    log = auto
+    pager = true
+    status = auto
+
+[diff]
+	guitool = meld
 
 [core]
     excludesfile = ~/.gitignore
@@ -17,13 +25,6 @@
 [push]
 	default = simple
 
-[alias]
-    ci = commit
-    co = checkout
-    fix = commit --amend --no-edit -a
-    graph = log --graph --oneline --decorate
-    grall = log --graph --oneline --decorate --all
-    mergeable = branch -avv --contains HEAD --no-merged
-
-[diff]
-	guitool = meld
+[user]
+    email = contact@leo-peltier.fr
+    name = Léo Peltier
