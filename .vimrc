@@ -199,12 +199,12 @@ autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
             \$buffers = array(); while(ob_get_level()) $buffers[] = ob_get_clean();<CR>
             \$buffers = array_filter($buffers) ?: null;<CR>
             \header('Content-Type: text/html; charset=UTF-8');<CR>
-            \var_dump(array_keys($locals), compact(array_keys($locals)), compact('buffers'));<CR>
+            \var_dump(array_keys($locals), $locals, compact('buffers'));<CR>
             \function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
-            \die();<CR>}<ESC>>aB
+            \die();<CR>}<ESC>^v%J^
 
 " Like dlv but dumps JSON.
 autocmd FileType php abbr djv {<CR>$locals = get_defined_vars();<CR>
             \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
-            \echo json_encode(array(array_keys($locals), compact(array_keys($locals))));<CR>
-            \die();<CR>}<ESC>>aB
+            \echo json_encode(array(array_keys($locals), $locals));<CR>
+            \die();<CR>}<ESC>^v%J^
