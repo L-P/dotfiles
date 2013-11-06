@@ -93,5 +93,6 @@ bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
 alias ..='cd ..'
 alias ...='cd ../..'
 
+source ~/.autojump/bin/autojump.bash
 source ~/.commonshrc
 source ~/.bash_local
