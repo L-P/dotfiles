@@ -146,7 +146,7 @@ bar {
 
 
 # Shotcuts
-bindsym $mod+p exec --no-startup-id pcmanfm
+bindsym $mod+p exec --no-startup-id thunar
 
 # Lock screen
 bindsym Scroll_Lock	exec --no-startup-id /usr/bin/i3lock -d -c 000000
