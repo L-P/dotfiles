@@ -174,16 +174,17 @@ for_window [class="^Screenruler$"] floating enable; border none; resize shrink u
 # Odd workspaces on the left screen, even ones on the right.
 # This has no incidence when using only one screen, i3 fallbacks to the current
 # screen if the one specified does not exist.
-workspace 1 output DFP5
-workspace 3 output DFP5
-workspace 5 output DFP5
-workspace 7 output DFP5
-workspace 9 output DFP5
-workspace 2 output DFP11
-workspace 4 output DFP11
-workspace 6 output DFP11
-workspace 8 output DFP11
-workspace 10 output DFP11
+# Use `xrandr` to get the output names.
+workspace 1 output DVI-1
+workspace 3 output DVI-1
+workspace 5 output DVI-1
+workspace 7 output DVI-1
+workspace 9 output DVI-1
+workspace 2 output HDMI-0
+workspace 4 output HDMI-0
+workspace 6 output HDMI-0
+workspace 8 output HDMI-0
+workspace 10 output HDMI-0
 
 # Autostart
 exec --no-startup-id gnome-settings-daemon
