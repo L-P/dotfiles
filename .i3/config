@@ -185,5 +185,7 @@ workspace 6 output DFP11
 workspace 8 output DFP11
 workspace 10 output DFP11
 
-# Black background
-exec --no-startup-id xsetroot -solid black
+# Autostart
+exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id gtk-redshift -l manual
+exec --no-startup-id sleep 2 && xsetroot -solid black
