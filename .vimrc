@@ -66,6 +66,9 @@ set undodir=~/.vim/undo
 " --------
 let mapleader="," " \ is difficult to type on azerty keyboards
 
+" Browse ctags
+nnoremap <Leader><C-P> :CtrlPTag<CR>
+
 " gitsessions.vim
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
@@ -74,7 +77,7 @@ nnoremap <Leader>ds :GitSessionDelete<CR>
 noremap <F8> :GundoToggle<CR>
 
 " F9 to save and build
-noremap <F9> :wa<CR> :make<CR><CR>
+noremap <F9> :wa<CR> :!clear<CR> :make<CR>
 
 " For consistency
 noremap Y y$
