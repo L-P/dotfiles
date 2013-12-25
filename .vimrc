@@ -118,6 +118,7 @@ autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 autocmd BufNewFile,BufRead *.txt                 set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
+autocmd BufNewFile,BufRead *.{c,h}{,pp}          set equalprg=
 
 " Misc functions
 " ==============
@@ -143,6 +144,8 @@ let g:syntastic_enable_signs=1                      " Use VIM signs to show erro
 let g:syntastic_echo_current_error=1                " Display current error in statusline
 let g:syntastic_javascript_checkers=["jshint"]      " Use jshint instead of jslint
 let g:syntastic_python_checkers=["python", "pyflakes"]
+let g:syntastic_c_checkers=["gcc", "splint"]
+let g:syntastic_splint_config_file="~/.splintrc"
 let g:syntastic_auto_loc_list=1                     " lopen/lclose automatically
 
 " CtrlP params
@@ -159,6 +162,12 @@ let g:ctrlp_working_path_mode=0 " Use vim working directory as ctrlp root.
 " Highlight the right column.
 autocmd FileType gitcommit set colorcolumn=+1
 
+
+" C / C++
+" ------
+" Documentation via K, see scripts/c_doc.sh
+autocmd FileType c   set keywordprg=c_doc
+autocmd FileType cpp set keywordprg=c_doc
 
 " Python
 " ------
