@@ -144,8 +144,6 @@ let g:syntastic_enable_signs=1                      " Use VIM signs to show erro
 let g:syntastic_echo_current_error=1                " Display current error in statusline
 let g:syntastic_javascript_checkers=["jshint"]      " Use jshint instead of jslint
 let g:syntastic_python_checkers=["python", "pyflakes"]
-let g:syntastic_c_checkers=["gcc", "splint"]
-let g:syntastic_splint_config_file="~/.splintrc"
 let g:syntastic_auto_loc_list=1                     " lopen/lclose automatically
 
 " CtrlP params
