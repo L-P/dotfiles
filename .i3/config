@@ -99,7 +99,6 @@ mode "resize" {
     bindsym Shift+K resize grow up    10 px or 10 ppt
     bindsym Shift+L resize grow right 10 px or 10 ppt
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
@@ -112,7 +111,6 @@ mode "launch" {
     bindsym p exec thunar           ; mode "default"
     bindsym t exec thunderbird      ; mode "default"
 
-    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+Tab mode "launch"
