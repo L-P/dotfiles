@@ -1,5 +1,4 @@
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
+# Use super as the modifier key.
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
@@ -7,9 +6,6 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -56,16 +52,16 @@ bindsym $mod+q focus parent
 bindcode $mod+a focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
+bindsym $mod+ampersand  workspace 1
+bindsym $mod+eacute     workspace 2
+bindsym $mod+quotedbl   workspace 3
 bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
+bindsym $mod+parenleft  workspace 5
+bindsym $mod+minus      workspace 6
+bindsym $mod+egrave     workspace 7
 bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ccedilla   workspace 9
+bindsym $mod+agrave     workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move workspace 1
@@ -88,29 +84,24 @@ bindsym $mod+Shift+E exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
 
-        # They resize the border in the direction you pressed, e.g.
-        # when pressing left, the window is resized so that it has
-        # more space on its left
+    # They resize the border in the direction you pressed, e.g.
+    # when pressing left, the window is resized so that it has
+    # more space on its left
+    bindsym h resize shrink left  10 px or 10 ppt
+    bindsym j resize shrink down  10 px or 10 ppt
+    bindsym k resize shrink up    10 px or 10 ppt
+    bindsym l resize shrink right 10 px or 10 ppt
+    bindsym Shift+H resize grow left  10 px or 10 ppt
+    bindsym Shift+J resize grow down  10 px or 10 ppt
+    bindsym Shift+K resize grow up    10 px or 10 ppt
+    bindsym Shift+L resize grow right 10 px or 10 ppt
 
-bindsym h resize shrink left 10 px or 10 ppt
-bindsym Shift+H resize grow   left 10 px or 10 ppt
-
-bindsym j resize shrink down 10 px or 10 ppt
-bindsym Shift+J resize grow   down 10 px or 10 ppt
-
-bindsym k resize shrink up 10 px or 10 ppt
-bindsym Shift+K resize grow   up 10 px or 10 ppt
-
-bindsym l resize shrink right 10 px or 10 ppt
-bindsym Shift+L resize grow   right 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-bindsym Return mode "default"
-bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -120,31 +111,32 @@ bar {
 }
 
 
-# Shotcuts
-bindsym $mod+p exec --no-startup-id thunar
+# App shortcuts
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+p      exec thunar
 
 # Lock screen
-bindsym Scroll_Lock	exec --no-startup-id /usr/bin/i3lock -d -c 000000
-bindsym $mod+End	exec --no-startup-id /usr/bin/i3lock -d -c 000000
+bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000
+bindsym $mod+End    exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+Scroll_Lock exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
 
 # Sound control with Mod+KP_(PLUS/MINUS)
-bindsym $mod+KP_Subtract		exec --no-startup-id /usr/bin/amixer set Master 5-
-bindsym $mod+KP_Add				exec --no-startup-id /usr/bin/amixer set Master 5+
-bindsym XF86AudioLowerVolume	exec --no-startup-id /usr/bin/amixer set Master 5-
-bindsym XF86AudioRaiseVolume	exec --no-startup-id /usr/bin/amixer set Master 5+
-bindsym XF86AudioMute			exec --no-startup-id /usr/bin/amixer set Master toggle
-bindsym XF86Calculator			exec --no-startup-id /usr/bin/terminator -x python3
+bindsym $mod+KP_Subtract     exec --no-startup-id /usr/bin/amixer set Master 5-
+bindsym $mod+KP_Add          exec --no-startup-id /usr/bin/amixer set Master 5+
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/amixer set Master 5-
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/amixer set Master 5+
+bindsym XF86AudioMute        exec --no-startup-id /usr/bin/amixer set Master toggle
+bindsym XF86Calculator       exec --no-startup-id /usr/bin/terminator -x python3
 
 # 'Background' workspace
 assign [class="Clementine"] → 10
-assign [class="Keepassx"] → 10
-assign [class="Pidgin"] → 10
+assign [class="Keepassx"]   → 10
+assign [class="Pidgin"]     → 10
 
 # Those should always float
 for_window [class="^File-roller$" title="^Compress$"] floating enable
-for_window [class="^Gcolor2$"] floating enable
-for_window [class="^Screenruler$"] floating enable; border none; resize shrink up 15px
+for_window [class="^Gcolor2$"]                        floating enable
+for_window [class="^Screenruler$"]                    floating enable; border none; resize shrink up 15px
 
 # Proper xfce notifications.
 # http://infra.in.zekjur.net/archives/i3-discuss/2011-November/000348.html
@@ -154,15 +146,15 @@ for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_togg
 # This has no incidence when using only one screen, i3 fallbacks to the current
 # screen if the one specified does not exist.
 # Use `xrandr` to get the output names.
-workspace 1 output DVI-1
-workspace 3 output DVI-1
-workspace 5 output DVI-1
-workspace 7 output DVI-1
-workspace 9 output DVI-1
-workspace 2 output HDMI-0
-workspace 4 output HDMI-0
-workspace 6 output HDMI-0
-workspace 8 output HDMI-0
+workspace 1  output DVI-1
+workspace 3  output DVI-1
+workspace 5  output DVI-1
+workspace 7  output DVI-1
+workspace 9  output DVI-1
+workspace 2  output HDMI-0
+workspace 4  output HDMI-0
+workspace 6  output HDMI-0
+workspace 8  output HDMI-0
 workspace 10 output HDMI-0
 
 # Autostart
