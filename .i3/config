@@ -1,8 +1,11 @@
 # Use super as the modifier key.
 set $mod Mod4
 
-# font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# If forced to use a system where there is no Inconsolata, use this.
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# The font to rule them all.
+font pango:Inconsolata Medium 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
