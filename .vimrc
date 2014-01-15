@@ -166,6 +166,9 @@ autocmd FileType gitcommit set colorcolumn=+1
 " Documentation via K, see scripts/c_doc.sh
 autocmd FileType c   set keywordprg=c_doc
 autocmd FileType cpp set keywordprg=c_doc
+autocmd FileType c   set nofoldenable
+autocmd FileType c   set foldmethod=syntax
+
 
 " Python
 " ------
