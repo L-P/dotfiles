@@ -134,6 +134,10 @@ bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+End    exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+Scroll_Lock exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
 
+# Brightness
+bindsym XF86MonBrightnessDown exec .bin/brightness - 500
+bindsym XF86MonBrightnessUp exec .bin/brightness + 500
+
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract     exec --no-startup-id /usr/bin/amixer set Master 5-
 bindsym $mod+KP_Add          exec --no-startup-id /usr/bin/amixer set Master 5+
