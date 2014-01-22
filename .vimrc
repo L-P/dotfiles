@@ -85,6 +85,9 @@ noremap Y y$
 " Disable Ex mode.
 noremap Q <Nop>
 
+" Visually select last inserted text.
+noremap gV `[v`]
+
 " Use arrow keys to navigate in wrapped text
 " http://www.reddit.com/r/vim/comments/lrqeb/what_keys_do_you_have_rebound_in_vim/c2v2phl
 nnoremap <Up> gk
