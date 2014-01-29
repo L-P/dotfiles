@@ -40,3 +40,6 @@
 [submodule ".autojump"]
 	path = .autojump
 	url = https://github.com/joelthelion/autojump.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
