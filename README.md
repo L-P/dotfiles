@@ -25,7 +25,7 @@ configuration files.
 
 Quick install
 -------------
-I'm a lazy man so I made a [script to make a script that installs everything](https://raw.github.com/L-P/dotfiles/master/scripts/make\_installer.sh).
+I'm a lazy man so I made a [script to make a script that installs everything](https://github.com/L-P/dotfiles/blob/master/.bin/make_installer.sh).
 This script requires `git` and the `makeself` package to be present.
 
 **Warning**: the resulting `dotfiles.run` script will remove all the dotfiles
