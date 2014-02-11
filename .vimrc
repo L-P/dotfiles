@@ -17,7 +17,8 @@ set guifont=Inconsolata\ Medium\ 18
 
 " Misc options
 " ------------
-set number              " Line numbering
+set relativenumber      " Relative line numbering
+set number              " Line numbering for the current line
 set showcmd             " Show the command being typed
 set ruler               " Show the cursor position
 set autoindent          " Use automatic indent
