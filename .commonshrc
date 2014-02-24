@@ -41,10 +41,10 @@ function duf() {
 
 # Handy grep aliases, since ack sucks.
 function g() {
-	grep --color=always -EHnr --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+	grep --color=always -EHnr --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
 function gi() {
-	grep --color=always -EHnri --exclude='*.dat' --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+	grep --color=always -EHnri --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
 }
 
 # Same aliases for the faster git grep.
