@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Autojump
 source ~/.autojump/bin/autojump.zsh
-autoload -U compinit && compinit
+autoload -U compinit && compinit -u
 
 # Misc options
 bindkey '^R' history-incremental-search-backward
