@@ -121,6 +121,7 @@ autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javasc
 autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 autocmd BufNewFile,BufRead *.txt                 set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 autocmd BufNewFile,BufRead *.{c,h}{,pp}          set equalprg=
+autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
 
 " Misc functions
 " ==============
