@@ -102,8 +102,23 @@ mode "resize" {
     bindsym Shift+K resize grow up    10 px or 10 ppt
     bindsym Shift+L resize grow right 10 px or 10 ppt
 
+    bindsym p mode "resize_precise"
     bindsym Escape mode "default"
 }
+mode "resize_precise" {
+    bindsym h resize shrink left  1 px or 1 ppt
+    bindsym j resize shrink down  1 px or 1 ppt
+    bindsym k resize shrink up    1 px or 1 ppt
+    bindsym l resize shrink right 1 px or 1 ppt
+    bindsym Shift+H resize grow left  1 px or 1 ppt
+    bindsym Shift+J resize grow down  1 px or 1 ppt
+    bindsym Shift+K resize grow up    1 px or 1 ppt
+    bindsym Shift+L resize grow right 1 px or 1 ppt
+
+    bindsym p mode "resize"
+    bindsym Escape mode "default"
+}
+
 bindsym $mod+r mode "resize"
 
 
