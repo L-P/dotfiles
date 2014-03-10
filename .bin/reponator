@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# Create an executable archive that sets up a debian package repository
+# containing the given packages.
+# Required packages: reprepro makeself
+# Required on the system that executes the archive: sudo
+# Usage: reponator DEB
+# Example: reponator foo.deb bar/*.deb
+
+function main() {
+    # TODO: get those from the user
+    local codename=wheezy
+    local arch=armhf
+    local debs=$@
+
+    local tmpdir=$(mktemp -d --suffix=reponator)
+    make_repo "$tmpdir" "$codename"
+    make_package "$tmpdir"
+
+    rm -rf "$tmpdir"
+}
+
+function make_repo() {
+    local tmpdir=$1
+    local codename=$2
+
+    local dir="$tmpdir/reponator"
+    mkdir -p "$dir/conf"
+
+    echo "$(tpl_distribution "$codename" "$arch")" > "$dir/conf/distributions"
+    reprepro -b "$dir" includedeb "$codename" $debs
+}
+
+function make_package() {
+    local tmpdir=$1
+    local cwd=$(pwd)
+
+    pushd "$tmpdir" > /dev/null
+    echo "$(tpl_loader)" > reponator/loader
+    chmod +x reponator/loader
+    makeself reponator "$cwd/reponator.run" reponator ./loader
+    popd > /dev/null
+}
+
+function tpl_loader() {
+    cat <<'EOF'
+#!/usr/bin/env bash
+list_path=/etc/apt/sources.list.d/reponator.list
+echo "deb file://$(pwd) wheezy main" | sudo tee "$list_path" > /dev/null
+sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/reponator.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0"
+read -p "Press enter to destroy repo."
+sudo rm "$list_path"
+EOF
+}
+
+function tpl_distribution() {
+    cat <<EOF
+Origin: reponator
+Label: reponator
+Codename: $1
+Components: main
+Architectures: $2
+Description: Repo created with reponator.
+EOF
+}
+
+
+main $@
