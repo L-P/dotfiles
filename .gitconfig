@@ -15,15 +15,12 @@
     pager = true
     status = auto
 
-[diff]
-	guitool = meld
-
 [core]
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
 
 [push]
-	default = simple
+    default = simple
 
 [user]
     email = contact@leo-peltier.fr
