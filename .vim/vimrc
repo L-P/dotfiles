@@ -198,7 +198,7 @@ autocmd FileType php set keywordprg=php_doc
 
 " Update control structures to PSR whitespacing.
 autocmd FileType php noremap <Leader>p :%s/\(if\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
-			\:%s/\(function\\|class\) \(.*\) {/\1 \2\r{/e<CR>
+    \:%s/\(function\\|class\) \(.*\) {/\1 \2\r{/e<CR>
 
 " Re-orders and formats the contents of a long PHP array.
 autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
@@ -212,15 +212,15 @@ autocmd FileType php vnoremap <Leader>gt A') ?><ESC>gvI<?= _('<ESC>
 
 " Dump local PHP variables (names, name=>contents).
 autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
-            \$buffers = array(); while(ob_get_level()) $buffers[] = ob_get_clean();<CR>
-            \$buffers = array_filter($buffers) ?: null;<CR>
-            \header('Content-Type: text/html; charset=UTF-8');<CR>
-            \var_dump(array_keys($locals), $locals, compact('buffers'));<CR>
-            \function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
-            \die();<CR>}<ESC>^v%J^
+    \$buffers = array(); while(ob_get_level()) $buffers[] = ob_get_clean();<CR>
+    \$buffers = array_filter($buffers) ?: null;<CR>
+    \header('Content-Type: text/html; charset=UTF-8');<CR>
+    \var_dump(array_keys($locals), $locals, compact('buffers'));<CR>
+    \function_exists('xdebug_print_function_stack') AND xdebug_print_function_stack();<CR>
+    \die();<CR>}<ESC>^v%J^
 
 " Like dlv but dumps JSON.
 autocmd FileType php abbr djv {<CR>$locals = get_defined_vars();<CR>
-            \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
-            \echo json_encode(array(array_keys($locals), $locals));<CR>
-            \die();<CR>}<ESC>^v%J^
+    \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
+    \echo json_encode(array(array_keys($locals), $locals));<CR>
+    \die();<CR>}<ESC>^v%J^
