@@ -17,7 +17,6 @@ set guifont=Inconsolata\ Medium\ 18
 
 " Misc options
 " ------------
-set relativenumber      " Relative line numbering
 set number              " Line numbering for the current line
 set showcmd             " Show the command being typed
 set ruler               " Show the cursor position
@@ -39,12 +38,18 @@ set showmode            " Display the current mode (insert/normal/visual/etc.)
 set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
 set textwidth=79        " Soft-limit of 79 chars
-set colorcolumn=80      " Highlight the 80th column
 set nowrap              " Disable text-wrapping
 set splitright          " Open new splits on the right
 set splitbelow          " Open new splits on the bottom
 set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
+
+if version >= 703
+set relativenumber      " Relative line numbering
+set colorcolumn=80      " Highlight the 80th column
+set undofile            " Persistant undo across sessions
+set undodir=~/.vim/undo
+endif
 
 
 " Highlight trailing spaces.
@@ -58,10 +63,6 @@ autocmd BufWinLeave * call clearmatches()
 " Highlight code over the 110th column (hard-limit).
 autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>110v.\+', -1)
 
-" Persistant undo across sessions
-" -------------------------------
-set undofile
-set undodir=~/.vim/undo
 
 
 " Mappings
