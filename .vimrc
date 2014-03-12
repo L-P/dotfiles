@@ -13,7 +13,7 @@ call pathogen#infect()
 set t_Co=256
 set background=dark
 colorscheme wombat256
-set guifont=Inconsolata\ Medium\ 18
+set guifont=Inconsolata\ Medium\ 16
 
 " Misc options
 " ------------
