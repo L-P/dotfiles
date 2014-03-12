@@ -208,9 +208,6 @@ autocmd FileType php noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>i
 autocmd FileType php abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
 autocmd FileType php abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
 
-" Wrap with <?= _('%') ?>
-autocmd FileType php vnoremap <Leader>gt A') ?><ESC>gvI<?= _('<ESC>
-
 " Dump local PHP variables (names, name=>contents).
 autocmd FileType php abbr dlv {<CR>$locals = get_defined_vars();<CR>
     \$buffers = array(); while(ob_get_level()) $buffers[] = ob_get_clean();<CR>
