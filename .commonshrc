@@ -70,10 +70,10 @@ function fd() {
 function mkrepo() {
     (
         mkdir $1
-        cd $1
+        pushd $1
         git init
         git ci --allow-empty -m "Initial commit."
-        cd ..
+        popd ..
     ) > /dev/null
 }
 
