@@ -129,6 +129,9 @@ mode "launch" {
     bindsym p exec thunar           ; mode "default"
     bindsym t exec thunderbird      ; mode "default"
 
+    # gnome-disks will not launch twice, gparted will. Avoid that.
+    bindsym d workspace 7; layout tabbed; exec ((ps x | grep gparted | grep -v grep) || gksudo gparted); exec gnome-disks ; mode "default"
+
     bindsym Escape mode "default"
 }
 bindsym $mod+Tab mode "launch"
