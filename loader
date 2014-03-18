@@ -1,17 +1,36 @@
 #!/usr/bin/env bash
 
 function main() {
-    rm -RfI ~/.dotfiles
+    rm -rf ~/.dotfiles
     rsync -a . ~/.dotfiles
 
     pushd ~
-    for file in .dotfiles/.*; do
-        basename="$(basename "$file")"
-        if [ "$basename" = '.' -o "$basename" =  '..' ]; then continue; fi
 
-        rm "$(basename "$file")"
+    local to_delete='';
+    local to_link='';
+    for file in .dotfiles/.*; do
+        local basename="$(basename "$file")"
+        if [ "$basename" = '.' -o "$basename" =  '..' ]; then
+            continue
+        fi
+
+        to_link="$to_link $file"
+
+        if [ -e "$basename" ]; then
+            to_delete="$to_delete $basename"
+        fi
+    done
+
+    if [ -n "$to_delete" ]; then
+        echo "The following files and directories are going to be deleted:"
+        echo "  $to_delete" | fmt
+        rm -rfI $to_delete
+    fi
+
+    for file in $to_link; do
         ln -s "$file" .
     done
+
     popd
 }
 
