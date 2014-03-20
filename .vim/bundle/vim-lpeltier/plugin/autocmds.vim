@@ -37,6 +37,7 @@ autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>110v.\+', -1)
 function! ModeChange()
     if getline(1) =~ "^#!" && getline(1) =~ "/bin/"
         silent !chmod u+x <afile>
+        e!
     endif
 endfunction
 autocmd BufWritePost * call ModeChange()
