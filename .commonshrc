@@ -34,7 +34,12 @@ alias :q='exit'
 alias :e='vim'
 alias :tabe='vim'
 
-# Nicer du (ncdu is nice too)
+# tmux for the lazy.
+function t () {
+    tmux a -t $1 || tmux new -s $1
+}
+
+# Nicer du (ncdu is nice too).
 function duf() {
     du -csh -- "$@" | sort -rh
 }
@@ -85,6 +90,7 @@ function record() {
     script -t "$dir/script_$date" 2> "$dir/timing_$date"
 }
 
+# Start SSH agent.
 if [ "root" != "$(whoami)" ]; then
     /usr/bin/keychain $HOME/.ssh/* &> /dev/null
     source $HOME/.keychain/$HOST-sh &> /dev/null
