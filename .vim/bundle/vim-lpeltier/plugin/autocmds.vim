@@ -4,17 +4,20 @@ endif
 
 " Language-specific config
 " ========================
-autocmd FileType gitcommit set colorcolumn=+1
 autocmd FileType python set textwidth=79 expandtab
+autocmd FileType mail set equalprg=fmt textwidth=72 expandtab
+if version >= 703
+    autocmd FileType mail      set colorcolumn+=1
+    autocmd FileType gitcommit set colorcolumn+=1
+endif
 
 " Custom filetypes and options
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
-autocmd BufNewFile,BufRead *.mail                set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
-autocmd BufNewFile,BufRead *.txt                 set filetype=mail equalprg=fmt textwidth=72 cc=+1 expandtab
 autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
+autocmd BufNewFile,BufRead *.{mail,txt}          set filetype=mail
 
 
 " Misc functions
