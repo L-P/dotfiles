@@ -1,6 +1,7 @@
 export PATH=~/.bin:$PATH
 # Scarcely used (see `update-alternatives --config editor`)
 export EDITOR=vim
+export LC_ALL=C.UTF-8
 
 # Nicer less by default
 export LESS='-RFXS -x4'
