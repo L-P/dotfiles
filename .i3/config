@@ -1,5 +1,7 @@
 # Use super as the modifier key.
 set $mod Mod4
+set $leftScreen DVI-1
+set $rightScreen HDMI-0
 
 # If forced to use a system where there is no Inconsolata, use this.
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -178,16 +180,16 @@ for_window [class="^Screenruler$"]                    floating enable; border no
 # This has no incidence when using only one screen, i3 fallbacks to the current
 # screen if the one specified does not exist.
 # Use `xrandr` to get the output names.
-workspace 1  output DVI-1
-workspace 3  output DVI-1
-workspace 5  output DVI-1
-workspace 7  output DVI-1
-workspace 9  output DVI-1
-workspace 2  output HDMI-0
-workspace 4  output HDMI-0
-workspace 6  output HDMI-0
-workspace 8  output HDMI-0
-workspace 10 output HDMI-0
+workspace 1  output $leftScreen
+workspace 3  output $leftScreen
+workspace 5  output $leftScreen
+workspace 7  output $leftScreen
+workspace 9  output $leftScreen
+workspace 2  output $rightScreen
+workspace 4  output $rightScreen
+workspace 6  output $rightScreen
+workspace 8  output $rightScreen
+workspace 10 output $rightScreen
 
 # Autostart
 exec --no-startup-id ~/.bin/startup
