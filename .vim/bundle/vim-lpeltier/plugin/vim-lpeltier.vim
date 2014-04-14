@@ -34,7 +34,7 @@ set softtabstop=4       " 1 tab = 4 spaces
 set encoding=utf-8      " Unicode über alles
 set ignorecase          " See smartcase
 set smartcase           " Do case-insensitive searches if the pattern is lowercase
-set spelllang=fr        " Use French for spellcheck
+set spelllang=en_us,fr
 set spellsuggest=5      " Limit spelling suggestions list to 5 entries
 set pastetoggle=<F2>    " Use F2 to toggle paste mode
 set incsearch           " Jump to the next search result while still typing
