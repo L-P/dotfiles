@@ -190,7 +190,4 @@ workspace 8  output HDMI-0
 workspace 10 output HDMI-0
 
 # Autostart
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id dunst &
-exec --no-startup-id gtk-redshift -l manual
-exec --no-startup-id sleep 2 && xsetroot -solid black
+exec --no-startup-id ~/.bin/startup

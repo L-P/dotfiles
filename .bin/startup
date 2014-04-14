@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+export DISPLAY=:0
+dunst &
+gnome-settings-daemon &
+sleep 5
+xsetroot -solid black &
+gtk-redshift -l manual &
+setxkbmap 'fr(oss)'
