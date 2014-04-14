@@ -60,7 +60,7 @@ endif
 " --------
 if 1
     " \ is difficult to type on azerty keyboards
-    let mapleader=","
+    let mapleader=" "
 endif
 
 " Browse ctags
