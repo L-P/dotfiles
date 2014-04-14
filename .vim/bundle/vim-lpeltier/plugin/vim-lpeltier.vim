@@ -73,9 +73,6 @@ nnoremap <Leader>ds :GitSessionDelete<CR>
 " Toggle Gundo window
 noremap <F8> :GundoToggle<CR>
 
-" F9 to save and build
-noremap <F9> :wa<CR> :!clear<CR> :make<CR>
-
 " For consistency
 noremap Y y$
 
