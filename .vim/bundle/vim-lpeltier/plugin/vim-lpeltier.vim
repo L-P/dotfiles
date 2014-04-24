@@ -46,6 +46,7 @@ set textwidth=79        " Soft-limit of 79 chars
 set nowrap              " Disable text-wrapping
 set splitright          " Open new splits on the right
 set splitbelow          " Open new splits on the bottom
+set lazyredraw          " Mostyl for speeding up scrolling.
 set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
 
