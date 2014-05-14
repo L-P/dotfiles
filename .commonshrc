@@ -96,6 +96,12 @@ function record() {
     script -t "$dir/script_$date" 2> "$dir/timing_$date"
 }
 
+# Echo a ready-to-copy scp command to get a file.
+function getscp() {
+    local ip="$(ip addr show eth0  | grep 'inet[^6]' | cut -d' ' -f6 | cut -d'/' -f1)"
+    echo "scp $(whoami)@$ip:$(pwd)/$1 ."
+}
+
 # Start SSH agent.
 if [ "root" != "$(whoami)" ]; then
     /usr/bin/keychain $HOME/.ssh/* &> /dev/null
