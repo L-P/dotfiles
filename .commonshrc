@@ -102,6 +102,11 @@ function getscp() {
     echo "scp $(whoami)@$ip:$(pwd)/$1 ."
 }
 
+# List all git repositories.
+function repos() {
+    find . -type d -name .git | sed -r 's/(\/\.git)$//'
+}
+
 # Start SSH agent.
 if [ "root" != "$(whoami)" ]; then
     /usr/bin/keychain $HOME/.ssh/* &> /dev/null
