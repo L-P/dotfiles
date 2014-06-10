@@ -154,6 +154,10 @@ bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+End    exec --no-startup-id /usr/bin/i3lock -d -c 000000
 bindsym $mod+Scroll_Lock exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
 
+# Screenshot
+bindsym Print exec scrot
+bindsym Mod1+Print exec scrot -s
+
 # Brightness
 bindsym XF86MonBrightnessDown exec .bin/brightness - 500
 bindsym XF86MonBrightnessUp exec .bin/brightness + 500
