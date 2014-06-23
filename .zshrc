@@ -1,7 +1,7 @@
 # Oh-my-ZSH
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
-plugins=(vi-mode tmux urltools)
+plugins=(vi-mode tmux urltools vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # Autojump
