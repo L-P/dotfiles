@@ -2,17 +2,16 @@
 
 function main() {
     local repo='https://github.com/L-P/dotfiles.git'
-    local tmp='/tmp/dotfiles'
-    local pwd="$(dirname "$0")"
+    local tmp="$(mktemp -d)"
+    local cwd="$(pwd)"
 
     git clone "$repo" "$tmp"
     pushd "$tmp"
     git submodule update --init --recursive
     find . -type d -name '.git' -exec rm -rf {} +
     pushd ..
-    makeself "$tmp" "$pwd/$(basename "$tmp").run" dotfiles ./loader
+    makeself "$tmp" "$cwd/dotfiles" dotfiles ./loader
     popd; popd
-    mv "$tmp.run" .
     rm -Rf "$tmp"
     return 0
 }
