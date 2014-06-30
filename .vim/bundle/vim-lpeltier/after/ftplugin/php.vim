@@ -7,7 +7,7 @@ set keywordprg=php_doc
 
 " Update control structures to PSR whitespacing.
 noremap <Leader>p :%s/\(if\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
-    \:%s/\(function\\|class\) \(.*\) {/\1 \2\r{/e<CR>
+    \:%s/\(function\\|trait\\|interface\\|class\) \(.*\) {/\1 \2\r{/e<CR>
 
 " Re-orders and formats the contents of a long PHP array.
 noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
