@@ -1,4 +1,4 @@
-" The file _will_ be loaded twice because of I handle vim.tiny.
+" The file _will_ be loaded twice because of how I handle vim.tiny.
 if exists("g:loaded_lpeltier")
     finish
 else
