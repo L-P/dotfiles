@@ -14,11 +14,15 @@ endif
 
 " Setting up colorscheme
 " ----------------------
-set t_Co=256
 set background=dark
 set guifont=Inconsolata\ Medium\ 16
-if has("syntax")
+
+" TERM == linux means it's a 8 color TTY.
+if $TERM != "linux"
+    set t_Co=256
     colorscheme wombat256
+else
+    colorscheme wombat
 endif
 
 " Misc options

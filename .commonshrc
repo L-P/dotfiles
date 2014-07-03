@@ -7,10 +7,10 @@ export LESS='-RFXS -x4'
 export PAGER='less'
 export MANPAGER='less'
 
-# 256 colors.
+# 256 colors, except on TTY.
 if [ "$TERM" = "screen" ]; then
     export TERM='screen-256color'
-else
+elif [ "$TERM" != "linux" ]; then
     export TERM='xterm-256color'
 fi
 
