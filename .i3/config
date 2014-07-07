@@ -132,7 +132,7 @@ mode "launch" {
     bindsym t exec thunderbird      ; mode "default"
 
     # gnome-disks will not launch twice, gparted will. Avoid that.
-    bindsym d workspace 7; exec ((ps x | grep gparted | grep -v grep) || gksudo gparted); exec gnome-disks ; mode "default"
+    bindsym d workspace 7; exec (pidof gpartedbin || gksudo gparted); exec gnome-disks ; mode "default"
 
     bindsym Escape mode "default"
 }
