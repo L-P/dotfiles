@@ -1,3 +1,9 @@
+# Start SSH agent.
+if [ "root" != "$(whoami)" ]; then
+    /usr/bin/keychain $HOME/.ssh/* &> /dev/null
+    source $HOME/.keychain/$HOST-sh &> /dev/null
+fi
+
 export PATH=~/.bin:$PATH
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 export LC_ALL=C.UTF-8
@@ -107,8 +113,18 @@ function repos() {
     find . -type d -name .git | sed -r 's/(\/\.git)$//'
 }
 
-# Start SSH agent.
-if [ "root" != "$(whoami)" ]; then
-    /usr/bin/keychain $HOME/.ssh/* &> /dev/null
-    source $HOME/.keychain/$HOST-sh &> /dev/null
-fi
+# Unmount a SSHFS.
+function ufs() {
+    fusermount -u "$1"
+}
+
+# Mount a SSHFS.
+function fs() {
+    local src="$1"
+    local dest="$2"
+
+    [ -d "$dest" ] || mkdir "$dest"
+
+    ufs "$dest" > /dev/null
+    sshfs "$src" "$dest"
+}
