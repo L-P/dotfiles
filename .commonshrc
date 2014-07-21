@@ -113,6 +113,16 @@ function repos() {
     find . -type d -name .git | sed -r 's/(\/\.git)$//'
 }
 
+# Update (fetch-only) all repositories in current dir and subsdirs.
+function update_repos() {
+    for repo in $(repos); do
+        pushd "$repo" > /dev/null
+        echo "-------------------- $repo"
+        git remote update --prune
+        popd > /dev/null
+    done
+}
+
 # Unmount a SSHFS.
 function ufs() {
     fusermount -u "$1"
