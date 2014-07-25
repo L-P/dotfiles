@@ -99,7 +99,8 @@ inoremap <Down> <C-O>gj
 noremap <Leader>c :!xsel -iob<CR>u
 
 " Align multiple columns of text, useful for multiple var assignments
-vnoremap <Leader>a :!column -t<CR>gv=
+vnoremap <Leader>a :!column -t<CR>gv=gv:s/  \([^ ]\)/ \1/g<CR>
+
 
 " sudo save a file.
 cnoremap w!! %!sudo tee > /dev/null %<CR>
