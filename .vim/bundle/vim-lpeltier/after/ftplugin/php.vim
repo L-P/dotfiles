@@ -13,8 +13,8 @@ noremap <Leader>p :%s/\(if\\|switch\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
 noremap <Leader>o vib<gv:s/, /,\r/g<CR>vib:sort<CR>gvJgqq>ibgv:s/ $//<CR>
 
 " Method declaration abbreviations
-abbr prf protected function%() {<CR>}<CR><ESC>?%<CR>xi
-abbr puf public function%() {<CR>}<CR><ESC>?%<CR>xi
+abbr prf protected function%()<CR>{<CR>}<CR><ESC>?%<CR>xi
+abbr puf public function%()<CR>{<CR>}<CR><ESC>?%<CR>xi
 
 " Dump local PHP variables (names, name=>contents).
 abbr dlv {<CR>$locals = get_defined_vars();<CR>
