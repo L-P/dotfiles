@@ -25,3 +25,10 @@
 [user]
     email = contact@leo-peltier.fr
     name = Léo Peltier
+
+[advice]
+    pushNonFastForward = false
+    statusHints = false
+    commitBeforeMerge = false
+    resolveConflict = false
+    detachedHead = false
