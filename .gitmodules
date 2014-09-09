@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-wombat"]
 	path = .vim/bundle/vim-wombat
 	url = https://github.com/cschlueter/vim-wombat.git
-[submodule ".vim/bundle/vim-less"]
-	path = .vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
@@ -31,9 +28,6 @@
 [submodule ".vim/bundle/vim-airline"]
 	path = .vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule ".vim/bundle/emmet-vim"]
-	path = .vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -43,6 +37,3 @@
 [submodule ".vim/bundle/vim-abolish"]
 	path = .vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
-[submodule ".vim/bundle/vim-arduino-syntax"]
-	path = .vim/bundle/vim-arduino-syntax
-	url = https://github.com/sudar/vim-arduino-syntax.git
