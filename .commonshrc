@@ -1,7 +1,7 @@
 # Start SSH agent.
 if [ "root" != "$(whoami)" ]; then
     /usr/bin/keychain $HOME/.ssh/* &> /dev/null
-    source $HOME/.keychain/$HOST-sh &> /dev/null
+    source $HOME/.keychain/$HOST-sh
 fi
 
 export PATH=~/.bin:$PATH
