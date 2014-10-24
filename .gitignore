@@ -11,6 +11,7 @@ nohup.out
 /.vim/sessions
 /.subversion/*
 /.config/*
+/.mutt/cache
 
 # Exceptions
 !/.config/terminator/config
