@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-wombat"]
 	path = .vim/bundle/vim-wombat
 	url = https://github.com/cschlueter/vim-wombat.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule ".vim/bundle/vdebug"]
 	path = .vim/bundle/vdebug
 	url = https://github.com/joonty/vdebug.git
