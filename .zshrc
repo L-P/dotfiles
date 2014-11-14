@@ -3,6 +3,16 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 setopt autocd
 
+# Bits from Oh My ZSH df5b09e20b05a5ba4234599602f7a74934c916db.
+source "$HOME/.zsh/completion.zsh"
+source "$HOME/.zsh/history.zsh"
+source "$HOME/.zsh/misc.zsh"
+source "$HOME/.zsh/vi-mode.plugin.zsh"
+
+# Huge slowdown with the defaults from history.zsh.
+HISTSIZE=2000
+SAVEHIST=$HISTSIZE
+
 # Autojump.
 source "$HOME/.autojump/bin/autojump.zsh"
 autoload -U compinit && compinit -u
@@ -11,12 +21,6 @@ autoload -U compinit && compinit -u
 function rebind-z() { fg }
 zle -N rebind-z
 bindkey '^Z' rebind-z
-
-# History
-HISTSIZE=1000000
-SAVEHIST=$HISTSIZE
-HISTFILE="$HOME/.zsh_history"
-setopt hist_ignore_all_dups inc_append_history complete_aliases
 
 # Awe-inspiring prompt.
 autoload -U colors && colors
