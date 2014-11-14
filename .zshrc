@@ -22,7 +22,7 @@ setopt hist_ignore_all_dups inc_append_history complete_aliases
 autoload -U colors && colors
 autoload -Uz vcs_info
 
-local cmdstatus="[%!:%j:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
+local cmdstatus="[%j:%(?.%{$fg[green]%}.%{$fg[red]%})%B%?%b]"
 local userat="%{$fg[green]%}%B%(!.%{$fg[red]%}.%{$fg[green]%})%B@%{$fg[green]%}%m%b"
 local pwd="%B%{$fg[blue]%}%c%b"
 local userchar="%(!.#.$)"
@@ -34,12 +34,12 @@ precmd() {
     vcs_info
 }
 
-local branch="%{$fg[green]%}[%b%c%u%{$fg[green]%}]%{$reset_color%}"
+local branch=" %{$fg[green]%}[%b%c%u%{$fg[green]%}]%{$reset_color%}"
 zstyle ':vcs_info:*' formats "$branch"
 zstyle ':vcs_info:*' actionformats "$branch (%a)"
 zstyle ':vcs_info:*' stagedstr "%{$fg[yellow]%}*"
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
-PROMPT="$cmdstatus$userat:$pwd \${vcs_info_msg_0_}$userchar "
+PROMPT="$cmdstatus$userat:$pwd\${vcs_info_msg_0_}$userchar "
 
 source "$HOME/.commonshrc"
 source "$HOME/.zsh_local"
