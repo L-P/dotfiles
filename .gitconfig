@@ -7,6 +7,7 @@
     mergeable = branch -avv --contains HEAD --no-merged
     upcoming = !git graph ..origin/HEAD
     stats = "!rm -rf /tmp/gitstats 2> /dev/null; gitstats . /tmp/gitstats > /dev/null && sensible-browser '/tmp/gitstats/index.html'"
+    supdate = submodule update --init --recursive
 
 [color]
     branch = auto
