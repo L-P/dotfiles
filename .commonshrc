@@ -1,5 +1,5 @@
-# Start SSH agent.
-if [ "root" != "$(whoami)" ]; then
+# Start SSH agent if not connected via SSH.
+if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
     /usr/bin/keychain $HOME/.ssh/* &> /dev/null
     source $HOME/.keychain/$HOST-sh
 fi
