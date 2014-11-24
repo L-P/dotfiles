@@ -1,6 +1,6 @@
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
-    /usr/bin/keychain $HOME/.ssh/* &> /dev/null
+    /usr/bin/keychain --quiet $(ls $HOME/.ssh | grep -Ev '(authorized_keys|config|known_hosts|.pub$)')
     source $HOME/.keychain/$HOST-sh
 fi
 
