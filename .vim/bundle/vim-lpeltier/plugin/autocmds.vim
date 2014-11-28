@@ -18,6 +18,7 @@ autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
 autocmd BufNewFile,BufRead *.{mail,txt}          set filetype=mail
+autocmd BufNewFile,BufRead *.{asm,s}             set filetype=nasm
 
 
 " Misc functions
