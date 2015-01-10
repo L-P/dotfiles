@@ -1,0 +1,69 @@
+#!/usr/bin/env php
+<?php
+
+error_reporting(-1);
+
+if ($argc !== 2) {
+    echo "usage: clone-gitolite URI\n";
+    exit(1);
+}
+
+cloneGitolite($argv[1]);
+
+function cloneGitolite($uri)
+{
+    foreach (getRepos($uri) as $repo) {
+        cloneRepo($uri, $repo);
+    }
+}
+
+function getRepos($uri)
+{
+    $cmd = sprintf(
+        'ssh %s 2> /dev/null | tail -n +3 | cut -c 13-',
+        $uri
+    );
+    exec($cmd, $repos);
+    return $repos;
+}
+
+function cloneRepo($uri, $repo)
+{
+    if (!shouldClone($repo))
+        return;
+
+    $destDir = dirname($repo);
+    if (!file_exists($destDir) && !mkdir($destDir, 0755, true)) {
+        echo "Unable to create dir `$destDir`.\n";
+        return;
+    }
+
+    $cmd = sprintf(
+        'git clone --quiet %s %s',
+        "$uri:$repo",
+        $repo
+    );
+
+    echo "$cmd\n";
+    passthru($cmd);
+}
+
+function shouldClone($repo)
+{
+    $destDir = dirname($repo);
+    if (file_exists($destDir) && !is_dir($destDir)) {
+        echo "`$destDir` exists and is not a directory.\n";
+        return false;
+    }
+
+    if (file_exists($repo)) {
+        $gitDir = "$repo/.git";
+        if (file_exists($gitDir) && is_dir($gitDir))
+            echo "`$repo` exists, skipping.\n";
+        else
+            echo "`$repo` exists but does not contain a .git dir.\n";
+        return false;
+    }
+
+    return true;
+}
