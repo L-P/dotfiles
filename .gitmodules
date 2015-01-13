@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/vim-wombat"]
 	path = .vim/bundle/vim-wombat
 	url = https://github.com/cschlueter/vim-wombat.git
-[submodule ".vim/bundle/vdebug"]
-	path = .vim/bundle/vdebug
-	url = https://github.com/joonty/vdebug.git
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
