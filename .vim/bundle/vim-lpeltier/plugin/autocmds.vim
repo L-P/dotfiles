@@ -14,6 +14,7 @@ endif
 " Custom filetypes and options
 autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
+autocmd BufNewFile,BufRead *.tpl                 set filetype=php
 autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
 autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
