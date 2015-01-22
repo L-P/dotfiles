@@ -36,6 +36,7 @@ zstyle ':vcs_info:*' check-for-changes true
 setopt prompt_subst
 precmd() {
     vcs_info
+    print -Pn "\e]0;$(basename "$(pwd)")\a"
 }
 
 local branch=" %{$fg[green]%}[%b%c%u%{$fg[green]%}]%{$reset_color%}"
