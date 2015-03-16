@@ -140,3 +140,7 @@ function fs() {
     ufs "$dest" > /dev/null
     sshfs "$src" "$dest"
 }
+
+function cert() {
+    openssl x509 -in "$1" -text -noout
+}
