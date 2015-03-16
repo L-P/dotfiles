@@ -20,6 +20,7 @@ autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javasc
 autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
 autocmd BufNewFile,BufRead *.{mail,txt}          set filetype=mail
 autocmd BufNewFile,BufRead *.{asm,s}             set filetype=nasm
+autocmd BufNewFile,BufRead *.{yml}               set filetype=ansible
 
 
 " Misc functions
