@@ -20,7 +20,7 @@ function cloneGitolite($uri)
 function getRepos($uri)
 {
     $cmd = sprintf(
-        'ssh %s 2> /dev/null | tail -n +3 | cut -c 13-',
+        'ssh %s 2> /dev/null | tail -n +3 | cut -c 6-',
         $uri
     );
     exec($cmd, $repos);
