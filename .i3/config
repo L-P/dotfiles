@@ -128,7 +128,7 @@ bindsym $mod+r mode "resize"
 mode "launch" {
     bindsym c exec chromium-browser ; mode "default"
     bindsym f exec firefox          ; mode "default"
-    bindsym p exec thunar           ; mode "default"
+    bindsym p exec pcmanfm          ; mode "default"
     bindsym t exec thunderbird      ; mode "default"
 
     # gnome-disks will not launch twice, gparted will. Avoid that.
