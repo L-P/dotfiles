@@ -1,7 +1,8 @@
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
-    /usr/bin/keychain --quiet $(ls $HOME/.ssh | grep -Ev '(authorized_keys|config|known_hosts|.pub$)')
+    /usr/bin/keychain --quiet 0889A1CD $(ls $HOME/.ssh | grep -Ev '(authorized_keys|config|known_hosts|.pub$)')
     source $HOME/.keychain/$HOST-sh
+    source $HOME/.keychain/$HOST-sh-gpg
 fi
 
 export PATH=~/.bin:$PATH
