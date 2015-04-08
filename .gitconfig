@@ -21,6 +21,9 @@
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
 
+[rerere]
+    enabled = true
+
 [push]
     default = simple
 
