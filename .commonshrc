@@ -56,7 +56,7 @@ alias :e='vim'
 alias :tabe='vim'
 
 # tmux for the lazy.
-function t () {
+function t() {
     tmux a -t $1 || tmux new -s $1
 }
 
@@ -153,6 +153,26 @@ function fs() {
     sshfs "$src" "$dest"
 }
 
+# Examine a x509 cert.
 function cert() {
     openssl x509 -in "$1" -text -noout
+}
+
+
+function hl() {
+    hledger is -p 'this month'
+    echo "-------------------\n-------------------"
+    hledger bs -p 'this month'
+}
+
+function hlc() {
+    hledger is --cleared -p 'this month'
+    echo "-------------------\n-------------------"
+    hledger bs --cleared -p 'this month'
+}
+
+function hlu() {
+    hledger is --uncleared -p 'this month'
+    echo "-------------------\n-------------------"
+    hledger bs --uncleared -p 'this month'
 }
