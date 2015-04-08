@@ -115,14 +115,19 @@ function repos() {
     find . -type d -name .git | sed -r 's/(\/\.git)$//'
 }
 
-# Update (fetch-only) all repositories in current dir and subsdirs.
-function update_repos() {
+# Run a git command on all git repositories found in the current dir and subdirs.
+function mgit() {
     for repo in $(repos); do
         pushd "$repo" > /dev/null
-        echo "-------------------- $repo"
-        git remote update --prune
+        echo "$repo"
+        git "$@"
         popd > /dev/null
     done
+}
+
+# Update (fetch-only) all repositories in current dir and subsdirs.
+function update_repos() {
+    mgit remote update --prune
 }
 
 # Unmount a SSHFS.
