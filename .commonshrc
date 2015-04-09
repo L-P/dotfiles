@@ -124,12 +124,14 @@ function repos() {
 
 # Run a git command on all git repositories found in the current dir and subdirs.
 function mgit() {
+    (
     for repo in $(repos); do
         pushd "$repo" > /dev/null
-        echo "$repo"
+        echo "\n$repo"
         git "$@"
         popd > /dev/null
     done
+    ) | $(git config core.pager || echo 'less')
 }
 
 # Update (fetch-only) all repositories in current dir and subsdirs.
