@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-ledger"]
 	path = .vim/bundle/vim-ledger
 	url = https://github.com/ledger/vim-ledger.git
+[submodule ".vim/bundle/emmet-vim"]
+	path = .vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
