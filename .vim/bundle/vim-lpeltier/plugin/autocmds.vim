@@ -4,6 +4,7 @@ endif
 
 " Language-specific config
 " ========================
+autocmd FileType markdown set textwidth=79
 autocmd FileType python set textwidth=79
 autocmd FileType mail set equalprg=fmt textwidth=72
 

@@ -46,7 +46,6 @@ set showmatch           " Highlight matching opening bracket when inserting '}'
 set showmode            " Display the current mode (insert/normal/visual/etc.)
 set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set laststatus=2        " Always show statusline
-set textwidth=79        " Soft-limit of 79 chars
 set nowrap              " Disable text-wrapping
 set splitright          " Open new splits on the right
 set splitbelow          " Open new splits on the bottom
