@@ -23,6 +23,7 @@ autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
 autocmd BufNewFile,BufRead *.{mail,txt}          set filetype=mail
 autocmd BufNewFile,BufRead *.{asm,s}             set filetype=nasm
 autocmd BufNewFile,BufRead *.{yml}               set filetype=ansible
+autocmd BufNewFile,BufRead .*shrc                set filetype=sh
 
 
 " Misc functions
