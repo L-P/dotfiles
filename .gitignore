@@ -12,6 +12,7 @@ nohup.out
 /.subversion/*
 /.config/*
 /.mutt/cache
+/.bin/*
 
 # Exceptions
 !/.config/terminator/config
