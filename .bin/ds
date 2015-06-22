@@ -20,6 +20,7 @@ function main($argc, array $argv)
     }
 
     $cmd = getDockerShellCommand($container);
+    echo implode(' ', $cmd), "\n";
     pcntl_exec($cmd[0], array_slice($cmd, 1));
 
     assert('false /* unreachable */');
