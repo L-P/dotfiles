@@ -11,6 +11,11 @@ exit(main($argc, $argv));
 
 function main($argc, array $argv)
 {
+    if ($argc < 2) {
+        fwrite(STDERR, "No fuzz given.\n");
+        return 1;
+    }
+
     $fuzz = implode('_', array_slice($argv, 1));
 
     $container = fuzzyGetContainer($fuzz);
