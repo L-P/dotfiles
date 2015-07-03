@@ -72,6 +72,7 @@ endif
 nnoremap <Leader><C-P> :CtrlPTag<CR>
 
 " gitsessions.vim
+nnoremap <Leader>ls :GitSessionLoad<CR>
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
 

@@ -4,6 +4,10 @@ if 1 " vim.tiny ignores conditionals, this is a vim.tiny check.
         call add(g:pathogen_disabled, 'gitgutter')
         call add(g:pathogen_disabled, 'gundo')
     endif
+
+    " Can't be done after the plugin is loaded.
+    let g:gitsessions_disable_auto_load = 1
+
     runtime bundle/pathogen/autoload/pathogen.vim
     call pathogen#infect()
 endif
