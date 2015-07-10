@@ -95,7 +95,7 @@ function getDockerShellCommand($container)
     } else {
         $user = empty($conf->user) ? getCurrentUser() : $conf->user;
         return array_merge($baseArgs, [
-            '/bin/login', '-f', $user,
+            '/bin/login', '-p', '-f', $user,
             'TERM=xterm'
         ]);
     }
