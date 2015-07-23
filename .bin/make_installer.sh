@@ -7,7 +7,7 @@ function main() {
 
     git clone "$repo" "$tmp" --depth=1
     pushd "$tmp"
-    git submodule update --init --recursive # --depth=1 available in 1.8.4
+    git submodule update --init --recursive
     find . -type d -name '.git' -exec rm -rf {} +
     pushd ..
     makeself "$tmp" "$cwd/dotfiles" dotfiles ./loader
