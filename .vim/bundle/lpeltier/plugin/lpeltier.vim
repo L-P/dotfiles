@@ -53,6 +53,7 @@ set lazyredraw          " Mostyl for speeding up scrolling.
 set clipboard=unnamed   " X clipboard as default yank register.
 set exrc                " Per-directory .vimrc.
 set secure              " Disallow unsafe commands in per-directory .vimrc files.
+set nohlsearch          " Don't highlight search results. (nvim default)
 
 if version >= 703
     set relativenumber      " Relative line numbering
