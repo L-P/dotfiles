@@ -131,7 +131,7 @@ function mgit() {
         git "$@"
         popd > /dev/null
     done
-    ) | $(git config core.pager || echo 'less')
+    ) 2>&1 | $(git config core.pager || echo 'less')
 }
 
 # Update (fetch-only) all repositories in current dir and subsdirs.
