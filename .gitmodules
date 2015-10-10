@@ -24,7 +24,7 @@
 	url = https://github.com/bling/vim-airline.git
 [submodule ".autojump"]
 	path = .autojump
-	url = https://github.com/joelthelion/autojump.git
+	url = https://github.com/L-P/autojump.git
 [submodule ".vim/bundle/abolish"]
 	path = .vim/bundle/abolish
 	url = https://github.com/tpope/vim-abolish.git
