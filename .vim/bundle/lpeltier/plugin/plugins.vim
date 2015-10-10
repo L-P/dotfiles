@@ -20,3 +20,4 @@ let g:ctrlp_working_path_mode = 0 " Use vim working directory as ctrlp root.
 
 " Use git to list repository files.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}

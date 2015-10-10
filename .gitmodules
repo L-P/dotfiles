@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/twig"]
 	path = .vim/bundle/twig
 	url = https://github.com/evidens/vim-twig.git
+[submodule ".vim/bundle/cpsm"]
+	path = .vim/bundle/cpsm
+	url = git@github.com:nixprime/cpsm.git
