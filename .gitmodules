@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/cpsm"]
 	path = .vim/bundle/cpsm
 	url = git@github.com:nixprime/cpsm.git
+[submodule ".vim/bundle/ansible-yaml"]
+	path = .vim/bundle/ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml.git
