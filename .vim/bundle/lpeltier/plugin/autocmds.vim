@@ -14,15 +14,13 @@ if version >= 703
 endif
 
 " Custom filetypes and options
-autocmd BufNewFile,BufRead *.{md,mkd,mkdn,mark*} set filetype=markdown makeprg=markdown\ %\ >\ %<.html
-autocmd BufNewFile,BufRead *.php{t,s}            set filetype=php
-autocmd BufNewFile,BufRead *.tpl                 set filetype=php
-autocmd BufNewFile,BufRead *.as                  set filetype=actionscript
-autocmd BufNewFile,BufRead *.js{m,on}            set filetype=json syntax=javascript equalprg=json_reformat
-autocmd BufNewFile,BufRead Vagrantfile           set filetype=ruby
-autocmd BufNewFile,BufRead *.{mail,txt}          set filetype=mail
-autocmd BufNewFile,BufRead *.{asm,s}             set filetype=nasm
-autocmd BufNewFile,BufRead .*shrc                set filetype=sh
+autocmd BufNewFile,BufRead *.md         setlocal filetype=markdown makeprg=markdown\ %\ >\ %<.html
+autocmd BufNewFile,BufRead *.php{t,s}   setlocal filetype=php
+autocmd BufNewFile,BufRead *.js{m,on}   setlocal filetype=json syntax=javascript equalprg=json_reformat
+autocmd BufNewFile,BufRead Vagrantfile  setlocal filetype=ruby
+autocmd BufNewFile,BufRead *.{mail,txt} setlocal filetype=mail
+autocmd BufNewFile,BufRead *.{asm,s}    setlocal filetype=nasm
+autocmd BufNewFile,BufRead .*shrc       setlocal filetype=sh
 
 
 " Misc functions
