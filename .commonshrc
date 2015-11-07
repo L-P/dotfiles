@@ -1,9 +1,7 @@
 function unlock() {
-    /usr/bin/keychain 0889A1CD
+    /usr/bin/keychain --agents gpg 0889A1CD
     source $HOME/.keychain/$HOST-sh-gpg
 }
-
-alias lock='keychain --clear --agents gpg'
 
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
