@@ -4,6 +4,7 @@ bindkey '^R' history-incremental-search-backward
 setopt autocd
 
 # Bits from Oh My ZSH df5b09e20b05a5ba4234599602f7a74934c916db.
+ZSH_CACHE_DIR="$HOME/.cache/zsh"
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/history.zsh"
 source "$HOME/.zsh/misc.zsh"
