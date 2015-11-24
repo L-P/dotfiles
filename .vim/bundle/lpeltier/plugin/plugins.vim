@@ -11,6 +11,7 @@ let g:syntastic_echo_current_error = 1                " Display current error in
 let g:syntastic_auto_loc_list = 1                     " lopen/lclose automatically
 let g:syntastic_javascript_checkers = ["jshint"]      " Use jshint instead of jslint
 let g:syntastic_python_checkers = ["python", "pyflakes"]
+let g:syntastic_php_phpcs_args='--standard=PSR2'
 
 " CtrlP params
 " ------------
