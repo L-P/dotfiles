@@ -45,6 +45,8 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias v='vagrant'
+alias ap='ansible-playbook'
 
 # Typos
 alias cim='vim'
