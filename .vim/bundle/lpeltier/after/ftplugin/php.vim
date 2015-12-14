@@ -3,7 +3,7 @@ let php_parent_error_close=1
 let php_parent_error_open=1
 
 " Documentation via K, see scripts/php_doc.sh
-set keywordprg=php_doc
+setlocal keywordprg=php_doc
 
 " Update control structures to PSR whitespacing.
 noremap <Leader>p :%s/\(if\\|switch\\|for\\|foreach\\|while\)(/\1 (/ge<CR>

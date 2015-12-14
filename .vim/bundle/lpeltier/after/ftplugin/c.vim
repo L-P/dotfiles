@@ -1,4 +1,4 @@
-set keywordprg=c_doc
-set foldmethod=syntax
-set nofoldenable
-set equalprg=
+setlocal keywordprg=c_doc
+setlocal foldmethod=syntax
+setlocal nofoldenable
+setlocal equalprg=

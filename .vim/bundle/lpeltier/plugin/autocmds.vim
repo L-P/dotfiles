@@ -4,13 +4,13 @@ endif
 
 " Language-specific config
 " ========================
-autocmd FileType markdown set textwidth=79
-autocmd FileType python set textwidth=79
-autocmd FileType mail set equalprg=fmt textwidth=72
+autocmd FileType markdown   setlocal textwidth=79
+autocmd FileType python     setlocal textwidth=79
+autocmd FileType mail       setlocal equalprg=fmt textwidth=72
 
 if version >= 703
-    autocmd FileType mail      set colorcolumn+=1
-    autocmd FileType gitcommit set colorcolumn+=1
+    autocmd FileType mail      setlocal colorcolumn+=1
+    autocmd FileType gitcommit setlocal colorcolumn+=1
 endif
 
 " Custom filetypes and options
