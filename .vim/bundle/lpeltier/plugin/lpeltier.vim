@@ -102,7 +102,7 @@ inoremap <Down> <C-O>gj
 " without + and * registers support.
 noremap <Leader>c :!xsel -iob<CR>u
 
-" Align multiple columns of text, useful for multiple var assignments
+" Align multiple columns of text.
 vnoremap <Leader>a :!column -t<CR>gv:s/  \([^ ]\)/ \1/g<CR>gv=
 
 
