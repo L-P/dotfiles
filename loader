@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 function main() {
     rm -rf ~/.dotfiles
     rsync -a . ~/.dotfiles
@@ -9,6 +11,7 @@ function main() {
     local to_delete='';
     local to_link='';
     for file in .dotfiles/.*; do
+        # shellcheck disable=SC2155
         local basename="$(basename "$file")"
         if [ "$basename" = '.' -o "$basename" =  '..' ]; then
             continue
@@ -24,7 +27,7 @@ function main() {
     if [ -n "$to_delete" ]; then
         echo "The following files and directories are going to be deleted:"
         echo "  $to_delete" | fmt
-        rm -rfI $to_delete
+        rm -rfI "$to_delete"
     fi
 
     for file in $to_link; do
