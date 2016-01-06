@@ -27,7 +27,10 @@ write_dotfiles() {
     if [ -n "$to_delete" ]; then
         echo "The following files and directories are going to be deleted:"
         echo "  $to_delete" | fmt
-        rm -rfI "$to_delete"
+
+        # Script is poorly done and hopes no path contain any space.
+        # shellcheck disable=SC2086
+        rm -rfI $to_delete
     fi
 
     for file in $to_link; do
