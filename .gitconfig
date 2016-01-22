@@ -4,10 +4,9 @@
     fix = commit --amend --no-edit -a
     grall = log --graph --oneline --decorate --all
     graph = log --graph --oneline --decorate
-    mergeable = branch -avv --contains HEAD --no-merged
-    upcoming = !git graph ..origin/HEAD
     stats = "!rm -rf /tmp/gitstats 2> /dev/null; gitstats . /tmp/gitstats > /dev/null && sensible-browser '/tmp/gitstats/index.html'"
     supdate = submodule update --init --recursive
+    upcoming = graph ..origin/HEAD
 
 [color]
     branch = auto
