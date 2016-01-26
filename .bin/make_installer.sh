@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 function main() {
-    local repo='https://github.com/L-P/dotfiles.git'
-    local tmp="$(mktemp -d)"
-    local cwd="$(pwd)"
+    local -r repo='https://github.com/L-P/dotfiles.git'
+    local -r tmp="$(mktemp -d)"
+    local -r cwd="$(pwd)"
 
     git clone "$repo" "$tmp" --depth=1
     pushd "$tmp"
