@@ -1,12 +1,12 @@
-function unlock() {
+unlock() {
     /usr/bin/keychain --agents gpg 0889A1CD
-    source $HOME/.keychain/$HOST-sh-gpg
+    source "$HOME/.keychain/$HOST-sh-gpg"
 }
 
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
     /usr/bin/keychain --quiet $(ls $HOME/.ssh | grep -v '\.pub$' | grep "$USER")
-    source $HOME/.keychain/$HOST-sh
+    source "$HOME/.keychain/$HOST-sh"
 fi
 
 export PATH=~/.bin:$PATH
@@ -46,7 +46,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias v='vagrant'
-alias ap='ansible-playbook'
+alias ap='ansible-playbook --vault-password-file=vault'
 
 # Typos
 alias cim='vim'
@@ -56,96 +56,82 @@ alias :e='vim'
 alias :tabe='vim'
 
 # tmux for the lazy.
-function t() {
-    tmux a -t $1 || tmux new -s $1
+t() {
+    tmux a -t "$1" || tmux new -s "$1"
 }
 
 # Nicer du (ncdu is nice too).
-function duf() {
+duf() {
     du -csh -- "$@" | sort -rh
 }
 
 # Handy grep aliases, since ack sucks.
-function g() {
-	grep --color=always -EHnr --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+g() {
+	grep --color=always -EHnr --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
-function gi() {
-	grep --color=always -EHnri --exclude-dir='.svn' --exclude-dir='.git' $@ . | $PAGER ;
+gi() {
+	grep --color=always -EHnri --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
 
 # Same aliases for the faster git grep.
-function gg() {
-	git grep --color=always -En $@
+gg() {
+	git grep --color=always -En "$@"
 }
-function ggi() {
-	git grep --color=always -Eni $@
+ggi() {
+	git grep --color=always -Eni "$@"
 }
 
 # Find aliases
-function f() {
-	find . -iname "*$@*"
+f() {
+	find . -iname "*$**"
 }
-function ff() {
-	find . -type f -iname "*$@*"
+ff() {
+	find . -type "f" -iname "*$**"
 }
-function fd() {
-	find . -type d -iname "*$@*"
+fd() {
+	find . -type d -iname "*$**"
 }
 
 # Make a git repo with an empty commit
-function mkrepo() {
+mkrepo() {
     (
-        mkdir $1
-        pushd $1
+        mkdir "$1"
+        pushd "$1"
         git init
         git ci --allow-empty -m "Initial commit."
         popd ..
     ) > /dev/null
 }
 
-# Record terminal input/output to file.
-function record() {
-    local date="$(date --rfc-3339=seconds | sed 's/ /_/g')"
-    local dir="$HOME/.terminal_recordings"
-    mkdir -p "$dir" &> /dev/null
-    script -t "$dir/script_$date" 2> "$dir/timing_$date"
-}
-
-# Echo a ready-to-copy scp command to get a file.
-function getscp() {
-    local ip="$(ip addr show eth0  | grep 'inet[^6]' | cut -d' ' -f6 | cut -d'/' -f1)"
-    echo "scp $(whoami)@$ip:$(pwd)/$1 ."
-}
-
 # List all git repositories.
-function repos() {
+repos() {
     find . -type d -name .git | sed -r 's/(\/\.git)$//'
 }
 
 # Run a git command on all git repositories found in the current dir and subdirs.
-function mgit() {
+mgit() {
     (
     for repo in $(repos); do
         pushd "$repo" > /dev/null
-        echo "\n$repo"
+        printf "\n%s\n" "$repo"
         git "$@"
         popd > /dev/null
     done
-    ) 2>&1 | $(git config core.pager || echo 'less')
+    ) 2>&1 | "$(git config core.pager || echo 'less')"
 }
 
 # Update (fetch-only) all repositories in current dir and subsdirs.
-function update_repos() {
+update_repos() {
     mgit remote update --prune
 }
 
 # Unmount a SSHFS.
-function ufs() {
+ufs() {
     fusermount -u "$1"
 }
 
 # Mount a SSHFS.
-function fs() {
+fs() {
     local src="$1"
     local dest="$2"
 
@@ -156,25 +142,13 @@ function fs() {
 }
 
 # Examine a x509 cert.
-function cert() {
+cert() {
     openssl x509 -in "$1" -text -noout
 }
 
 
-function hl() {
+hl() {
     hledger is -p 'this month'
-    echo "-------------------\n-------------------"
+    printf "-------------------\n-------------------\n"
     hledger bs -p 'this month'
-}
-
-function hlc() {
-    hledger is --cleared -p 'this month'
-    echo "-------------------\n-------------------"
-    hledger bs --cleared -p 'this month'
-}
-
-function hlu() {
-    hledger is --uncleared -p 'this month'
-    echo "-------------------\n-------------------"
-    hledger bs --uncleared -p 'this month'
 }
