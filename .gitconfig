@@ -2,12 +2,21 @@
     ci = commit
     co = checkout
     fix = commit --amend --no-edit -a
+    cif = commit --fixup HEAD
     grall = log --graph --oneline --decorate --all
     graph = log --graph --oneline --decorate
     ignored = "!git ls-files -v | grep '^[a-z]' | cut -d' ' -f 2"
     stats = "!rm -rf /tmp/gitstats 2> /dev/null; gitstats . /tmp/gitstats > /dev/null && sensible-browser '/tmp/gitstats/index.html'"
     supdate = submodule update --init --recursive
     upcoming = graph ..origin/HEAD
+
+[user]
+    email = contact@leo-peltier.fr
+    name = Léo Peltier
+
+[core]
+    excludesfile = ~/.gitignore
+    pager = less -RFXS -x4
 
 [color]
     branch = auto
@@ -17,16 +26,11 @@
     pager = true
     status = auto
 
-[core]
-    excludesfile = ~/.gitignore
-    pager = less -RFXS -x4
+[rebase]
+    autosquash = true
 
 [push]
     default = simple
-
-[user]
-    email = contact@leo-peltier.fr
-    name = Léo Peltier
 
 [advice]
     pushNonFastForward = false
