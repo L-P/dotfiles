@@ -152,3 +152,9 @@ hl() {
     printf "-------------------\n-------------------\n"
     hledger bs -p 'this month'
 }
+
+hlp() {
+    hledger is -p "$*"
+    printf "-------------------\n-------------------\n"
+    hledger bs -p "$*"
+}
