@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/yaml-helper"]
 	path = .vim/bundle/yaml-helper
 	url = https://github.com/lmeijvogel/vim-yaml-helper.git
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git
