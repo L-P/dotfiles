@@ -2,7 +2,6 @@ if 1 " vim.tiny ignores conditionals, this is a vim.tiny check.
     let g:pathogen_disabled = []
     if version < 703
         call add(g:pathogen_disabled, 'gitgutter')
-        call add(g:pathogen_disabled, 'gundo')
     endif
 
     runtime bundle/pathogen/autoload/pathogen.vim

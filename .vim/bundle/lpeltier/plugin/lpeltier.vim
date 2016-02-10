@@ -73,14 +73,12 @@ endif
 
 " Browse ctags
 nnoremap <Leader><C-P> :CtrlPTag<CR>
+nnoremap <F8> :UndotreeToggle<CR>
 
 " gitsessions.vim
 nnoremap <Leader>ls :GitSessionLoad<CR>
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
-
-" Toggle Gundo window
-noremap <F8> :GundoToggle<CR>
 
 " For consistency
 noremap Y y$

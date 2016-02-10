@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/Gundo"]
-	path = .vim/bundle/gundo
-	url = https://github.com/vim-scripts/Gundo.git
 [submodule ".vim/bundle/wombat"]
 	path = .vim/bundle/wombat
 	url = https://github.com/cschlueter/vim-wombat.git
@@ -52,3 +49,6 @@
 [submodule ".vim/bundle/yaml-helper"]
 	path = .vim/bundle/yaml-helper
 	url = https://github.com/lmeijvogel/vim-yaml-helper.git
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git
