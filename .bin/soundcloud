@@ -1,0 +1,9 @@
+#!/bin/sh
+
+iface=enp2s0
+gateway="$(ip route list | sed "s/.* via \([0-9.]*\) dev $iface*/\1/;t;d" | head -1)"
+hosts="soundcloud.com style.sndcdn.com a-v2.sndcdn.com ec-media.sndcdn.com ec-hls-media.soundcloud.com"
+
+for host in $hosts; do
+    route add -host "$host" gw "$gateway" "$iface"
+done
