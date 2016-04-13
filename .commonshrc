@@ -98,7 +98,7 @@ mkrepo() {
         mkdir "$1"
         pushd "$1"
         git init
-        git ci --allow-empty -m "Initial commit."
+        git ci --allow-empty -m "Initial commit"
         popd ..
     ) > /dev/null
 }
