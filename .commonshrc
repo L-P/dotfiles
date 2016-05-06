@@ -5,7 +5,7 @@ unlock() {
 
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
-    /usr/bin/keychain --quiet $(ls $HOME/.ssh | grep -v '\.pub$' | grep "$USER")
+    /usr/bin/keychain --quiet $(ls "$HOME/.ssh" | grep -v '\.pub$' | grep "$USER")
     source "$HOME/.keychain/$HOST-sh"
 fi
 
@@ -159,4 +159,10 @@ hlp() {
     hledger is -p "$*"
     printf "-------------------\n-------------------\n"
     hledger bs -p "$*"
+}
+
+# Convert a SVG to PNG
+# svg2png FILE WIDTH
+svg2png() {
+    inkscape --export-png="$1.png" --export-width="$2" --export-background-opacity=0 --without-gui "$1"
 }
