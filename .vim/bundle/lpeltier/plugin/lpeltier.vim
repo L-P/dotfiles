@@ -1,4 +1,4 @@
-" The file _will_ be loaded twice because of how I handle vim.tiny.
+" The file _will_ be loaded twice because of how I handle vim.tiny
 if exists("g:loaded_lpeltier")
     finish
 else
@@ -17,7 +17,7 @@ endif
 set background=dark
 set guifont=Inconsolata\ Medium\ 16
 
-" TERM == linux means it's a 8 color TTY.
+" TERM == linux means it's a 8 color TTY
 if $TERM != "linux"
     set t_Co=256
     colorscheme wombat256
@@ -50,12 +50,12 @@ set laststatus=2        " Always show statusline
 set nowrap              " Disable text-wrapping
 set splitright          " Open new vertical splits on the right
 set splitbelow          " Open new horizontal splits on the bottom
-set lazyredraw          " Mostyl for speeding up scrolling.
-set clipboard=unnamed   " X clipboard as default yank register.
-set exrc                " Per-directory .vimrc.
-set secure              " Disallow unsafe commands in per-directory .vimrc files.
+set lazyredraw          " Mostly for speeding up scrolling
+set clipboard=unnamed   " X clipboard as default yank register
+set exrc                " Per-directory .vimrc
+set secure              " Disallow unsafe commands in per-directory .vimrc files
 set nohlsearch          " Don't highlight search results. (nvim default)
-set nrformats-=octal    " Parse 0\d+ numbers as decimal when using ^A and ^X.
+set nrformats-=octal    " Parse 0\d+ numbers as decimal when using ^A and ^X
 
 if version >= 703
     set relativenumber      " Relative line numbering
@@ -83,10 +83,10 @@ nnoremap <Leader>ds :GitSessionDelete<CR>
 " For consistency
 noremap Y y$
 
-" Disable Ex mode.
+" Disable Ex mode
 noremap Q <Nop>
 
-" Visually select last inserted text.
+" Visually select last inserted text
 noremap gV `[v`]
 
 " Use arrow keys to navigate in wrapped text
@@ -97,14 +97,14 @@ inoremap <Up> <C-O>gk
 inoremap <Down> <C-O>gj
 
 " Copy the current selection in X clipboard, useful when vim is compiled
-" without + and * registers support.
+" without + and * registers support
 noremap <Leader>c :!xsel -iob<CR>u
 
-" Align multiple columns of text.
+" Align multiple columns of text
 vnoremap <Leader>a :!column -t<CR>gv:s/  \([^ ]\)/ \1/g<CR>gv=
 
 
-" sudo save a file.
+" sudo save a file
 cnoremap w!! %!sudo tee > /dev/null %<CR>
 
 " Shiny path autocomplete
