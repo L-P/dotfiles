@@ -48,8 +48,8 @@ set scrolloff=3         " Force-scroll 3 lines before/after the cursor
 set sidescrolloff=5     " Force-scroll 5 chars before/after the cursor
 set laststatus=2        " Always show statusline
 set nowrap              " Disable text-wrapping
-set splitright          " Open new splits on the right
-set splitbelow          " Open new splits on the bottom
+set splitright          " Open new vertical splits on the right
+set splitbelow          " Open new horizontal splits on the bottom
 set lazyredraw          " Mostyl for speeding up scrolling.
 set clipboard=unnamed   " X clipboard as default yank register.
 set exrc                " Per-directory .vimrc.
