@@ -1,6 +1,6 @@
 #!/bin/sh
 
-iface=enp2s0
+iface="$(ip link show | grep -E  ': (en|wl).+state UP' | cut -d: -f 2 | cut -c 2-)"
 gateway="$(ip route list | sed "s/.* via \([0-9.]*\) dev $iface*/\1/;t;d" | head -1)"
 hosts="soundcloud.com api.soundcloud.com style.sndcdn.com a-v2.sndcdn.com ec-media.sndcdn.com ec-hls-media.soundcloud.com"
 
