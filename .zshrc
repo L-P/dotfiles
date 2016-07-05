@@ -47,5 +47,12 @@ zstyle ':vcs_info:*' stagedstr "%{$fg[yellow]%}*"
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
 PROMPT="$cmdstatus$userat:$pwd\${vcs_info_msg_0_}$userchar "
 
+# https://github.com/creationix/nvm/issues/539#issuecomment-110643090
+lazy_source () {
+    eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
+}
+export NVM_DIR="${HOME}/.nvm"
+lazy_source nvm "${NVM_DIR}/nvm.sh"
+
 source "$HOME/.commonshrc"
 source "$HOME/.zsh_local"
