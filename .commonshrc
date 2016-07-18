@@ -50,7 +50,6 @@ alias ap='ansible-playbook --vault-password-file=vault'
 alias ave='ansible-vault edit --vault-password-file=vault'
 alias optipng='optipng -strip all -o7'
 alias ds='webdev-toolbox docker-shell'
-alias vim='nvim'
 
 # tmux for the lazy.
 t() {
