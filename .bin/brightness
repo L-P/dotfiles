@@ -4,27 +4,50 @@
 # It sucks a bit but at least it works.
 
 function main() {
-	local file_brightness='/sys/class/backlight/intel_backlight/brightness'
-	local file_max='/sys/class/backlight/intel_backlight/max_brightness'
-	local cur=$(cat "$file_brightness")
-	local max=$(cat "$file_max")
+    case $1 in
+        mon)
+            local file_brightness='/sys/class/backlight/intel_backlight/brightness'
+            local file_max='/sys/class/backlight/intel_backlight/max_brightness'
+            ;;
+        kbd)
+            local file_brightness='/sys/class/leds/samsung::kbd_backlight/brightness'
+            local file_max='/sys/class/leds/samsung::kbd_backlight/max_brightness'
+            ;;
+        *)
+            echo "Bad device $1, need mon or kbd" 1>&2
+            exit 1
+            ;;
+    esac
 
-	if [ ! -w "$file_brightness" ]; then
-		echo "Can't set the new brightness, try with sudo or as root."
-		exit 2
-	fi
+    local -r op="$2"
+    local -r delta="$3"
 
-	new=$(($cur $1 $2))
-    new=$(($new>$max?$max:$new))
-    new=$(($new<0?0:$new))
-	echo $new > "$file_brightness"
-	echo "New brightness: $new/$max."
+    local -r cur=$(cat "$file_brightness")
+    local -r max=$(cat "$file_max")
+
+    if [ ! -w "$file_brightness" ]; then
+        echo "Can't set the new brightness, try with sudo or as root." 1>&2
+        exit 1
+    fi
+
+    if [ "$op" = "-" ]; then
+        local new=$((cur - delta))
+    elif [ "$op" = "+" ]; then
+        local new=$((cur + delta))
+    else
+        echo "Bad op $op, need - or +" 1>&2
+        exit 1
+    fi
+
+    new=$(((new > max) ? max : new))
+    new=$(((new < 0) ? 0 : new))
+    echo $new > "$file_brightness"
+    echo "New brightness: $new/$max."
 }
 
-if [[ -z "$1" || -z "$2" ]]; then
-	echo "Usage: brightness <-|+> <delta>"
-	exit 1
+if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
+    echo "Usage: brightness <mon|kbd> <-|+> <delta>" 1>&2
+    exit 1
 fi
 
-main $1 $2
-
+main "$1" "$2" "$3"

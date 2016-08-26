@@ -157,8 +157,10 @@ bindsym Print exec scrot
 bindsym Mod1+Print exec scrot -s
 
 # Brightness
-bindsym XF86MonBrightnessDown exec .bin/brightness - 500
-bindsym XF86MonBrightnessUp exec .bin/brightness + 500
+bindsym XF86MonBrightnessDown exec .bin/brightness mon - 500
+bindsym XF86MonBrightnessUp exec .bin/brightness mon + 500
+bindsym XF86KbdBrightnessDown exec .bin/brightness kbd - 1
+bindsym XF86KbdBrightnessUp exec .bin/brightness kbd + 1
 
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract     exec --no-startup-id /usr/bin/amixer set Master 5-
