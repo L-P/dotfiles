@@ -40,12 +40,6 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule ".vim/bundle/less"]
-	path = .vim/bundle/less
-	url = https://github.com/groenewege/vim-less.git
-[submodule ".vim/bundle/yaml-helper"]
-	path = .vim/bundle/yaml-helper
-	url = https://github.com/lmeijvogel/vim-yaml-helper.git
 [submodule ".vim/bundle/undotree"]
 	path = .vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
