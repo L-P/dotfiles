@@ -160,3 +160,10 @@ hlp() {
 svg2png() {
     inkscape --export-png="$1.png" --export-width="$2" --export-background-opacity=0 --without-gui "$1"
 }
+
+# Display time bewteen keyframes
+# keyframes FILE
+keyframes () {
+    ffprobe -of compact -show_packets -select_streams v "$1" | grep 'K$' |\
+        awk 'BEGIN{FS="|";last=0}{split($5,a,"="); print a[2]-last; last=a[2]}'
+}
