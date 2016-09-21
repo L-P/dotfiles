@@ -9,6 +9,7 @@
     stats = "!rm -rf /tmp/gitstats 2> /dev/null; gitstats . /tmp/gitstats > /dev/null && sensible-browser '/tmp/gitstats/index.html'"
     supdate = submodule update --init --recursive
     upcoming = !git graph ..origin/HEAD
+    fgc = -c gc.reflogExpire=0 -c gc.reflogExpireUnreachable=0 -c gc.rerereresolved=0 -c gc.rerereunresolved=0 -c gc.pruneExpire=now gc --aggressive
 
 [user]
     email = contact@leo-peltier.fr
