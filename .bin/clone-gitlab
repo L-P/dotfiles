@@ -1,5 +1,10 @@
 #!/usr/bin/env php
 <?php
+/**
+ * clone-gitlab
+ *
+ * Clone every project (repository) you have access to.
+ */
 
 declare(strict_types=1);
 exit(main($argv));
@@ -74,7 +79,8 @@ function prepare_repo(string $path): bool
 function get_repos(string $domain, string $token): array
 {
     $repos = [];
-    $projects = api_request($domain, '/projects', $token);
+    // TODO: handle pagination
+    $projects = api_request($domain, '/projects?per_page=100', $token);
     foreach ($projects as $project) {
         $repos[$project->ssh_url_to_repo] = $project->path_with_namespace;
     }
