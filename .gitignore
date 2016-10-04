@@ -1,20 +1,21 @@
 # Global ignores
 .*.sw[op]
 .svn/
+.vault
 .~lock.*
 nohup.out
 
 # Ignores for dotfiles repo
-/.vim/undo
-/.vim/.netrwhist
-/.vim/spell
-/.vim/sessions
-/.subversion/*
+/.bin/*
 /.config/*
 /.mutt/cache
-/.bin/*
+/.subversion/*
+/.vim/.netrwhist
+/.vim/sessions
+/.vim/spell
+/.vim/undo
 
 # Exceptions
-!/.config/terminator/config
 !/.config/dunstrc
+!/.config/terminator/config
 !/.subversion/config
