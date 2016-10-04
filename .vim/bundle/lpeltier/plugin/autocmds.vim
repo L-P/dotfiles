@@ -46,3 +46,34 @@ function! ModeChange()
     endif
 endfunction
 autocmd BufWritePost * call ModeChange()
+
+" Transparent encryption/decryption for ansible vaults
+" ----------------------------------------------------
+function! AnsibleVaultDecrypt()
+    if getline(1) =~ '^\$ANSIBLE_VAULT;'
+        silent :%!ansible-vault --vault-password-file=.vault decrypt - --output -
+        let b:is_ansible_vault=1
+
+        " The file is kept encrypted on file so any syntastic check will fail
+        let b:syntastic_skip_checks = 1
+        SyntasticReset
+    else
+        let b:is_ansible_vault=0
+    endif
+endfunction
+
+function! AnsibleVaultEncrypt()
+    if b:is_ansible_vault
+        silent :%!ansible-vault --vault-password-file=.vault encrypt - --output -
+    endif
+endfunction
+
+function! AnsibleVaultAfterEncrypt()
+    if b:is_ansible_vault
+        silent u
+    endif
+endfunction
+
+autocmd BufReadPost  * call AnsibleVaultDecrypt()
+autocmd BufWritePre  * call AnsibleVaultEncrypt()
+autocmd BufWritePost * call AnsibleVaultAfterEncrypt()
