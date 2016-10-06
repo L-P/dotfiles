@@ -74,6 +74,7 @@ function! AnsibleVaultAfterEncrypt()
     endif
 endfunction
 
+autocmd BufNewFile   * call AnsibleVaultDecrypt()
 autocmd BufReadPost  * call AnsibleVaultDecrypt()
 autocmd BufWritePre  * call AnsibleVaultEncrypt()
 autocmd BufWritePost * call AnsibleVaultAfterEncrypt()
