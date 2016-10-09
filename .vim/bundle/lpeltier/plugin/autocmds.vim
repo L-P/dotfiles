@@ -63,13 +63,13 @@ function! AnsibleVaultDecrypt()
 endfunction
 
 function! AnsibleVaultEncrypt()
-    if b:is_ansible_vault
+    if exists("b:is_ansible_vault") && b:is_ansible_vault
         silent :%!ansible-vault --vault-password-file=.vault encrypt - --output -
     endif
 endfunction
 
 function! AnsibleVaultAfterEncrypt()
-    if b:is_ansible_vault
+    if exists("b:is_ansible_vault") && b:is_ansible_vault
         silent u
     endif
 endfunction
