@@ -5,7 +5,7 @@ unlock() {
 
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
-    /usr/bin/keychain --quiet $(ls "$HOME/.ssh" | grep -v '\.pub$' | grep "$USER")
+    /usr/bin/keychain --quiet "$USER@$HOST"
     source "$HOME/.keychain/$HOST-sh"
 fi
 
