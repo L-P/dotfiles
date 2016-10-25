@@ -1,8 +1,10 @@
 " Plugins config
 " ==============
-" Airline
+" Misc
 " -------
 let g:airline_theme = 'wombat'
+" For markdown
+let g:table_mode_corner="|"
 
 " Syntastic
 " ---------

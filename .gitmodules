@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule ".vim/bundle/table-mode"]
+	path = .vim/bundle/table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode.git
