@@ -5,6 +5,7 @@
 let g:airline_theme = 'wombat'
 " For markdown
 let g:table_mode_corner="|"
+let g:go_fmt_command = "goimports"
 
 " Syntastic
 " ---------
@@ -16,13 +17,14 @@ let g:syntastic_python_checkers = ["python", "pyflakes", "pylint"]
 let g:syntastic_yaml_checkers = ["yamllint"]
 let g:syntastic_json_checkers = ["jsonlint"]
 let g:syntastic_php_phpcs_args='--standard=PSR2'
+let g:syntastic_filetype_map = { "ansible": "yaml" }
+let g:syntastic_go_checkers = ["go", "gofmt", "golint", "govet"]
 
 " CtrlP params
 " ------------
 let g:ctrlp_cmd='CtrlPMixed'      " Search in all buffers/files
 let g:ctrlp_mruf_max = 0          " Disable MRU so CtrlPMixed only searches for buffers and files.
 let g:ctrlp_working_path_mode = 0 " Use vim working directory as ctrlp root.
-let g:syntastic_filetype_map = { "ansible": "yaml" }
 
 " Use git to list repository files.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
