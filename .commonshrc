@@ -1,8 +1,3 @@
-unlock() {
-    /usr/bin/keychain --agents gpg 0889A1CD
-    source "$HOME/.keychain/$HOST-sh-gpg"
-}
-
 # Start SSH agent if not connected via SSH.
 if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
     /usr/bin/keychain --quiet "$USER@$HOST"
