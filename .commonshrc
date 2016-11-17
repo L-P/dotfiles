@@ -14,7 +14,7 @@ export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 export LC_ALL=C.UTF-8
 
 # Nicer less by default
-export LESS='-RFXS -x4'
+export LESS='-RFXS -x4 -n'
 export PAGER='less'
 export MANPAGER='less'
 
