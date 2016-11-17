@@ -39,3 +39,6 @@
     commitBeforeMerge = false
     resolveConflict = false
     detachedHead = false
+
+[gpg]
+	program = gpg2

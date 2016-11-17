@@ -50,6 +50,7 @@ alias ap='ansible-playbook --vault-password-file=.vault'
 alias optipng='optipng -strip all -o7'
 alias ds='webdev-toolbox docker-shell'
 alias run='webdev-toolbox runner'
+alias gpg='gpg2'
 
 # tmux for the lazy.
 t() {
