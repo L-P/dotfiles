@@ -109,7 +109,7 @@ mgit() {
         git "$@"
         popd > /dev/null
     done
-    ) 2>&1 | $(git config core.pager || echo 'less')
+    ) 2>&1 | $(git config core.pager || echo 'less') # shellcheck disable=SC2091
 }
 
 # Update (fetch-only) all repositories in current dir and subsdirs.
@@ -162,4 +162,11 @@ svg2png() {
 keyframes () {
     ffprobe -of compact -show_packets -select_streams v "$1" | grep 'K$' |\
         awk 'BEGIN{FS="|";last=0}{split($5,a,"="); print a[2]-last; last=a[2]}'
+}
+
+# shellcheck disable=SC2046
+dockerpurge() {
+    docker rm -v $(docker ps -a -q -f status=exited)
+    docker rmi $(docker images -f "dangling=true" -q)
+    docker volume rm $(docker volume ls -qf dangling=true)
 }
