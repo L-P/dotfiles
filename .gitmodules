@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/table-mode"]
 	path = .vim/bundle/table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule ".vim/bundle/airline-themes"]
+	path = .vim/bundle/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
