@@ -21,7 +21,19 @@ autocmd BufNewFile,BufRead Vagrantfile  setlocal filetype=ruby
 autocmd BufNewFile,BufRead *.{mail,txt} setlocal filetype=mail
 autocmd BufNewFile,BufRead *.{asm,s}    setlocal filetype=nasm
 autocmd BufNewFile,BufRead .*shrc       setlocal filetype=sh
-autocmd BufWritePost        *.go        call go#cmd#Build(1)
+autocmd BufWritePost       *.go         call CompileGo()
+
+" go build does not compile tests and running both go test and go build at the
+" same time results un a disappearing quickfix buffer, select what command to
+" run based on the filename.
+function! CompileGo()
+    if @% =~ "_test.go$"
+        call go#cmd#Test(1, 0)
+    else
+        echo "AS REGULAR FILE"
+        call go#cmd#Build(1)
+    endif
+endfunction
 
 
 " Misc functions
