@@ -21,6 +21,7 @@ autocmd BufNewFile,BufRead Vagrantfile  setlocal filetype=ruby
 autocmd BufNewFile,BufRead *.{mail,txt} setlocal filetype=mail
 autocmd BufNewFile,BufRead *.{asm,s}    setlocal filetype=nasm
 autocmd BufNewFile,BufRead .*shrc       setlocal filetype=sh
+autocmd BufWritePost        *.go        call go#cmd#Build(1)
 
 
 " Misc functions
