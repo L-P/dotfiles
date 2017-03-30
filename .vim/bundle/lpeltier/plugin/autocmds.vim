@@ -30,7 +30,6 @@ function! CompileGo()
     if @% =~ "_test.go$"
         call go#cmd#Test(1, 0)
     else
-        echo "AS REGULAR FILE"
         call go#cmd#Build(1)
     endif
 endfunction
