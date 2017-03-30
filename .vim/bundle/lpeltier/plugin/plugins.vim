@@ -31,9 +31,8 @@ let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go"] }
 
 " CtrlP params
 " ------------
-let g:ctrlp_cmd='CtrlPMixed'      " Search in all buffers/files
-let g:ctrlp_mruf_max = 0          " Disable MRU so CtrlPMixed only searches for buffers and files.
-let g:ctrlp_working_path_mode = 0 " Use vim working directory as ctrlp root.
+let g:ctrlp_cmd='CtrlPMixed'        " Search in all buffers/files
+let g:ctrlp_working_path_mode = 'r' " Use vim working directory as ctrlp root.
 
 " Use git to list repository files.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
