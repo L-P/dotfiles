@@ -10,8 +10,7 @@ source "$HOME/.zsh/history.zsh"
 source "$HOME/.zsh/misc.zsh"
 source "$HOME/.zsh/vi-mode.plugin.zsh"
 
-# Huge slowdown with the defaults from history.zsh.
-HISTSIZE=2000
+HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 
 # Autojump.
