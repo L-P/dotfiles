@@ -55,3 +55,6 @@
 [submodule ".vim/bundle/syntastic-local-eslint"]
 	path = .vim/bundle/syntastic-local-eslint
 	url = https://github.com/mtscout6/syntastic-local-eslint.vim.git
+[submodule ".vim/bundle/automkdir"]
+	path = .vim/bundle/automkdir
+	url = https://github.com/benizi/vim-automkdir.git
