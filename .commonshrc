@@ -54,7 +54,7 @@ t() {
 
 # Nicer du (ncdu is nice too).
 duf() {
-    du -csh -- "$@" | sort -rh
+    du --apparent-size -csh -- "$@" | sort -rh
 }
 
 # Handy grep aliases, since ack sucks.
