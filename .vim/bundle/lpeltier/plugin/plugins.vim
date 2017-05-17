@@ -27,7 +27,6 @@ let g:syntastic_json_checkers = ["jsonlint"]
 let g:syntastic_php_phpcs_args='--standard=PSR2'
 let g:syntastic_filetype_map = { "ansible": "yaml" }
 let g:syntastic_go_checkers = ["golint", "govet", "errcheck"]
-let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["go"] }
 
 " CtrlP params
 " ------------
