@@ -17,6 +17,9 @@ SAVEHIST=$HISTSIZE
 source "$HOME/.autojump/bin/autojump.zsh"
 autoload -U compinit && compinit -u
 
+# Disable r builtin (alias for `fc -e -`)
+disable r
+
 # Bind ^Z to fg, allowing to cycle in and out of apps quickly.
 function rebind-z() { fg }
 zle -N rebind-z
