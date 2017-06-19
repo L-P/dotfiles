@@ -22,6 +22,7 @@ autocmd BufNewFile,BufRead *.{mail,txt}   setlocal filetype=mail
 autocmd BufNewFile,BufRead *.{asm,s}      setlocal filetype=nasm
 autocmd BufNewFile,BufRead .*shrc         setlocal filetype=sh
 autocmd BufNewFile,BufRead *.glsl          setlocal filetype=glsl
+autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
 autocmd BufWritePost       *.go         call CompileGo()
 
 " go build does not compile tests and running both go test and go build at the
