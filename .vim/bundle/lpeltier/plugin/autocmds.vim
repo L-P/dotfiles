@@ -30,7 +30,7 @@ autocmd BufWritePost       *.go         call CompileGo()
 " run based on the filename.
 function! CompileGo()
     if @% =~ "_test.go$"
-        call go#cmd#Test(1, 0)
+        call go#test#Test(1, 0)
     else
         call go#cmd#Build(1)
     endif
