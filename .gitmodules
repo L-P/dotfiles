@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/glsl"]
 	path = .vim/bundle/glsl
 	url = https://github.com/tikhomirov/vim-glsl.git
+[submodule ".vim/bundle/template"]
+	path = .vim/bundle/template
+	url = https://github.com/aperezdc/vim-template
