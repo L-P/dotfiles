@@ -60,18 +60,18 @@ duf() {
 
 # Handy grep aliases, since ack sucks.
 g() {
-	grep --color=always -EHnr --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
+	grep -EHnr --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
 gi() {
-	grep --color=always -EHnri --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
+	grep -EHnri --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
 
 # Same aliases for the faster git grep.
 gg() {
-	git grep --color=always -En "$@"
+	git grep -En "$@"
 }
 ggi() {
-	git grep --color=always -Eni "$@"
+	git grep -Eni "$@"
 }
 
 # Find aliases
