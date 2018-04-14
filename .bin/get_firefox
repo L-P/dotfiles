@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu
+
+src="https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+dst="/opt/firefox"
+tmp="$(mktemp --suffix=.firefox.tar.bz2)"
+bin="/usr/local/bin/firefox"
+
+wget "$src" -O "$tmp"
+sudo -v
+sudo rm -rf "$dst" || true
+sudo rm "$bin" || true
+sudo tar xf "$tmp" -C /opt
+sudo ln -s "$dst/firefox" "$bin"
+rm "$tmp"
+sudo -k
