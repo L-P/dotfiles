@@ -126,7 +126,7 @@ bindsym $mod+r mode "resize"
 
 # Launch mode, one app per key.
 mode "launch" {
-    bindsym c exec chromium-browser ; mode "default"
+    bindsym c exec chromium         ; mode "default"
     bindsym f exec firefox          ; mode "default"
     bindsym g exec firefox -private ; mode "default"
     bindsym p exec pcmanfm          ; mode "default"
