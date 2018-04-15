@@ -128,6 +128,7 @@ bindsym $mod+r mode "resize"
 mode "launch" {
     bindsym c exec chromium-browser ; mode "default"
     bindsym f exec firefox          ; mode "default"
+    bindsym g exec firefox -private ; mode "default"
     bindsym p exec pcmanfm          ; mode "default"
     bindsym t exec thunderbird      ; mode "default"
 
@@ -154,7 +155,6 @@ bindsym $mod+Home        exec --no-startup-id /usr/bin/i3lock -d -c 000000; exec
 
 # Screenshot
 bindsym Print exec scrot
-bindsym Mod1+Print exec scrot -s
 
 # Brightness
 bindsym XF86MonBrightnessDown exec .bin/brightness mon - 500
@@ -168,17 +168,15 @@ bindsym $mod+KP_Add          exec --no-startup-id /usr/bin/amixer set Master 5+
 bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/amixer set Master 5-
 bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/amixer set Master 5+
 bindsym XF86AudioMute        exec --no-startup-id /usr/bin/amixer set Master toggle
-bindsym XF86Calculator       exec --no-startup-id /usr/bin/terminator -x python3
 
 # 'Background' workspace
-assign [class="Clementine"] → 10
-assign [class="Keepassx"]   → 10
-assign [class="Pidgin"]     → 10
+assign [class="Keepassx"]  10
+assign [class="keepassxc"] 10
+assign [class="^Saaz"]     3
 
 # Those should always float
 for_window [class="^File-roller$" title="^Compress$"] floating enable
 for_window [class="^Gcolor2$"]                        floating enable
-for_window [class="^Screenruler$"]                    floating enable; border none; resize shrink up 15px
 
 # Odd workspaces on the left screen, even ones on the right.
 # This has no incidence when using only one screen, i3 fallbacks to the current
