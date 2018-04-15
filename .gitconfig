@@ -42,3 +42,10 @@
 
 [gpg]
     program = gpg2
+
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckobjects = true
