@@ -162,6 +162,9 @@ bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 500
 bindsym XF86KbdBrightnessDown exec .local/bin/brightness kbd - 1
 bindsym XF86KbdBrightnessUp   exec .local/bin/brightness kbd + 1
 
+bindsym F8 exec .local/bin/brightness mon - 500
+bindsym F9 exec .local/bin/brightness mon + 500
+
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract     exec --no-startup-id ~/.local/bin/pasink set-sink-volume -5%
 bindsym $mod+KP_Add          exec --no-startup-id ~/.local/bin/pasink set-sink-volume +5%
