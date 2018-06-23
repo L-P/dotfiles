@@ -13,7 +13,7 @@ write_dotfiles() {
     for file in .dotfiles/.*; do
         # shellcheck disable=SC2155
         local basename="$(basename "$file")"
-        if [ "$basename" = '.' -o "$basename" =  '..' ]; then
+        if [ "$basename" = '.' ] || [ "$basename" =  '..' ]; then
             continue
         fi
 
