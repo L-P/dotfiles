@@ -1,4 +1,0 @@
-[miscellany]
-global-ignores = *.sw[op]
-log-encoding = UTF-8
-use-commit-times = yes
