@@ -86,6 +86,9 @@ noremap Y y$
 " Disable Ex mode
 noremap Q <Nop>
 
+" Disable external help
+noremap K <Nop>
+
 " Visually select last inserted text
 noremap gV `[v`]
 

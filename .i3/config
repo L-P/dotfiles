@@ -172,7 +172,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.bin/pasink set-sink-volume 
 bindsym XF86AudioMute        exec --no-startup-id ~/.bin/pasink set-sink-mute toggle
 
 # 'Background' workspace
-assign [class="Keepassx"]  10
 assign [class="keepassxc"] 10
 assign [class="^Saaz"]     3
 
