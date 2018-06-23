@@ -1,6 +1,5 @@
 # Misc options.
 bindkey -v
-bindkey '^R' history-incremental-search-backward
 setopt autocd
 
 # Bits from Oh My ZSH df5b09e20b05a5ba4234599602f7a74934c916db.
