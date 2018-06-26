@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/template"]
 	path = .vim/bundle/template
 	url = https://github.com/aperezdc/vim-template
+[submodule ".vim/bundle/twig"]
+	path = .vim/bundle/twig
+	url = https://github.com/lumiliet/vim-twig.git
