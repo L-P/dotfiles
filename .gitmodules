@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/terraform"]
 	path = .vim/bundle/terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule ".vim/bundle/yaml-helper"]
+	path = .vim/bundle/yaml-helper
+	url = https://github.com/lmeijvogel/vim-yaml-helper
