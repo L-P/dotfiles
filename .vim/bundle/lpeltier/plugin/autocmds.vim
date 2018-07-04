@@ -14,15 +14,16 @@ if version >= 703
 endif
 
 " Custom filetypes and options
+autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json syntax=javascript equalprg=json_reformat
 autocmd BufNewFile,BufRead *.md               setlocal filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}         setlocal filetype=php
-autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json syntax=javascript equalprg=json_reformat
-autocmd BufNewFile,BufRead Vagrantfile        setlocal filetype=ruby
-autocmd BufNewFile,BufRead *.{mail,txt}       setlocal filetype=mail
+autocmd BufNewFile,BufRead *.twig             setlocal filetype=html.twig
 autocmd BufNewFile,BufRead *.{asm,s}          setlocal filetype=nasm
-autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead *.{glsl,vert,frag} setlocal filetype=glsl
+autocmd BufNewFile,BufRead *.{mail,txt}       setlocal filetype=mail
+autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead CMakeLists.txt     setlocal filetype=cmake
+autocmd BufNewFile,BufRead Vagrantfile        setlocal filetype=ruby
 autocmd BufWritePost       *.go               call CompileGo()
 
 " go build does not compile tests and running both go test and go build at the
