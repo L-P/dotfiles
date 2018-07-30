@@ -24,7 +24,9 @@ autocmd BufNewFile,BufRead *.{mail,txt}       setlocal filetype=mail
 autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead CMakeLists.txt     setlocal filetype=cmake
 autocmd BufNewFile,BufRead Vagrantfile        setlocal filetype=ruby
-autocmd BufWritePost       *.go               call CompileGo()
+
+autocmd BufWritePost *.go call CompileGo()
+autocmd BufWritePost *.tf silent !terraform fmt
 
 " go build does not compile tests and running both go test and go build at the
 " same time results un a disappearing quickfix buffer, select what command to

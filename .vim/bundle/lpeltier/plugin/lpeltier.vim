@@ -56,6 +56,7 @@ set exrc                " Per-directory .vimrc
 set secure              " Disallow unsafe commands in per-directory .vimrc files
 set nohlsearch          " Don't highlight search results. (nvim default)
 set nrformats-=octal    " Parse 0\d+ numbers as decimal when using ^A and ^X
+set autoread            " Auto-reload files when changed externally
 
 if version >= 703
     set relativenumber      " Relative line numbering
