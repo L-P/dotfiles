@@ -81,6 +81,9 @@ nnoremap <Leader>ls :GitSessionLoad<CR>
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
 
+" Open/create file in same directory (Create Sibling)
+nnoremap <Leader>cs :e %:h/
+
 " For consistency
 noremap Y y$
 
