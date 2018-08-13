@@ -32,6 +32,7 @@ alias mkdir='mkdir -pv'
 alias rm='rm --preserve-root'
 alias gd='git diff -M -C'
 alias gds='git diff -M -C --staged'
+alias gpf='git push --force-with-lease'
 alias gs='git status --short'
 alias py='python3'
 alias ripit='ripit -o /dev/shm/ripit -c 2 -q 8' # FLAC @ max comp.
