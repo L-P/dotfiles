@@ -1,0 +1,55 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+exit(main());
+
+function main(): int
+{
+    $delta = (7.8 * 3600) - get_total();
+    if ($delta <= 0) {
+        $delta *= -1;
+        echo '-';
+    }
+
+    $h = intval($delta / 3600);
+    $m = intval($delta / 60) % 60;
+    $abs = date('H:m:s', intval(time() + $delta));
+
+    printf("%dh %dm (%s)\n", $h, $m, $abs);
+    return 0;
+}
+
+function get_total(): int
+{
+    $entries = array_filter(array_map('trim', explode(
+        "\n",
+        shell_exec(
+            'hamster-cli list | tail -n +3 | cut -d"(" -f2 | cut -d")" -f1'
+        )
+    )));
+
+    $total = 0;
+    foreach (array_map('parse_entry', $entries) as $v) {
+        list($h, $m) = $v;
+        $total += ($h * 3600) + ($m * 60);
+    }
+
+    return $total;
+}
+
+function parse_entry(string $str): array
+{
+    $h = 0;
+    $m = 0;
+
+    foreach (array_map('trim', explode(' ', $str)) as $v) {
+        $d = intval(preg_replace('`[^\d]`', '', $v));
+        if ($v[strlen($v) - 1] === 'h') {
+            $h = $d;
+        } else {
+            $m = $d;
+        }
+    }
+
+    return[$h, $m];
+}
