@@ -6,6 +6,9 @@ exit(main());
 function main(): int
 {
     $delta = (7.8 * 3600) - get_total();
+    $abs = intval(time() + $delta);
+    $abs -= $abs % 60;
+
     if ($delta <= 0) {
         $delta *= -1;
         echo '-';
@@ -13,9 +16,8 @@ function main(): int
 
     $h = intval($delta / 3600);
     $m = intval($delta / 60) % 60;
-    $abs = date('H:m:s', intval(time() + $delta));
 
-    printf("%dh %dm (%s)\n", $h, $m, $abs);
+    printf("%dh %dm (%s)\n", $h, $m, date('H:i:s', $abs));
     return 0;
 }
 
