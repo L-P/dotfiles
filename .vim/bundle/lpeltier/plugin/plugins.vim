@@ -6,15 +6,6 @@ let g:airline_theme = 'wombat'
 " For markdown
 let g:table_mode_corner="|"
 
-" Go
-" --
-let g:go_fmt_command = "goimports"
-let g:go_highlight_array_whitespace_error = 1
-let g:go_highlight_chan_whitespace_error = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_space_tab_error = 1
-let g:go_highlight_trailing_whitespace_error = 1
-
 " Syntastic
 " ---------
 let g:syntastic_enable_signs = 1                      " Use VIM signs to show errors
@@ -26,7 +17,6 @@ let g:syntastic_yaml_checkers = ["yamllint"]
 let g:syntastic_json_checkers = ["jsonlint"]
 let g:syntastic_php_phpcs_args='--standard=PSR2'
 let g:syntastic_filetype_map = { "ansible": "yaml" }
-let g:syntastic_go_checkers = ["golint", "govet", "errcheck"]
 
 " CtrlP params
 " ------------
