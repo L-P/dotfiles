@@ -14,7 +14,8 @@ if version >= 703
 endif
 
 " Custom filetypes and options
-autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json syntax=javascript equalprg=json_reformat
+autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json equalprg=json_reformat
+autocmd BufNewFile,BufRead *.babelrc          setlocal filetype=json equalprg=json_reformat
 autocmd BufNewFile,BufRead *.md               setlocal filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}         setlocal filetype=php
 autocmd BufNewFile,BufRead *.twig             setlocal filetype=html.twig
