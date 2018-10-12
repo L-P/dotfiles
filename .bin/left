@@ -5,7 +5,21 @@ exit(main());
 
 function main(): int
 {
-    $delta = (7.8 * 3600) - get_total();
+    echo 'Daily: ';
+    print_left(7.8 * 3600);
+
+    echo 'Weekly: ';
+    $fdow = strtotime('last monday');
+    $ldow = strtotime('next saturday');
+    $range = date('Y-m-d H:i:s', $fdow) . '-' . date('Y-m-d H:i:s', $ldow);
+    print_left(5 * 7.8 * 3600, $range);
+
+    return 0;
+}
+
+function print_left(float $allocated, string $range = '')
+{
+    $delta = $allocated - get_total($range);
     $abs = intval(time() + $delta);
     $abs -= $abs % 60;
 
@@ -18,16 +32,20 @@ function main(): int
     $m = intval($delta / 60) % 60;
 
     printf("%dh %dm (%s)\n", $h, $m, date('H:i:s', $abs));
-    return 0;
 }
 
-function get_total(): int
+function get_total($range = '')
 {
+    if (strlen($range) > 0) {
+        $range = escapeshellarg($range);
+    }
+
     $entries = array_filter(array_map('trim', explode(
         "\n",
-        shell_exec(
-            'hamster-cli list | tail -n +3 | cut -d"(" -f2 | cut -d")" -f1'
-        )
+        shell_exec(sprintf(
+            'hamster-cli list %s | tail -n +3 | cut -d"(" -f2 | cut -d")" -f1',
+            $range
+        ))
     )));
 
     $total = 0;
