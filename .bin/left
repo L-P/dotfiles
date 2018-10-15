@@ -9,7 +9,7 @@ function main(): int
     print_left(7.8 * 3600);
 
     echo 'Weekly: ';
-    $fdow = strtotime('last monday');
+    $fdow = strtotime('last sunday');
     $ldow = strtotime('next saturday');
     $range = date('Y-m-d H:i:s', $fdow) . '-' . date('Y-m-d H:i:s', $ldow);
     print_left(5 * 7.8 * 3600, $range);
