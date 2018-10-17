@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/wombat"]
 	path = .vim/bundle/wombat
 	url = https://github.com/cschlueter/vim-wombat.git
@@ -70,6 +67,3 @@
 [submodule ".vim/bundle/vue"]
 	path = .vim/bundle/vue
 	url = https://github.com/posva/vim-vue.git
-[submodule ".vim/bundle/vue-syntastic"]
-	path = .vim/bundle/vue-syntastic
-	url = https://github.com/sekel/vim-vue-syntastic.git
