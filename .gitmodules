@@ -67,3 +67,9 @@
 [submodule ".vim/bundle/yaml-helper"]
 	path = .vim/bundle/yaml-helper
 	url = https://github.com/lmeijvogel/vim-yaml-helper
+[submodule ".vim/bundle/vue"]
+	path = .vim/bundle/vue
+	url = https://github.com/posva/vim-vue.git
+[submodule ".vim/bundle/vue-syntastic"]
+	path = .vim/bundle/vue-syntastic
+	url = https://github.com/sekel/vim-vue-syntastic.git
