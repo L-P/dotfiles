@@ -27,5 +27,3 @@ abbr djv {<CR>$locals = get_defined_vars();<CR>
     \(PHP_SAPI === 'cli') OR header('Content-Type: application/json');<CR>
     \echo json_encode(array(array_keys($locals), $locals));<CR>
     \die();<CR>}<ESC>^v%J^
-
-let g:syntastic_php_phpcs_args='--standard=PSR2'

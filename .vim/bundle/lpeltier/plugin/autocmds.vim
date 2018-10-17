@@ -71,10 +71,6 @@ function! AnsibleVaultDecrypt()
     if getline(1) =~ '^\$ANSIBLE_VAULT;'
         silent :%!ansible-vault --vault-password-file=.vault decrypt - --output -
         let b:is_ansible_vault=1
-
-        " The file is kept encrypted on file so any syntastic check will fail
-        let b:syntastic_skip_checks = 1
-        SyntasticReset
     else
         let b:is_ansible_vault=0
     endif
