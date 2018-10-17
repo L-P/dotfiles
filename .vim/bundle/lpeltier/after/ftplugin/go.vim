@@ -5,5 +5,3 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_space_tab_error = 1
 let g:go_highlight_trailing_whitespace_error = 1
 let g:go_metalinter_autosave = 1
-
-let b:syntastic_mode = "passive"
