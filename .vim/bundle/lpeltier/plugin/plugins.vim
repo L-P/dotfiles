@@ -1,8 +1,9 @@
 " Plugins config
 " ==============
-" Misc
-" -------
 let g:airline_theme = 'wombat'
+
+let g:ale_open_list=1
+
 " For markdown
 let g:table_mode_corner="|"
 
