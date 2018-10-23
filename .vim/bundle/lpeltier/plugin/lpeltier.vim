@@ -105,7 +105,7 @@ inoremap <Down> <C-O>gj
 
 " Copy the current selection in X clipboard, useful when vim is compiled
 " without + and * registers support
-noremap <Leader>c :!xsel -iob<CR>u
+noremap <Leader>c :!xclip -selection clipboard -i<CR>u
 
 " Align multiple columns of text
 vnoremap <Leader>a :!column -t<CR>gv:s/  \([^ ]\)/ \1/g<CR>gv=
