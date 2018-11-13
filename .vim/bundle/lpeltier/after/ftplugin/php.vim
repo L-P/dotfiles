@@ -2,8 +2,6 @@
 let php_parent_error_close=1
 let php_parent_error_open=1
 
-let g:ale_php_phpcs_standard="PSR2"
-
 " Update control structures to PSR whitespacing.
 noremap <Leader>p :%s/\(if\\|switch\\|for\\|foreach\\|while\)(/\1 (/ge<CR>
     \:%s/\(function\\|trait\\|interface\\|class\) \(.*\) {/\1 \2\r{/e<CR>
