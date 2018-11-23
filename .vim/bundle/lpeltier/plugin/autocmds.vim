@@ -26,19 +26,7 @@ autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead CMakeLists.txt     setlocal filetype=cmake
 autocmd BufNewFile,BufRead Vagrantfile        setlocal filetype=ruby
 
-autocmd BufWritePost *.go call CompileGo()
 autocmd BufWritePost *.tf silent !terraform fmt
-
-" go build does not compile tests and running both go test and go build at the
-" same time results un a disappearing quickfix buffer, select what command to
-" run based on the filename.
-function! CompileGo()
-    if @% =~ "_test.go$"
-        call go#test#Test(1, 0)
-    else
-        call go#cmd#Build(1)
-    endif
-endfunction
 
 
 " Misc functions
