@@ -147,6 +147,7 @@ bar {
 
 # App shortcuts
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym XF86Calculator exec i3-sensible-terminal -e python3
 
 # Lock screen
 bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000
