@@ -4,7 +4,7 @@ if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
     source "$HOME/.keychain/$HOST-sh"
 fi
 
-export PATH=~/.bin:$PATH
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.bin"
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 export LC_ALL=C.UTF-8
 
@@ -41,11 +41,9 @@ alias cdr='cd $(git rev-parse --show-toplevel)'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias v='vagrant'
 alias ap='ansible-playbook --vault-password-file=.vault'
 alias optipng='optipng -strip all -o7'
 alias ds='webdev-toolbox docker-shell'
-alias run='webdev-toolbox runner'
 alias adminer='webdev-toolbox adminer'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
@@ -63,10 +61,10 @@ duf() {
 
 # Handy grep aliases, since ack sucks.
 g() {
-	grep -EHnr --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
+	grep -EHnr --exclude-dir='node_modules' --exclude-dir='vendor' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
 gi() {
-	grep -EHnri --exclude-dir='.svn' --exclude-dir='.git' "$*" . | "$PAGER" ;
+	grep -EHnri --exclude-dir='node_modules' --exclude-dir='vendor' --exclude-dir='.git' "$*" . | "$PAGER" ;
 }
 
 # Same aliases for the faster git grep.
@@ -142,7 +140,6 @@ cert() {
     openssl x509 -in "$1" -text -noout
 }
 
-
 hl() {
     hledger is -p 'this month'
     printf "-------------------\n-------------------\n"
@@ -159,18 +156,4 @@ hlp() {
 # svg2png FILE WIDTH
 svg2png() {
     inkscape --export-png="$1.png" --export-width="$2" --export-background-opacity=0 --without-gui "$1"
-}
-
-# Display time bewteen keyframes
-# keyframes FILE
-keyframes () {
-    ffprobe -of compact -show_packets -select_streams v "$1" | grep 'K$' |\
-        awk 'BEGIN{FS="|";last=0}{split($5,a,"="); print a[2]-last; last=a[2]}'
-}
-
-# shellcheck disable=SC2046
-dockerpurge() {
-    docker rm -v $(docker ps -a -q -f status=exited)
-    docker rmi $(docker images -f "dangling=true" -q)
-    docker volume rm $(docker volume ls -qf dangling=true)
 }
