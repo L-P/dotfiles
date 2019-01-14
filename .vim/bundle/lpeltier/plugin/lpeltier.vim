@@ -117,6 +117,6 @@ cnoremap w!! %!sudo tee > /dev/null %<CR>
 " Shiny path autocomplete
 set wildmode=list:longest,list:full
 set wildmenu
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/,CVS*,*.pyc
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/,*.pyc
 
 com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
