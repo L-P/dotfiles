@@ -150,10 +150,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym XF86Calculator exec i3-sensible-terminal -e python3
 
 # Lock screen
-bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000
-bindsym $mod+End    exec --no-startup-id /usr/bin/i3lock -d -c 000000
-bindsym $mod+Scroll_Lock exec --no-startup-id /usr/bin/i3lock -d -c 000000; exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
-bindsym $mod+Home        exec --no-startup-id /usr/bin/i3lock -d -c 000000; exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+bindsym Scroll_Lock exec --no-startup-id /usr/bin/i3lock -c 000000
+bindsym $mod+End    exec --no-startup-id /usr/bin/i3lock -c 000000
+bindsym $mod+Scroll_Lock exec --no-startup-id /usr/bin/i3lock -c 000000; exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+bindsym $mod+Home        exec --no-startup-id /usr/bin/i3lock -c 000000; exec --no-startup-id dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
 
 # Screenshot
 bindsym Print exec scrot
