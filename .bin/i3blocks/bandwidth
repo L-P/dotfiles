@@ -23,9 +23,9 @@ function get_diff(Stats $last, Stats $cur): string
     $drx = (int) round(($cur->rx - $last->rx) / $dt);
 
     return sprintf(
-        "↓%s/s ↑%s/s",
-        str_pad(humanize($drx), 8, ' ', STR_PAD_LEFT),
-        str_pad(humanize($dtx), 8, ' ', STR_PAD_LEFT)
+        "↓↑ %s/s %s/s",
+        humanize($drx),
+        humanize($dtx)
     );
 }
 
