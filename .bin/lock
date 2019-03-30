@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+xset -display :0.0 dpms force off
+/usr/bin/i3lock -c 000000 --nofork
+xset -display :0.0 dpms force on
