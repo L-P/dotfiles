@@ -15,6 +15,9 @@
     email = contact@leo-peltier.fr
     name = Léo Peltier
 
+[diff]
+    algorithm = patience
+
 [core]
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
