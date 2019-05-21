@@ -22,3 +22,5 @@ endif
 
 " Disable ALE for go as we already have vim-go
 let g:ale_pattern_options = {'.*\.go$': {'ale_enabled': 0}}
+
+let g:go_metalinter_command='golangci-lint'
