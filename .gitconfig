@@ -17,6 +17,7 @@
 
 [diff]
     algorithm = patience
+    renameLimit = 2048
 
 [core]
     excludesfile = ~/.gitignore
