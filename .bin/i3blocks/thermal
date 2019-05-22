@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+require __DIR__ . '/lib.php';
+
+exit(main());
+
+function main(): int
+{
+    $out = [];
+    foreach (glob('/sys/class/thermal/thermal_zone*') as $v) {
+        $t = round(trim(file_get_contents("$v/temp")) / 1000.0, 2);
+        $out[] = template($t, 100, '%d', 1.25);
+    }
+
+    echo implode('/', $out);
+
+    return 0;
+}
