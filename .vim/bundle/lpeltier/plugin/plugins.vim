@@ -19,8 +19,3 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 if !empty(glob('~/.vim/bundle/cpsm/build/cpsm_py.so'))
     let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 endif
-
-" Disable ALE for go as we already have vim-go
-let g:ale_pattern_options = {'.*\.go$': {'ale_enabled': 0}}
-
-let g:go_metalinter_command='golangci-lint'
