@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/ledger"]
 	path = .vim/bundle/ledger
 	url = https://github.com/ledger/vim-ledger.git
-[submodule ".vim/bundle/emmet-vim"]
-	path = .vim/bundle/emmet
-	url = https://github.com/mattn/emmet-vim.git
 [submodule ".vim/bundle/cpsm"]
 	path = .vim/bundle/cpsm
 	url = https://github.com/nixprime/cpsm.git
@@ -40,9 +37,6 @@
 [submodule ".vim/bundle/editorconfig"]
 	path = .vim/bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule ".vim/bundle/table-mode"]
-	path = .vim/bundle/table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule ".vim/bundle/airline-themes"]
 	path = .vim/bundle/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
