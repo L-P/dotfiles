@@ -50,6 +50,7 @@ alias dcd='docker-compose down'
 alias dcs='docker-compose stop'
 alias dcu='docker-compose up'
 alias dcl='docker-compose logs --follow'
+alias tf='terraform'
 
 # tmux for the lazy.
 t() {
