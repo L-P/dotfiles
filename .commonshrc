@@ -4,7 +4,7 @@ if [ "root" != "$(whoami)" -a -z "$SSH_CLIENT" -a -z "$SSH_TTY" ]; then
     source "$HOME/.keychain/$HOST-sh"
 fi
 
-export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.bin"
+export PATH="${PATH}:${HOME}/.bin:${HOME}/.local/bin:/opt/go/bin"
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 export LC_ALL=C.UTF-8
 
