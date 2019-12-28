@@ -78,6 +78,12 @@ _main_root() {
     _install_cli
     _install_desktop
     _install_golang
+
+    sed -i '/^supersede domain-name-servers/d' '/etc/dhclient.conf'
+    echo 'supersede domain-name-servers 127.0.0.1;' >> "/etc/dhclient.conf"
+
+    sed -i '/^supersede domain-name-servers/d' '/etc/wicd/dhclient.conf.template'
+    echo 'supersede domain-name-servers 127.0.0.1;' >> '/etc/wicd/dhclient.conf.template'
 }
 
 _install_golang() {
@@ -115,7 +121,8 @@ _install_cli() {
         sqlite3 mariadb-client \
         php-cli php-mysql composer \
         httpie mycli \
-        mat2 qrencode
+        mat2 qrencode \
+        wicd-curses
 
     update-alternatives --set editor /usr/bin/vim.basic
     chsh -s $(which zsh) lpeltier
