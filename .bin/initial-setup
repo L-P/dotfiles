@@ -1,0 +1,225 @@
+#!/usr/bin/env sh
+# This script is the very first thing that runs on my machine after installing
+# a fresh Debian without any DE.
+
+set -eux
+
+_main() {
+    if [ "$(id -u)" -eq 0 ]; then
+        _main_root
+        su lpeltier -c "$0"
+    else
+        _main_user
+    fi
+}
+
+_main_user() {
+    _init_checks_user
+    _install_dotfiles
+
+    systemctl --user enable syncthing
+    get_firefox
+}
+
+_install_dotfiles() {
+    cwd="$(pwd)"
+    dir="$HOME/.dotfiles"
+
+    rm -rf "$dir"
+
+    # for idempotence, we need to get rid of the git config because of some bad
+    # commit metadata in YCM
+    rm -f "$HOME/.gitconfig"
+
+    git clone https://github.com/L-P/dotfiles "$dir"
+    cd "$dir"
+    git submodule update --init --recursive
+
+    cd "$HOME"
+    for f in $(find .dotfiles -maxdepth 1 -name ".*"); do
+        if [ "$f" = "." -o "$f" = ".dotfiles" -o "$f" = ".git" ]; then
+            continue
+        fi
+
+        ln -s -f "$f" .
+    done
+
+    cd "$HOME/.dotfiles/.vim/bundle/cpsm"
+    PY3=ON ./install.sh
+
+    cd "$HOME/.dotfiles/.vim/bundle/you-complete-me"
+    python3 ./install.py
+
+    touch "$HOME/.zsh_local" "$HOME/.bash_local"
+
+    cd "$cwd"
+}
+
+_init_checks_user() {
+    if [ "$(id -u)" -eq 0 ]; then
+        echo "this script needs to run as a regular user" 1>&2
+        exit 1
+    fi
+
+    # random executable as canary
+    which jq 2> /dev/null
+    if [ $? -ne 0 ]; then
+        echo "you need to run the script as root first" 1>&2
+        exit 1
+    fi
+}
+
+_main_root() {
+    _init_checks_root
+
+    _setup_apt_sources
+    apt upgrade -y
+
+    _install_cli
+    _install_desktop
+    _install_golang
+}
+
+_install_golang() {
+    cwd=$(pwd)
+    cd "/opt"
+    rm -rf "/opt/go"
+    version="$(curl -s https://golang.org/VERSION?m=text)"
+    curl -s "https://dl.google.com/go/$version.linux-amd64.tar.gz" | tar xz
+    cd "$cwd"
+}
+
+_install_cli() {
+    # Base CLI
+    apt install -y \
+        git keychain vim-nox zsh tmux \
+        p7zip unrar-free unzip \
+        ncdu tree htop curl \
+        jq moreutils rsync
+
+    # Development tools
+    apt install -y \
+        build-essential make cmake gdb valgrind \
+        clang clang-format clang-tidy \
+        exuberant-ctags shellcheck yamllint \
+        cppreference-doc-en-html \
+        libboost-all-dev
+
+    # Misc
+    apt install -y \
+        dnsutils mtr whois \
+        dos2unix optipng woof git-crypt \
+        hledger makeself sshfs units \
+        gnuplot graphviz ffmpeg \
+        imagemagick nmap flac pv \
+        sqlite3 mariadb-client \
+        php-cli php-mysql composer \
+        httpie mycli \
+        mat2 qrencode
+
+    update-alternatives --set editor /usr/bin/vim.basic
+    chsh -s $(which zsh) lpeltier
+}
+
+_install_desktop() {
+    # Base desktop
+    apt install -y \
+        i3 i3blocks lightdm dunst \
+        pavucontrol pulseaudio \
+        fonts-inconsolata \
+        firmware-iwlwifi unbound \
+        eog evince file-roller \
+        lxterminal pcmanfm \
+        gdebi scrot x11-xserver-utils xclip xwallpaper
+
+    # Rest of the wold, the big apps.
+    apt install -y \
+        chromium libreoffice syncthing \
+        gimp gimp-plugin-registry \
+        gnome-disk-utility gparted \
+        gtk-redshift vlc wireshark \
+        keepassxc
+
+    update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
+}
+
+_setup_apt_sources() {
+    dst="/etc/apt/sources.list.d/lpeltier.list"
+    rm -f "$dst" # for idempotence
+
+    apt update
+    apt install -y gnupg # required for apt-key
+
+    # non-free required for iwlwifi
+    echo "deb http://httpredir.debian.org/debian/ $(lsb_release -sc) non-free" > "$dst"
+
+    _install_syncthing_pgp_key
+    echo "deb https://apt.syncthing.net/ syncthing stable" >> "$dst"
+
+    apt update
+}
+
+_install_syncthing_pgp_key() {
+    echo "-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+LlHRAP8U8Ozk3ll45SR12Zf2
+=rVev
+-----END PGP PUBLIC KEY BLOCK-----" \
+    | apt-key add -
+}
+
+_init_checks_root() {
+    if [ "$(lsb_release -si)" != "Debian" ]; then
+        echo "this script is expected to run on Debian only" 1>&2
+        exit 1
+    fi
+
+    if [ "$(lsb_release -sr)" -lt 10 ]; then
+        echo "this script is expected to run on Debian ≥ 10 only" 1>&2
+        exit 1
+    fi
+
+    if [ "$(id -u)" -ne 0 ]; then
+        echo "this script needs to run as root" 1>&2
+        exit 1
+    fi
+}
+
+_main
