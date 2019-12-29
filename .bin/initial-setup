@@ -113,7 +113,7 @@ _install_cli() {
 
     # Misc
     apt install -y \
-        dnsutils mtr whois \
+        dnsutils mtr-tiny whois \
         dos2unix optipng woof git-crypt \
         hledger makeself sshfs units \
         gnuplot graphviz ffmpeg \
