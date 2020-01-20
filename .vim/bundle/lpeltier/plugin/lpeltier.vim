@@ -58,7 +58,7 @@ set nohlsearch          " Don't highlight search results. (nvim default)
 set nrformats-=octal    " Parse 0\d+ numbers as decimal when using ^A and ^X
 set autoread            " Auto-reload files when changed externally
 set list                " Show non-breaking spaces
-set listchars=nbsp:␣
+set listchars=tab:\ \ ,nbsp:␣
 
 if version >= 703
     set relativenumber      " Relative line numbering
