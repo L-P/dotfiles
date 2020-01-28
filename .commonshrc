@@ -49,6 +49,7 @@ alias dcb='docker-compose build'
 alias dcd='docker-compose down'
 alias dcs='docker-compose stop'
 alias dcu='docker-compose up'
+alias dcr='docker-compose restart'
 alias dcl='docker-compose logs --follow'
 alias tf='terraform'
 
