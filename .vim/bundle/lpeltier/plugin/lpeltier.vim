@@ -122,3 +122,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/,*.pyc
 
 com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+
+" URL encode/decode
+vnoremap <leader>enurl :!python -c 'import sys,urllib;print urllib.quote(sys.stdin.read().strip())'<cr>
+vnoremap <leader>deurl :!python -c 'import sys,urllib;print urllib.unquote(sys.stdin.read().strip())'<cr>
