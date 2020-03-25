@@ -37,7 +37,7 @@ _install_dotfiles() {
 
     cd "$HOME"
     for f in $(find .dotfiles -maxdepth 1 -name ".*"); do
-        if [ "$f" = "." -o "$f" = ".dotfiles" -o "$f" = ".git" ]; then
+        if [ "$f" = "." ] || [ "$f" = ".dotfiles" ] || [ "$f" = ".git" ]; then
             continue
         fi
 
@@ -62,8 +62,7 @@ _init_checks_user() {
     fi
 
     # random executable as canary
-    which jq 2> /dev/null
-    if [ $? -ne 0 ]; then
+    if ! command -v jq 2> /dev/null; then
         echo "you need to run the script as root first" 1>&2
         exit 1
     fi
@@ -125,7 +124,7 @@ _install_cli() {
         wicd-curses
 
     update-alternatives --set editor /usr/bin/vim.basic
-    chsh -s $(which zsh) lpeltier
+    chsh -s "$(command -v zsh)" lpeltier
 }
 
 _install_desktop() {
