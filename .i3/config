@@ -130,7 +130,6 @@ mode "launch" {
     bindsym f exec firefox          ; mode "default"
     bindsym g exec firefox -private ; mode "default"
     bindsym p exec pcmanfm          ; mode "default"
-    bindsym t exec thunderbird      ; mode "default"
 
     bindsym Escape mode "default"
 }
