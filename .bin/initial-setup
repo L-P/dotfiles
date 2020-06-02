@@ -108,7 +108,7 @@ _install_cli() {
         docker.io docker-compose \
         clang clang-format clang-tidy \
         exuberant-ctags shellcheck yamllint \
-        cppreference-doc-en-html \
+        cppreference-doc-en-html ninja-build \
         libboost-all-dev
 
     # Misc
