@@ -105,6 +105,7 @@ _install_cli() {
     # Development tools
     apt install -y \
         build-essential make cmake gdb valgrind \
+        docker.io docker-compose \
         clang clang-format clang-tidy \
         exuberant-ctags shellcheck yamllint \
         cppreference-doc-en-html \
