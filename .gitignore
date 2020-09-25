@@ -4,6 +4,8 @@
 .vault
 .~lock.*
 nohup.out
+.vimrc
+TODO
 
 # Ignores for dotfiles repo
 /.bin/*
