@@ -166,6 +166,10 @@ hlp() {
     hledger bs -p "$*"
 }
 
+ts() {
+    date "-d@$1"
+}
+
 # Convert a SVG to PNG
 # svg2png FILE WIDTH
 svg2png() {
