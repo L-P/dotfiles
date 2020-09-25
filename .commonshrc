@@ -101,6 +101,16 @@ mkrepo() {
     ) > /dev/null
 }
 
+gpr() {
+    remote=origin
+    if [ $(git remote | grep github) ]; then
+        remote=github
+    fi
+
+    git fetch "$remote" "pull/$1/head:pr/$1"
+    git checkout "pr/$1"
+}
+
 # List all git repositories.
 repos() {
     find . -type d -name .git | sed -r 's/(\/\.git)$//'
