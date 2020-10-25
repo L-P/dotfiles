@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/emmet"]
 	path = .vim/bundle/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule ".vim/bundle/tagalong"]
+	path = .vim/bundle/tagalong
+	url = https://github.com/AndrewRadev/tagalong.vim
