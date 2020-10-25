@@ -49,7 +49,7 @@ autocmd BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%>110v.\+', -1)
 " Set +x automatically when writing a shell script
 " ------------------------------------------------
 function! ModeChange()
-    if getline(1) =~ "^#!" && getline(1) =~ "/bin/"
+    if (getline(1) =~ "^#!" || getline(1) =~ "^///") && getline(1) =~ "/bin/"
         silent !chmod u+x <afile>
     endif
 endfunction
