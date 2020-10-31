@@ -1,7 +1,7 @@
 # Use super as the modifier key.
 set $mod Mod4
-set $leftScreen DVI-1
-set $rightScreen HDMI-0
+set $leftScreen eDP-1
+set $rightScreen HDMI-1
 
 # If forced to use a system where there is no Inconsolata, use this.
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -139,7 +139,7 @@ bindsym $mod+Tab mode "launch"
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
 
-    tray_output $rightScreen
+    tray_output $leftScreen
 
     #output $rightScreen
 }
