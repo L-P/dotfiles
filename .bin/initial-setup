@@ -118,7 +118,7 @@ _install_cli() {
         hledger makeself sshfs units \
         gnuplot graphviz ffmpeg \
         imagemagick nmap flac pv \
-        sqlite3 mariadb-client \
+        sqlite3 mariadb-client pandoc \
         php-cli php-mysql composer \
         httpie mycli \
         mat2 qrencode \
