@@ -8,6 +8,7 @@ autocmd FileType markdown   setlocal textwidth=79
 autocmd FileType python     setlocal textwidth=79
 autocmd FileType mail       setlocal equalprg=fmt textwidth=72
 autocmd FileType yaml       setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html       setlocal cursorcolumn
 
 if version >= 703
     autocmd FileType mail      setlocal colorcolumn+=1
