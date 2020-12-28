@@ -78,8 +78,8 @@ _main_root() {
     _install_desktop
     _install_golang
 
-    sed -i '/^supersede domain-name-servers/d' '/etc/dhclient.conf'
-    echo 'supersede domain-name-servers 127.0.0.1;' >> "/etc/dhclient.conf"
+    sed -i '/^supersede domain-name-servers/d' '/etc/dhcp/dhclient.conf'
+    echo 'supersede domain-name-servers 127.0.0.1;' >> "/etc/dhcp/dhclient.conf"
 
     sed -i '/^supersede domain-name-servers/d' '/etc/wicd/dhclient.conf.template'
     echo 'supersede domain-name-servers 127.0.0.1;' >> '/etc/wicd/dhclient.conf.template'
@@ -124,7 +124,7 @@ _install_cli() {
         mat2 qrencode \
         wicd-curses
 
-    update-alternatives --set editor /usr/bin/vim.basic
+    update-alternatives --set editor /usr/bin/vim.nox
     chsh -s "$(command -v zsh)" lpeltier
 }
 
