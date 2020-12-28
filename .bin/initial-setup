@@ -119,6 +119,7 @@ _install_cli() {
         gnuplot graphviz ffmpeg \
         imagemagick nmap flac pv \
         sqlite3 mariadb-client pandoc \
+        texlive-latex-base texlive-latex-recommended texlive-latex-extra  \
         php-cli php-mysql composer \
         httpie mycli \
         mat2 qrencode \
