@@ -16,9 +16,15 @@ _main() {
 _main_user() {
     _init_checks_user
     _install_dotfiles
+    _install_golang_bins
 
     systemctl --user enable syncthing
     get_firefox
+}
+
+_install_golang_bins() {
+    go get golang.org/x/tools/cmd/goimports
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)/bin"
 }
 
 _install_dotfiles() {
