@@ -122,7 +122,7 @@ _install_cli() {
         clang clang-format clang-tidy \
         exuberant-ctags shellcheck yamllint \
         cppreference-doc-en-html ninja-build \
-        libboost-all-dev
+        libboost-all-dev universal-ctags
 
     # Misc
     apt install -y \
