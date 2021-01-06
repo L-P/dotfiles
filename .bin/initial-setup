@@ -84,9 +84,16 @@ _main_root() {
     _install_desktop
     _install_golang
 
+    # Disable maddening and downright dangerous automagic volume adjustement bullshit.
+    # See https://www.reddit.com/r/linux/comments/2rjiaa/horrible_decisions_flat_volumes_in_pulseaudio_a/
+    # and https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=674936
+    # Thanks u/GaianNeuron for introducing me to Destiny Potato and to this fix.
+    sed -i '/^flat-volumes/d' '/etc/pulse/daemon.conf'
+    echo 'flat-volumes = no' >> "/etc/pulse/daemon.conf"
+
+    # Use local unbound DNS.
     sed -i '/^supersede domain-name-servers/d' '/etc/dhcp/dhclient.conf'
     echo 'supersede domain-name-servers 127.0.0.1;' >> "/etc/dhcp/dhclient.conf"
-
     sed -i '/^supersede domain-name-servers/d' '/etc/wicd/dhclient.conf.template'
     echo 'supersede domain-name-servers 127.0.0.1;' >> '/etc/wicd/dhclient.conf.template'
 }
