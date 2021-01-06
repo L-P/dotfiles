@@ -159,7 +159,7 @@ _install_desktop() {
         gimp gimp-plugin-registry \
         gnome-disk-utility gparted \
         gtk-redshift vlc wireshark \
-        keepassxc
+        keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
 }
