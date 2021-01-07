@@ -110,33 +110,23 @@ _install_golang() {
 _install_cli() {
     # Base CLI
     apt install -y \
-        git keychain vim-nox zsh tmux \
-        p7zip unrar-free unzip \
-        ncdu tree htop curl \
-        jq moreutils rsync
+        curl git htop jq keychain moreutils ncdu p7zip rsync tmux tree \
+        unrar-free unzip vim-nox zsh \
 
     # Development tools
     apt install -y \
-        build-essential make cmake gdb valgrind \
-        docker.io docker-compose \
-        clang clang-format clang-tidy \
-        exuberant-ctags shellcheck yamllint \
-        cppreference-doc-en-html ninja-build \
-        libboost-all-dev universal-ctags
+        build-essential clang clang-format clang-tidy cmake \
+        cppreference-doc-en-html docker-compose docker.io exuberant-ctags gdb \
+        libboost-all-dev make ninja-build shellcheck universal-ctags valgrind \
+        yamllint
 
     # Misc
     apt install -y \
-        dnsutils mtr-tiny whois \
-        dos2unix optipng woof git-crypt \
-        hledger makeself sshfs units \
-        gnuplot graphviz ffmpeg \
-        imagemagick nmap flac pv \
-        sqlite3 mariadb-client pandoc \
-        texlive-latex-base texlive-latex-recommended texlive-latex-extra  \
-        httpie mycli \
-        mat2 qrencode \
-        wicd-curses \
-        php-cli php-mysql php-xml php-gd php-zip composer
+        composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz
+        hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny mycli \
+        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv \
+        qrencode sqlite3 sshfs texlive-latex-base texlive-latex-extra \
+        texlive-latex-recommended units whois wicd-curses woof
 
     update-alternatives --set editor /usr/bin/vim.nox
     chsh -s "$(command -v zsh)" lpeltier
