@@ -133,10 +133,10 @@ _install_cli() {
         imagemagick nmap flac pv \
         sqlite3 mariadb-client pandoc \
         texlive-latex-base texlive-latex-recommended texlive-latex-extra  \
-        php-cli php-mysql composer \
         httpie mycli \
         mat2 qrencode \
-        wicd-curses
+        wicd-curses \
+        php-cli php-mysql php-xml php-gd php-zip composer
 
     update-alternatives --set editor /usr/bin/vim.nox
     chsh -s "$(command -v zsh)" lpeltier
