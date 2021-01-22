@@ -18,15 +18,12 @@ endif
 " Custom filetypes and options
 autocmd BufNewFile,BufRead *.dockerfile       setlocal filetype=dockerfile
 autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json equalprg=python\ -m\ json.tool
-autocmd BufNewFile,BufRead *.md               setlocal filetype=markdown makeprg=markdown\ %\ >\ %<.html
 autocmd BufNewFile,BufRead *.php{t,s}         setlocal filetype=php
-autocmd BufNewFile,BufRead *.twig             setlocal filetype=html.twig
 autocmd BufNewFile,BufRead *.{asm,s}          setlocal filetype=nasm
 autocmd BufNewFile,BufRead *.{glsl,vert,frag} setlocal filetype=glsl
 autocmd BufNewFile,BufRead *.{mail,txt}       setlocal filetype=mail
 autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead CMakeLists.txt     setlocal filetype=cmake
-autocmd BufNewFile,BufRead Vagrantfile        setlocal filetype=ruby
 
 autocmd BufWritePost *.tf silent !terraform fmt
 
@@ -54,31 +51,3 @@ function! ModeChange()
     endif
 endfunction
 autocmd BufWritePost * call ModeChange()
-
-" Transparent encryption/decryption for ansible vaults
-" ----------------------------------------------------
-function! AnsibleVaultDecrypt()
-    if getline(1) =~ '^\$ANSIBLE_VAULT;'
-        silent :%!ansible-vault --vault-password-file=.vault decrypt - --output -
-        let b:is_ansible_vault=1
-    else
-        let b:is_ansible_vault=0
-    endif
-endfunction
-
-function! AnsibleVaultEncrypt()
-    if exists("b:is_ansible_vault") && b:is_ansible_vault
-        silent :%!ansible-vault --vault-password-file=.vault encrypt - --output -
-    endif
-endfunction
-
-function! AnsibleVaultAfterEncrypt()
-    if exists("b:is_ansible_vault") && b:is_ansible_vault
-        silent u
-    endif
-endfunction
-
-autocmd BufNewFile   * call AnsibleVaultDecrypt()
-autocmd BufReadPost  * call AnsibleVaultDecrypt()
-autocmd BufWritePre  * call AnsibleVaultEncrypt()
-autocmd BufWritePost * call AnsibleVaultAfterEncrypt()
