@@ -150,7 +150,7 @@ _install_desktop() {
     # Rest of the wold, the big apps.
     apt install -y \
         chromium libreoffice syncthing \
-        gimp gimp-plugin-registry \
+        gimp gimp-plugin-registry gimp-python \
         gnome-disk-utility gparted \
         gtk-redshift vlc wireshark \
         keepassxc gucharmap
