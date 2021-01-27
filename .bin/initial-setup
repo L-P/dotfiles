@@ -128,7 +128,7 @@ _install_cli() {
     apt install -y \
         composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz
         hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny mycli \
-        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv \
+        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv qpdf \
         qrencode sqlite3 sshfs texlive-latex-base texlive-latex-extra \
         texlive-latex-recommended ufw units whois wicd-curses woof
 
@@ -152,7 +152,7 @@ _install_desktop() {
         chromium libreoffice syncthing \
         gimp gimp-plugin-registry gimp-python \
         gnome-disk-utility gparted \
-        gtk-redshift vlc wireshark \
+        gtk-redshift inkscape vlc wireshark \
         keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
