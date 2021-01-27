@@ -51,6 +51,7 @@ alias dcu='docker-compose up'
 alias dcr='docker-compose restart'
 alias dcl='docker-compose logs --follow'
 alias tf='terraform'
+alias cal='ncal -Mb'
 
 # tmux for the lazy.
 t() {
