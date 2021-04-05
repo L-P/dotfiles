@@ -6,6 +6,7 @@
 nohup.out
 .vimrc
 TODO
+/tags
 
 # Ignores for dotfiles repo
 /.bin/*
