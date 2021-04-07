@@ -19,12 +19,13 @@ _main_user() {
     _install_golang_bins
 
     systemctl --user enable syncthing
-    get_firefox
+    "$HOME/.bin/get_firefox"
 }
 
 _install_golang_bins() {
-    go get golang.org/x/tools/cmd/goimports
-    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)/bin"
+    GO="/opt/go/bin/go"
+    "$GO" get golang.org/x/tools/cmd/goimports
+    curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$("$GO" env GOPATH)/bin"
 }
 
 _install_dotfiles() {
@@ -126,7 +127,7 @@ _install_cli() {
 
     # Misc
     apt install -y \
-        composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz
+        composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz \
         hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny mycli \
         nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv qpdf \
         qrencode sqlite3 sshfs texlive-latex-base texlive-latex-extra \
