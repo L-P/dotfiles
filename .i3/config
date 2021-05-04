@@ -130,6 +130,7 @@ mode "launch" {
     bindsym f exec firefox          ; mode "default"
     bindsym g exec firefox -private ; mode "default"
     bindsym p exec pcmanfm          ; mode "default"
+    bindsym k exec keepassxc        ; mode "default" ; workspace 10
 
     bindsym Escape mode "default"
 }
