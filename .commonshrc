@@ -7,6 +7,7 @@ fi
 export PATH="${PATH}:${HOME}/.bin:${HOME}/.local/bin:/opt/go/bin"
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 export LC_ALL=C.UTF-8
+export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 
 # Nicer less by default
 export LESS='-RFXS -x4 -n'
