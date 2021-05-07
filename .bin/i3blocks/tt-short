@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+tt="$HOME/.bin/tt"
+
+if ! "$tt" > /dev/null 2>&1; then
+    echo '<span color="red">No task running.</span>'
+    exit
+fi
+
+$tt 2>&1 | head -n 1 | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'"'"'/\&#39;/g'
