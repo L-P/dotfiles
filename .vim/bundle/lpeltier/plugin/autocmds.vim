@@ -17,6 +17,7 @@ endif
 
 " Custom filetypes and options
 autocmd BufNewFile,BufRead *.dockerfile       setlocal filetype=dockerfile
+autocmd BufNewFile,BufRead Dockerfile.*       setlocal filetype=dockerfile
 autocmd BufNewFile,BufRead *.js{m,on}         setlocal filetype=json equalprg=python\ -m\ json.tool
 autocmd BufNewFile,BufRead *.php{t,s}         setlocal filetype=php
 autocmd BufNewFile,BufRead *.{asm,s}          setlocal filetype=nasm
