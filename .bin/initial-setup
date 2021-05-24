@@ -34,10 +34,6 @@ _install_dotfiles() {
 
     rm -rf "$dir"
 
-    # for idempotence, we need to get rid of the git config because of some bad
-    # commit metadata in YCM
-    rm -f "$HOME/.gitconfig"
-
     git clone https://github.com/L-P/dotfiles "$dir"
     cd "$dir"
     git submodule update --init --recursive
@@ -53,9 +49,6 @@ _install_dotfiles() {
 
     cd "$HOME/.dotfiles/.vim/bundle/cpsm"
     PY3=ON ./install.sh
-
-    cd "$HOME/.dotfiles/.vim/bundle/you-complete-me"
-    python3 ./install.py
 
     touch "$HOME/.zsh_local" "$HOME/.bash_local"
 
