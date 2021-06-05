@@ -139,7 +139,8 @@ _install_desktop() {
         firmware-iwlwifi unbound \
         eog evince file-roller \
         lxterminal pcmanfm \
-        gdebi scrot x11-xserver-utils xclip xwallpaper
+        gdebi scrot x11-xserver-utils xclip xwallpaper \
+        pasystray paprefs
 
     # Rest of the wold, the big apps.
     apt install -y \

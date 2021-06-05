@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
+
 export DISPLAY=:0
 dunst &
 sleep 2
 xsetroot -solid black &
 gtk-redshift -l manual &
+pasystray &
 setxkbmap 'fr(oss)'
