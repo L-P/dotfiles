@@ -102,38 +102,6 @@ mkrepo() {
     ) > /dev/null
 }
 
-gpr() {
-    remote=origin
-    if [ $(git remote | grep github) ]; then
-        remote=github
-    fi
-
-    git fetch "$remote" "pull/$1/head:pr/$1"
-    git checkout "pr/$1"
-}
-
-# List all git repositories.
-repos() {
-    find . -type d -name .git | sed -r 's/(\/\.git)$//'
-}
-
-# Run a git command on all git repositories found in the current dir and subdirs.
-mgit() {
-    (
-    for repo in $(repos); do
-        pushd "$repo" > /dev/null
-        printf "\n%s\n" "$repo"
-        git "$@"
-        popd > /dev/null
-    done
-    ) 2>&1 | $(git config core.pager || echo 'less') # shellcheck disable=SC2091
-}
-
-# Update (fetch-only) all repositories in current dir and subsdirs.
-update_repos() {
-    mgit remote update --prune
-}
-
 # Unmount a SSHFS.
 ufs() {
     fusermount -u "$1"
