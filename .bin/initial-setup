@@ -109,12 +109,12 @@ _install_cli() {
     # Base CLI
     apt install -y \
         curl git htop jq keychain moreutils ncdu p7zip rsync tmux tree \
-        unrar-free unzip vim-nox zsh \
+        unrar-free unzip vim vim-gtk3 zsh
 
     # Development tools
     apt install -y \
         build-essential clang clang-format clang-tidy cmake \
-        cppreference-doc-en-html docker-compose docker.io exuberant-ctags gdb \
+        cppreference-doc-en-html docker-compose docker.io gdb \
         libboost-all-dev make ninja-build shellcheck universal-ctags valgrind \
         yamllint
 
@@ -124,7 +124,7 @@ _install_cli() {
         hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny mycli \
         nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv qpdf \
         qrencode sqlite3 sshfs texlive-latex-base texlive-latex-extra \
-        texlive-latex-recommended ufw units whois wicd-curses woof
+        texlive-latex-recommended ufw units whois woof
 
     update-alternatives --set editor /usr/bin/vim.nox
     chsh -s "$(command -v zsh)" lpeltier
@@ -140,7 +140,7 @@ _install_desktop() {
         eog evince file-roller \
         lxterminal pcmanfm \
         gdebi scrot x11-xserver-utils xclip xwallpaper \
-        pasystray paprefs
+        pasystray paprefs wicd-gtk
 
     # Rest of the wold, the big apps.
     apt install -y \
