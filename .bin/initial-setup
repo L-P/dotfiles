@@ -110,22 +110,20 @@ _install_golang() {
 _install_cli() {
     # Base CLI
     apt install -y \
-        curl git htop jq keychain moreutils ncdu p7zip rsync tmux tree \
-        unrar-free unzip vim vim-gtk3 zsh
+        curl git htop jq keychain moreutils ncdu rsync tmux tree unzip vim zsh
 
     # Development tools
     apt install -y \
-        build-essential clang clang-format clang-tidy cmake \
-        cppreference-doc-en-html docker-compose docker.io gdb \
-        libboost-all-dev make ninja-build shellcheck universal-ctags valgrind \
-        yamllint
+        build-essential clang clang-format clang-tidy cmake docker-compose \
+        docker.io gdb libboost-all-dev make ninja-build shellcheck \
+        universal-ctags valgrind yamllint
 
     # Misc
     apt install -y \
         composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz \
-        hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny mycli \
-        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv qpdf \
-        qrencode sqlite3 sshfs texlive-latex-base texlive-latex-extra \
+        hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny \
+        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv \
+        qrencode sqlite3 texlive-latex-base texlive-latex-extra \
         texlive-latex-recommended ufw units whois woof
 
     update-alternatives --set editor /usr/bin/vim.basic
@@ -135,21 +133,14 @@ _install_cli() {
 _install_desktop() {
     # Base desktop
     apt install -y \
-        i3 i3blocks lightdm dunst \
-        pavucontrol pulseaudio \
-        fonts-inconsolata \
-        firmware-iwlwifi unbound \
-        eog evince file-roller \
-        lxterminal pcmanfm \
-        gdebi scrot x11-xserver-utils xclip xwallpaper \
-        pasystray paprefs wicd-gtk
+        i3 i3blocks lightdm dunst pavucontrol pulseaudio fonts-inconsolata \
+        firmware-iwlwifi unbound nomacs evince lxterminal pcmanfm scrot \
+        x11-xserver-utils xclip xwallpaper pasystray paprefs wicd-gtk
 
-    # Rest of the wold, the big apps.
+    # Rest of the world, the big apps.
     apt install -y \
-        chromium libreoffice syncthing \
-        gimp gimp-plugin-registry gimp-python \
-        gnome-disk-utility gparted \
-        gtk-redshift inkscape vlc wireshark \
+        chromium libreoffice syncthing gimp gimp-plugin-registry gimp-python \
+        gnome-disk-utility gparted gtk-redshift inkscape mpv wireshark \
         keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
@@ -163,7 +154,7 @@ _setup_apt_sources() {
     apt install -y gnupg # required for apt-key
 
     # non-free required for iwlwifi
-    echo "deb http://httpredir.debian.org/debian/ $(lsb_release -sc) non-free" > "$dst"
+    echo "deb http://deb.debian.org/debian/ $(lsb_release -sc) non-free" > "$dst"
 
     _install_syncthing_pgp_key
     echo "deb https://apt.syncthing.net/ syncthing stable" >> "$dst"
