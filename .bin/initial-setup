@@ -4,10 +4,12 @@
 
 set -eux
 
+TARGET_USER=lpeltier
+
 _main() {
     if [ "$(id -u)" -eq 0 ]; then
         _main_root
-        su lpeltier -c "$0"
+        su "$TARGET_USER" -c "$0"
     else
         _main_user
     fi
@@ -127,7 +129,7 @@ _install_cli() {
         texlive-latex-recommended ufw units whois woof
 
     update-alternatives --set editor /usr/bin/vim.basic
-    chsh -s "$(command -v zsh)" lpeltier
+    chsh -s "$(command -v zsh)" "$TARGET_USER"
 }
 
 _install_desktop() {
@@ -154,7 +156,7 @@ _install_desktop() {
 }
 
 _setup_apt_sources() {
-    dst="/etc/apt/sources.list.d/lpeltier.list"
+    dst="/etc/apt/sources.list.d/${TARGET_USER}.list"
     rm -f "$dst" # for idempotence
 
     apt update
