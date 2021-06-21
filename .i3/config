@@ -1,7 +1,8 @@
 # Use super as the modifier key.
 set $mod Mod4
-set $leftScreen DVI-1
-set $rightScreen HDMI-0
+
+set $leftScreen eDP-1
+set $rightScreen DP-4-3
 
 # If forced to use a system where there is no Inconsolata, use this.
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -125,7 +126,8 @@ bindsym $mod+r mode "resize"
 
 # Launch mode, one app per key.
 mode "launch" {
-    bindsym s exec signal-desktop   ; mode "default"
+    bindsym c exec google-chrome    ; mode "default"
+    bindsym s exec slack            ; mode "default"
     bindsym f exec firefox          ; mode "default"
     bindsym g exec firefox -private ; mode "default"
     bindsym p exec thunar           ; mode "default"
@@ -137,10 +139,6 @@ bindsym $mod+Tab mode "launch"
 
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
-
-    tray_output $rightScreen
-
-    #output $rightScreen
 }
 
 # App shortcuts
@@ -155,8 +153,8 @@ bindsym $mod+End    exec --no-startup-id ~/.local/bin/lock
 bindsym Print exec --no-startup-id flameshot gui
 
 # Brightness
-bindsym XF86MonBrightnessDown exec .local/bin/brightness mon - 500
-bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 500
+bindsym XF86MonBrightnessDown exec .local/bin/brightness mon - 5000
+bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 5000
 bindsym XF86KbdBrightnessDown exec .local/bin/brightness kbd - 1
 bindsym XF86KbdBrightnessUp   exec .local/bin/brightness kbd + 1
 
@@ -180,10 +178,10 @@ for_window [class="^Gcolor2$"]                        floating enable
 # This has no incidence when using only one screen, i3 fallbacks to the current
 # screen if the one specified does not exist.
 # Use `xrandr` to get the output names.
-workspace 1  output $leftScreen
-workspace 3  output $leftScreen
-workspace 5  output $leftScreen
-workspace 7  output $leftScreen
+workspace 1  output $rightScreen
+workspace 3  output $rightScreen
+workspace 5  output $rightScreen
+workspace 7  output $rightScreen
 workspace 9  output $leftScreen
 workspace 2  output $rightScreen
 workspace 4  output $rightScreen
