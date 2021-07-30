@@ -8,8 +8,8 @@
 nohup.out
 
 # Ignores for dotfiles repo
-/.bin/*
 /.config/*
+/.local/*
 /.vim/.netrwhist
 /.vim/sessions
 /.vim/spell

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-tt="$HOME/.bin/tt"
+tt="$HOME/.local/bin/tt"
 
 if ! "$tt" > /dev/null 2>&1; then
     echo '<span color="red">No task running.</span>'

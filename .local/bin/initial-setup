@@ -21,7 +21,7 @@ _main_user() {
     _install_golang_bins
 
     systemctl --user enable syncthing
-    "$HOME/.bin/get_firefox"
+    "$HOME/.local/bin/get_firefox"
 }
 
 _install_golang_bins() {

@@ -149,25 +149,25 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym XF86Calculator exec i3-sensible-terminal -e python3
 
 # Lock screen
-bindsym Scroll_Lock exec --no-startup-id ~/.bin/lock
-bindsym $mod+End    exec --no-startup-id ~/.bin/lock
+bindsym Scroll_Lock exec --no-startup-id ~/.local/bin/lock
+bindsym $mod+End    exec --no-startup-id ~/.local/bin/lock
 
 # Screenshot
 bindsym Print exec --no-startup-id scrot
 bindsym Mod1+Sys_Req exec --no-startup-id scrot -u
 
 # Brightness
-bindsym XF86MonBrightnessDown exec .bin/brightness mon - 500
-bindsym XF86MonBrightnessUp exec .bin/brightness mon + 500
-bindsym XF86KbdBrightnessDown exec .bin/brightness kbd - 1
-bindsym XF86KbdBrightnessUp exec .bin/brightness kbd + 1
+bindsym XF86MonBrightnessDown exec .local/bin/brightness mon - 500
+bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 500
+bindsym XF86KbdBrightnessDown exec .local/bin/brightness kbd - 1
+bindsym XF86KbdBrightnessUp   exec .local/bin/brightness kbd + 1
 
 # Sound control with Mod+KP_(PLUS/MINUS)
-bindsym $mod+KP_Subtract     exec --no-startup-id ~/.bin/pasink set-sink-volume -5%
-bindsym $mod+KP_Add          exec --no-startup-id ~/.bin/pasink set-sink-volume +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.bin/pasink set-sink-volume -5%
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.bin/pasink set-sink-volume +5%
-bindsym XF86AudioMute        exec --no-startup-id ~/.bin/pasink set-sink-mute toggle
+bindsym $mod+KP_Subtract     exec --no-startup-id ~/.local/bin/pasink set-sink-volume -5%
+bindsym $mod+KP_Add          exec --no-startup-id ~/.local/bin/pasink set-sink-volume +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/pasink set-sink-volume -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/pasink set-sink-volume +5%
+bindsym XF86AudioMute        exec --no-startup-id ~/.local/bin/pasink set-sink-mute toggle
 
 # 'Background' workspace
 assign [class="keepassxc"] 10
@@ -194,4 +194,4 @@ workspace 8  output $rightScreen
 workspace 10 output $rightScreen
 
 # Autostart
-exec --no-startup-id ~/.bin/startup
+exec --no-startup-id ~/.local/bin/startup
