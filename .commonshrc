@@ -38,14 +38,21 @@ alias py='python3'
 alias cdr='cd $(git rev-parse --show-toplevel)'
 alias optipng='optipng -strip all -o7'
 alias adminer='webdev-toolbox adminer'
-alias dcb='docker-compose build'
-alias dcd='docker-compose down'
-alias dcs='docker-compose stop'
-alias dcu='docker-compose up'
-alias dcr='docker-compose restart'
-alias dcl='docker-compose logs --follow'
 alias tf='terraform'
 alias cal='ncal -Mb'
+
+# Forgetting to sudo with docker.
+export DOCKER='sudo docker'
+export COMPOSE='sudo docker-compose'
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
+
+alias dcb='sudo docker-compose build'
+alias dcd='sudo docker-compose down'
+alias dcs='sudo docker-compose stop'
+alias dcu='sudo docker-compose up'
+alias dcr='sudo docker-compose restart'
+alias dcl='sudo docker-compose logs --follow'
 
 # tmux for the lazy.
 t() {
