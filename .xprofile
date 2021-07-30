@@ -1,2 +1,2 @@
 killall ssh-agent
-$(ssh-agent)
+eval "$(ssh-agent)"
