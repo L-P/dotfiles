@@ -110,7 +110,7 @@ _install_golang() {
 _install_cli() {
     # Base CLI
     apt install -y \
-        curl git htop jq keychain moreutils ncdu rsync tmux tree unzip vim zsh
+        curl git htop jq moreutils ncdu rsync tmux tree unzip vim zsh
 
     # Development tools
     apt install -y \
