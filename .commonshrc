@@ -1,5 +1,7 @@
 export PATH="${PATH}:${HOME}/.local/bin:/opt/go/bin"
+export PYTHONSTARTUP="${HOME}/.bin/pythonstartup.py"
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
+
 export LC_ALL=C.UTF-8
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
 
