@@ -1,1 +1,2 @@
 eval "$(ssh-agent)"
+export PATH="${PATH}:${HOME}/.local/bin"
