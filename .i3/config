@@ -1,7 +1,7 @@
 # Use super as the modifier key.
 set $mod Mod4
-set $leftScreen DVI-1
-set $rightScreen HDMI-0
+set $leftScreen eDP
+set $rightScreen eDP
 
 # If forced to use a system where there is no Inconsolata, use this.
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -155,10 +155,8 @@ bindsym $mod+End    exec --no-startup-id ~/.local/bin/lock
 bindsym Print exec --no-startup-id flameshot gui
 
 # Brightness
-bindsym XF86MonBrightnessDown exec .local/bin/brightness mon - 500
-bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 500
-bindsym XF86KbdBrightnessDown exec .local/bin/brightness kbd - 1
-bindsym XF86KbdBrightnessUp   exec .local/bin/brightness kbd + 1
+bindsym XF86MonBrightnessDown exec .local/bin/brightness mon - 10
+bindsym XF86MonBrightnessUp   exec .local/bin/brightness mon + 10
 
 # Sound control with Mod+KP_(PLUS/MINUS)
 bindsym $mod+KP_Subtract     exec --no-startup-id ~/.local/bin/pasink set-sink-volume -5%
