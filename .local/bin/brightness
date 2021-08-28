@@ -6,15 +6,11 @@
 function main() {
     case $1 in
         mon)
-            local file_brightness='/sys/class/backlight/intel_backlight/brightness'
-            local file_max='/sys/class/backlight/intel_backlight/max_brightness'
-            ;;
-        kbd)
-            local file_brightness='/sys/class/leds/samsung::kbd_backlight/brightness'
-            local file_max='/sys/class/leds/samsung::kbd_backlight/max_brightness'
+            local file_brightness='/sys/class/backlight/amdgpu_bl0/brightness'
+            local file_max='/sys/class/backlight/amdgpu_bl0/max_brightness'
             ;;
         *)
-            echo "Bad device $1, need mon or kbd" 1>&2
+            echo "Bad device $1, need mon" 1>&2
             exit 1
             ;;
     esac
