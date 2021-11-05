@@ -45,10 +45,11 @@ alias docker-compose='sudo docker-compose'
 
 alias dcb='sudo docker-compose build'
 alias dcd='sudo docker-compose down'
+alias dce='sudo docker-compose exec'
+alias dcl='sudo docker-compose logs --follow'
+alias dcr='sudo docker-compose restart'
 alias dcs='sudo docker-compose stop'
 alias dcu='sudo docker-compose up'
-alias dcr='sudo docker-compose restart'
-alias dcl='sudo docker-compose logs --follow'
 
 # tmux for the lazy.
 t() {
