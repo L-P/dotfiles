@@ -56,6 +56,7 @@ set splitright          " Open new vertical splits on the right
 set tabstop=4           " 1 tab = 4 spaces
 set undodir=~/.vim/undo
 set undofile            " Persistant undo across sessions
+set backupcopy=yes      " Allow writing to Docker file mounts without breaking them.
 
 " Mappings
 " --------
