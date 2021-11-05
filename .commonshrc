@@ -79,13 +79,13 @@ ggi() {
 
 # Find aliases
 f() {
-	find . -iname "*$**"
+    find . -iname "*$**" 2>/dev/null | grep -Ev '^\./(vendor|node_modules)/'
 }
 ff() {
-	find . -type "f" -iname "*$**"
+	find . -type "f" -iname "*$**" 2>/dev/null | grep -Ev '^\./(vendor|node_modules)/'
 }
 fd() {
-	find . -type d -iname "*$**"
+	find . -type d -iname "*$**" 2>/dev/null | grep -Ev '^\./(vendor|node_modules)/'
 }
 
 # Make a git repo with an empty commit
