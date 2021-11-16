@@ -11,6 +11,7 @@ source "$HOME/.zsh/vi-mode.plugin.zsh"
 
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
+eval "$(lesspipe)"
 
 # Autojump.
 source "$HOME/.autojump/bin/autojump.zsh"
