@@ -30,6 +30,7 @@ alias gd='git diff -M -C'
 alias gds='git diff -M -C --staged'
 alias gpf='git push --force-with-lease'
 alias gs='git status --short'
+alias gap='git add -p'
 alias la='ll -va'
 alias ll='ls -vlh'
 alias ls='ls --group-directories-first --color=auto -v'
@@ -40,6 +41,7 @@ alias phpcs='phpcs --standard=PSR12'
 alias py='python3'
 alias rm='rm --preserve-root'
 alias tf='terraform'
+alias tfp='rm -f plan 2>/dev/null; terraform validate && terraform plan -out plan'
 
 # Forgetting to sudo with docker.
 export DOCKER='sudo docker'
@@ -144,4 +146,10 @@ ts() {
 # svg2png FILE WIDTH
 svg2png() {
     inkscape --export-png="$1.png" --export-width="$2" --export-background-opacity=0 --without-gui "$1"
+}
+
+pass() {
+    val="$(dd if=/dev/urandom bs=1 count=36 status=none | base64)"
+    echo -n "$val" | xclip
+    echo "$val"
 }
