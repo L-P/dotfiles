@@ -72,6 +72,10 @@ nnoremap <Leader>ls :GitSessionLoad<CR>
 nnoremap <Leader>ss :GitSessionSave<CR>
 nnoremap <Leader>ds :GitSessionDelete<CR>
 
+" sort current Block
+nnoremap <Leader>sb {jv}k:sort<CR>
+nnoremap <Leader>si vib:sort<CR>
+
 " Open/create file in same directory (Create Sibling)
 nnoremap <Leader>cs :e %:h/
 
