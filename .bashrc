@@ -63,3 +63,5 @@ bind -m vi-insert "\C-l":clear-screen # Ctrl+L : clear
 source ~/.autojump/bin/autojump.bash
 source ~/.commonshrc
 source ~/.bash_local
+
+complete -C /usr/bin/nomad nomad

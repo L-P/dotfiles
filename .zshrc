@@ -55,3 +55,6 @@ PROMPT="$cmdstatus$userat:$pwd\${vcs_info_msg_0_}$userchar "
 
 source "$HOME/.commonshrc"
 source "$HOME/.zsh_local"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/nomad nomad
