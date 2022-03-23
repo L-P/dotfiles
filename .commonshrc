@@ -1,6 +1,9 @@
 export PATH="${PATH}:${HOME}/.local/bin:/opt/go/bin"
 export PYTHONSTARTUP="${HOME}/.local/bin/pythonstartup.py"
 
+# Uploading sessions by default is the worst possible idea.
+export ASCIINEMA_API_URL="https://0.0.0.0/"
+
 export EDITOR=vim # Scarcely used (see `update-alternatives --config editor`)
 
 export LC_ALL=C.UTF-8
