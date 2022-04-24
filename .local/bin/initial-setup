@@ -26,7 +26,7 @@ _main_user() {
 
 _install_golang_bins() {
     GO="/opt/go/bin/go"
-    "$GO" get golang.org/x/tools/cmd/goimports
+    "$GO" install golang.org/x/tools/cmd/goimports@latest
     curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$("$GO" env GOPATH)/bin"
 }
 
@@ -84,25 +84,16 @@ _main_root() {
     ufw allow syncthing
     ufw enable
 
-    # Disable maddening and downright dangerous automagic volume adjustement bullshit.
-    # See https://www.reddit.com/r/linux/comments/2rjiaa/horrible_decisions_flat_volumes_in_pulseaudio_a/
-    # and https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=674936
-    # Thanks u/GaianNeuron for introducing me to Destiny Potato and to this fix.
-    sed -i '/^flat-volumes/d' '/etc/pulse/daemon.conf'
-    echo 'flat-volumes = no' >> "/etc/pulse/daemon.conf"
-
     # Use local unbound DNS.
     sed -i '/^supersede domain-name-servers/d' '/etc/dhcp/dhclient.conf'
     echo 'supersede domain-name-servers 127.0.0.1;' >> "/etc/dhcp/dhclient.conf"
-    sed -i '/^supersede domain-name-servers/d' '/etc/wicd/dhclient.conf.template'
-    echo 'supersede domain-name-servers 127.0.0.1;' >> '/etc/wicd/dhclient.conf.template'
 }
 
 _install_golang() {
     cwd=$(pwd)
     cd "/opt"
     rm -rf "/opt/go"
-    version="$(curl -s https://golang.org/VERSION?m=text)"
+    version="$(curl -s https://go.dev/VERSION?m=text)"
     curl -s "https://dl.google.com/go/$version.linux-amd64.tar.gz" | tar xz
     cd "$cwd"
 }
@@ -119,12 +110,10 @@ _install_cli() {
         universal-ctags valgrind yamllint
 
     # Misc
-    apt install -y \
-        composer dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz \
-        hledger httpie imagemagick makeself mariadb-client mat2 mtr-tiny \
-        nmap optipng pandoc php-cli php-gd php-mysql php-xml php-zip pv \
-        qrencode sqlite3 texlive-latex-base texlive-latex-extra \
-        texlive-latex-recommended ufw units whois woof
+     apt install -y \
+         dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz \
+         hledger imagemagick makeself mat2 mtr-tiny nmap optipng pv \
+         qrencode sqlite3 ufw units whois
 
     update-alternatives --set editor /usr/bin/vim.basic
     chsh -s "$(command -v zsh)" "$TARGET_USER"
@@ -134,13 +123,13 @@ _install_desktop() {
     # Base desktop
     apt install -y \
         i3 i3blocks lightdm dunst pavucontrol pulseaudio fonts-inconsolata \
-        firmware-iwlwifi unbound nomacs evince lxterminal pcmanfm scrot \
-        x11-xserver-utils xclip xwallpaper pasystray paprefs wicd-gtk
+        firmware-iwlwifi unbound evince lxterminal pcmanfm flameshot \
+        x11-xserver-utils xclip xwallpaper pasystray paprefs
 
     # Rest of the world, the big apps.
     apt install -y \
-        chromium libreoffice syncthing gimp gimp-plugin-registry gimp-python \
-        gnome-disk-utility gparted gtk-redshift inkscape mpv wireshark \
+        chromium libreoffice syncthing gimp gimp-plugin-registry \
+        gnome-disk-utility gparted redshift-gtk inkscape mpv \
         keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
@@ -214,7 +203,7 @@ _init_checks_root() {
         exit 1
     fi
 
-    if [ "$(lsb_release -sr)" -lt 10 ]; then
+    if [ "$(lsb_release -sr)" -lt 11 ]; then
         echo "this script is expected to run on Debian ≥ 10 only" 1>&2
         exit 1
     fi
