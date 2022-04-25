@@ -153,3 +153,19 @@ pass() {
     echo -n "$val" | xclip
     echo "$val"
 }
+
+gv() {
+    vim -q <(grep -nr "$@" .) +copen
+}
+
+gvi() {
+    vim -q <(grep -inr "$@" .) +copen
+}
+
+ggv() {
+    vim -q <(git grep -n "$@") +copen
+}
+
+ggvi() {
+    vim -q <(git grep -in "$@") +copen
+}
