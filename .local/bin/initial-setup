@@ -113,7 +113,7 @@ _install_cli() {
      apt install -y \
          dnsutils dos2unix ffmpeg flac git-crypt gnuplot graphviz \
          hledger imagemagick makeself mat2 mtr-tiny nmap optipng pv \
-         qrencode sqlite3 ufw units whois
+         qrencode sqlite3 ufw units whois ncal
 
     update-alternatives --set editor /usr/bin/vim.basic
     chsh -s "$(command -v zsh)" "$TARGET_USER"
@@ -124,7 +124,8 @@ _install_desktop() {
     apt install -y \
         i3 i3blocks lightdm dunst pavucontrol pulseaudio fonts-inconsolata \
         firmware-iwlwifi unbound evince lxterminal pcmanfm flameshot \
-        x11-xserver-utils xclip xwallpaper pasystray paprefs
+        x11-xserver-utils xclip xwallpaper pasystray paprefs vim-desktop \
+        fonts-recommended
 
     # Rest of the world, the big apps.
     apt install -y \
