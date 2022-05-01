@@ -124,14 +124,13 @@ _install_desktop() {
     apt install -y \
         i3 i3blocks lightdm dunst pavucontrol pulseaudio fonts-inconsolata \
         firmware-iwlwifi unbound evince lxterminal pcmanfm flameshot \
-        x11-xserver-utils xclip xwallpaper pasystray paprefs vim-desktop \
+        x11-xserver-utils xclip xwallpaper pasystray paprefs gvim \
         fonts-recommended
 
     # Rest of the world, the big apps.
     apt install -y \
         chromium libreoffice syncthing gimp gimp-plugin-registry \
-        gnome-disk-utility gparted redshift-gtk inkscape mpv \
-        keepassxc gucharmap
+        gnome-disk-utility gparted inkscape mpv keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
 }
