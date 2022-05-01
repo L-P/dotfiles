@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Usage: Like pactl but you don't need to set the sink.
 
-sink="$(pactl list short sinks | head -n1 | cut -f1)"
+sink="$(pactl list short sinks | grep RUNNING | head -n1 | cut -f1)"
 pactl "$1" "$sink" "$2"
