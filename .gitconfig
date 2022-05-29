@@ -39,11 +39,12 @@
     ff = only
 
 [advice]
-    pushNonFastForward = false
-    statusHints = false
+    addIgnoredFile = false
     commitBeforeMerge = false
-    resolveConflict = false
     detachedHead = false
+    pushNonFastForward = false
+    resolveConflict = false
+    statusHints = false
 
 [transfer]
     fsckobjects = true
