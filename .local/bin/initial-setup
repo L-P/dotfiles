@@ -129,7 +129,7 @@ _install_desktop() {
 
     # Rest of the world, the big apps.
     apt install -y \
-        chromium libreoffice syncthing gimp gimp-plugin-registry \
+        libreoffice syncthing gimp gimp-plugin-registry \
         gnome-disk-utility gparted inkscape mpv keepassxc gucharmap
 
     update-alternatives --set x-terminal-emulator /usr/bin/lxterminal
