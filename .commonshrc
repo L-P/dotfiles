@@ -169,3 +169,15 @@ ggv() {
 ggvi() {
     vim -q <(git grep -in "$@") +copen
 }
+
+repl() {
+    while true; do
+        clear
+        "$@"
+        read
+    done
+}
+
+rekey() {
+    gpg-connect-agent "scd serialno" "learn --force" /bye
+}
