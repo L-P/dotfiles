@@ -41,7 +41,7 @@ alias phpcs='phpcs --standard=PSR12'
 alias py='python3'
 alias rm='rm --preserve-root'
 alias tf='terraform'
-alias tfp='rm -f plan 2>/dev/null; terraform validate && terraform plan -out plan'
+alias tfp='rm -f plan 2>/dev/null; terraform plan -out plan'
 
 # Forgetting to sudo with docker.
 export DOCKER='sudo docker'
