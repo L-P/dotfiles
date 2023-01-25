@@ -181,3 +181,22 @@ repl() {
 rekey() {
     gpg-connect-agent "scd serialno" "learn --force" /bye
 }
+
+# fix PATTERN
+# Commits the index as a fixup to the first commit that matches PATTERN
+fix() {
+    sha="$(git log -n 1 --format='%H' -F -i --grep "$*")"
+    if [ '' = "$sha" ]; then
+        echo 'No commit found.' 1>&2
+        return 1
+    fi
+
+    git commit --fix "$sha"
+}
+
+# dcredo SERVICENAME
+dcredo() {
+    docker-compose stop "$1" && \
+    docker-compose rm -f "$1" && \
+    docker-compose up -d
+}
