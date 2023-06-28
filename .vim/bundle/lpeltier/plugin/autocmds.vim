@@ -25,6 +25,7 @@ autocmd BufNewFile,BufRead *.{glsl,vert,frag} setlocal filetype=glsl
 autocmd BufNewFile,BufRead *.{mail,txt}       setlocal filetype=mail
 autocmd BufNewFile,BufRead .*shrc             setlocal filetype=sh
 autocmd BufNewFile,BufRead CMakeLists.txt     setlocal filetype=cmake
+autocmd BufNewFile,BufRead *.service          setlocal filetype=systemd
 
 autocmd BufWritePost *.tf silent !terraform fmt % &> /dev/null
 
