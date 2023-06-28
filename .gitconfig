@@ -14,7 +14,7 @@
     name = Léo Peltier
 
 [diff]
-    algorithm = patience
+    algorithm = histogram
     renameLimit = 2048
 
 [core]
