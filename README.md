@@ -20,7 +20,7 @@ it in there and see if it's really useful (it won't stay if it's not).
 
 Quick install
 -------------
-I'm a lazy man so I made a [script to make a script that installs everything](https://github.com/L-P/dotfiles/blob/master/.bin/make_installer.sh).
+I'm a lazy man so I made a [script to make a script that installs everything](https://github.com/L-P/dotfiles/blob/master/.local/bin/make_installer.sh).
 This script requires `git` and the `makeself` package to be present.
 
 **Warning**: the resulting `dotfiles.run` script will remove all the dotfiles
