@@ -214,3 +214,25 @@ nonce() {
     printf "%s" "$nonce" | xclip
     echo "$nonce"
 }
+
+fssm() {
+    ssm "$(ssm | grep "$1" | awk '{print $2}')"
+}
+
+# jobout JOBNAME TASKNAME
+jobout() {
+    nomad logs -verbose -f -stdout -job "$1" "$2"
+}
+
+# joberr JOBNAME TASKNAME
+joberr() {
+    nomad logs -verbose -f -stderr -job "$1" "$2"
+}
+
+# awsip IP
+# Describes the network interface associated to the given IP address.
+awsip() {
+    AWS ec2 describe-network-interfaces \
+        --output table \
+        --filters "Name=addresses.private-ip-address,Values=$1"
+}
