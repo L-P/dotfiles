@@ -128,7 +128,7 @@ mode "launch" {
     bindsym s exec signal-desktop   ; mode "default"
     bindsym f exec firefox          ; mode "default"
     bindsym g exec firefox -private ; mode "default"
-    bindsym p exec pcmanfm          ; mode "default"
+    bindsym p exec thunar           ; mode "default"
     bindsym k exec keepassxc        ; mode "default" ; workspace 10
 
     bindsym Escape mode "default"
