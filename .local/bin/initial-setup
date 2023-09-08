@@ -4,6 +4,7 @@ set -eux
 
 # Enough basics to boot into a functional session.
 sudo apt-get install -y \
+    colorized-logs \
     firefox-esr \
     fonts-inconsolata \
     git \
@@ -17,11 +18,13 @@ sudo apt-get install -y \
     lightdm \
     lxterminal \
     make \
+    moreutils \
     ncdu \
     p7zip \
     paprefs \
     pasystray \
     pavucontrol \
+    psmisc \
     python-is-python3 \
     python3 \
     rsync \
