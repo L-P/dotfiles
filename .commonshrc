@@ -200,3 +200,9 @@ dcredo() {
     docker-compose rm -f "$1" && \
     docker-compose up -d
 }
+
+nonce() {
+    nonce="$(dd if=/dev/urandom bs=1 count=4 status=none | xxd -p)"
+    printf "%s" "$nonce" | xclip
+    echo "$nonce"
+}
