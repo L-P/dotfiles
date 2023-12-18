@@ -1,7 +1,7 @@
 set expandtab
 abbr ifee if err :=; err != nil {<CR>return fmt.Errorf(": %w", err)<CR>}<CR><ESC>?:=<CR>la
 abbr ife if err != nil {<CR>return fmt.Errorf(": %w", err)<CR>}<CR><ESC>?:<CR>i
-abbr goshebang ///bin/true; exec /usr/bin/env go run "$0" "$@"<CR>package main<CR><CR>func main() {<CR>%<CR>}<CR><ESC>?%<CR>xi
+abbr goshebang /*?sr/bin/env go run "$0" "$@"; exit $? #*/<CR>package main<CR><CR>func main() {<CR>%<CR>}<CR><ESC>?%<CR>xi
 
 let b:ale_linters = ['gobuild', 'golangci-lint']
 let b:ale_fixers = ['goimports', 'gofmt']
