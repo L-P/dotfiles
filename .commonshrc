@@ -42,6 +42,7 @@ alias py='python3'
 alias rm='rm --preserve-root'
 alias tf='terraform'
 alias tfp='clear; rm -f plan 2>/dev/null; terraform plan -out plan'
+alias tfa='terraform apply plan'
 
 # Forgetting to sudo with docker.
 export DOCKER='sudo docker'
