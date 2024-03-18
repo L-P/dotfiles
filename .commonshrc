@@ -43,6 +43,7 @@ alias rm='rm --preserve-root'
 alias tf='terraform'
 alias tfp='clear; rm -f plan 2>/dev/null; terraform plan -out plan'
 alias tfa='terraform apply plan'
+alias uuid='cat /proc/sys/kernel/random/uuid'
 
 # Forgetting to sudo with docker.
 export DOCKER='sudo docker'
