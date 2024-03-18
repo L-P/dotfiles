@@ -4,6 +4,6 @@ set -xeuo pipefail
 
 pushd "/opt"
 sudo rm -rf "/opt/go"
-version="$(curl -s https://go.dev/VERSION?m=text)"
+version="$(curl -s https://go.dev/VERSION?m=text | head -n1)"
 curl -s "https://dl.google.com/go/$version.linux-amd64.tar.gz" | sudo tar xz
 popd
