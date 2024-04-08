@@ -4,11 +4,14 @@ set -eux
 
 # Enough basics to boot into a functional session.
 sudo apt-get install -y \
+    build-essential \
     colorized-logs \
+    curl \
     firefox-esr \
     fonts-inconsolata \
     git \
-    golang \
+    git-crypt \
+    git-lfs \
     gpg \
     htop \
     i3 \
