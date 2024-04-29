@@ -39,6 +39,7 @@ sudo apt-get install -y \
     vim \
     webext-ublock-origin-firefox \
     xclip \
+    xxd \
     zsh
 
 sudo chsh -s "$(which zsh)" "$(whoami)"
