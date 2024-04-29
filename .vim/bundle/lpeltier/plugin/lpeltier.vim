@@ -63,8 +63,9 @@ set backupcopy=yes      " Allow writing to Docker file mounts without breaking t
 " \ is difficult to type on azerty keyboards
 let mapleader=" "
 
+nnoremap <C-P> :GFiles<CR>
 " Browse ctags
-nnoremap <Leader><C-P> :CtrlPTag<CR>
+nnoremap <Leader><C-P> :Tags<CR>
 nnoremap <F8> :UndotreeToggle<CR>
 
 " gitsessions.vim

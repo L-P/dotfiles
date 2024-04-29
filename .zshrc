@@ -8,6 +8,8 @@ source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/history.zsh"
 source "$HOME/.zsh/misc.zsh"
 source "$HOME/.zsh/vi-mode.plugin.zsh"
+source "/usr/share/doc/fzf/examples/key-bindings.zsh"
+source "/usr/share/doc/fzf/examples/completion.zsh"
 
 HISTSIZE=10000
 SAVEHIST=$HISTSIZE
