@@ -1,5 +1,4 @@
 # Global ignores
-.*.sw[op]
 .vault
 .~lock.*
 /.vimrc
@@ -14,6 +13,7 @@ nohup.out
 /.vim/sessions
 /.vim/spell
 /.vim/undo
+/.vim/swap
 
 # Exceptions
 !/.config/dunstrc
