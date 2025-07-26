@@ -6,3 +6,7 @@ sleep 2
 xsetroot -solid black &
 pasystray &
 setxkbmap 'fr(oss)'
+xrandr --output DisplayPort-1 --primary --left-of DisplayPort-0 \
+    --mode 3840x2160 --rate 160 \
+    --output DisplayPort-0 \
+    --mode 3840x2160 --rate 160
