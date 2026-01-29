@@ -51,7 +51,7 @@ zstyle ':vcs_info:*' formats "$branch"
 zstyle ':vcs_info:*' actionformats "$branch (%a)"
 zstyle ':vcs_info:*' stagedstr "%{$fg[yellow]%}*"
 zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}*"
-PROMPT="$cmdstatus$userat:$pwd\${vcs_info_msg_0_}$userchar "
+PROMPT="$cmdstatus$userat(\${CLENV}):$pwd\${vcs_info_msg_0_}$userchar "
 
 source "$HOME/.commonshrc"
 source "$HOME/.zsh_local"
