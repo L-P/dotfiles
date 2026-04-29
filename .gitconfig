@@ -16,6 +16,8 @@
 [diff]
     algorithm = histogram
     renameLimit = 2048
+    renames = true
+    mnemonicPrefix = true
 
 [core]
     excludesfile = ~/.gitignore
