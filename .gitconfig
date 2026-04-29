@@ -19,6 +19,9 @@
     renames = true
     mnemonicPrefix = true
 
+[tag]
+    gpgSign = true
+
 [core]
     excludesfile = ~/.gitignore
     pager = less -RFXS -x4
