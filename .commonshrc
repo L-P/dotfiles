@@ -219,3 +219,6 @@ tfr() {
     # shellcheck disable=SC2046
     terraform plan -out plan $(terraform plan -refresh=false -json | jq -r '.change.resource.addr|select(.!=null)|"-target="+.')
 }
+
+export FZF_DEFAULT_COMMAND="find . | grep -vE  './(vendor|.git)'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
