@@ -68,3 +68,6 @@
 
 [init]
 	defaultBranch = master
+
+[lfs "ssh"]
+    autoMultiplex = false
