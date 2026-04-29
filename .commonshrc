@@ -208,3 +208,7 @@ nonce() {
     printf "%s" "$nonce" | xclip
     echo "$nonce"
 }
+
+wip() {
+    git commit -m "$(date --rfc-3339=seconds)"
+}
