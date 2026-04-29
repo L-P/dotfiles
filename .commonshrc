@@ -212,3 +212,10 @@ nonce() {
 wip() {
     git commit -m "$(date --rfc-3339=seconds)"
 }
+
+tfr() {
+    clear
+    rm -f plan 2>/dev/null
+    # shellcheck disable=SC2046
+    terraform plan -out plan $(terraform plan -refresh=false -json | jq -r '.change.resource.addr|select(.!=null)|"-target="+.')
+}
